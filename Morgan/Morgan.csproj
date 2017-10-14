@@ -61,11 +61,16 @@
     <Compile Include="Commands\ActionCommand.cs" />
     <Compile Include="Commands\ActionParameterCommand.cs" />
     <Compile Include="DataModel\ApplicationPage.cs" />
+    <Compile Include="Pages\BaseFormPage.xaml.cs">
+      <DependentUpon>BaseFormPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Base\BasePage.cs" />
     <Compile Include="ValueConverters\ApplicationPageToPageConverter.cs" />
     <Compile Include="ValueConverters\Base\BaseValueConverter.cs" />
     <Compile Include="ValueConverters\BooleanToVisibilityConverter.cs" />
     <Compile Include="ValueConverters\BooleanToVisibilityInvertConverter.cs" />
     <Compile Include="ViewModel\ApplicationViewModel.cs" />
+    <Compile Include="ViewModel\Pages\BaseFormPageViewModel.cs" />
     <Compile Include="ViewModel\Base\BaseViewModel.cs" />
     <Compile Include="ViewModel\Base\ViewModelBag.cs" />
     <Compile Include="Window\WindowResizer.cs" />
@@ -82,6 +87,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\BaseFormPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\Buttons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

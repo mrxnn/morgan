@@ -10,7 +10,7 @@
         /// <summary>
         /// Controls the currently visible page of the application
         /// </summary>
-        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.WelcomePage;
+        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.BaseFormPage;
 
         #endregion
     }

@@ -12,6 +12,9 @@ namespace Morgan
         {
             switch((ApplicationPage)value)
             {
+                case ApplicationPage.BaseFormPage:
+                    return new BaseFormPage();
+
                 default: return null;
             }
         }

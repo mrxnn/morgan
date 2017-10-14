@@ -40,12 +40,11 @@
 
     <!-- Default Button -->
     <Style TargetType="{x:Type Button}">
-        <Setter Property="Background" Value="{StaticResource GreenPrimaryBrush}"/>
+        <Setter Property="Background" Value="{StaticResource ColorPrimaryBrush}"/>
         <Setter Property="Foreground" Value="{StaticResource ForegroundLightBrush}"/>
         <Setter Property="Padding" Value="12,8"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="FontSize" Value="15"/>
-        <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="local:ButtonAttachedProperties.IsBusy" Value="False"/>
         <Setter Property="Template">
@@ -68,14 +67,14 @@
                         <EventTrigger RoutedEvent="MouseEnter">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <ColorAnimation To="{StaticResource GreenSecondary}" Duration="0:0:0.2" Storyboard.TargetProperty="Background.Color"/>
+                                    <ColorAnimation To="{StaticResource ColorSecondary}" Duration="0:0:0.2" Storyboard.TargetProperty="Background.Color"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
                         <EventTrigger RoutedEvent="MouseLeave">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <ColorAnimation To="{StaticResource GreenPrimary}" Duration="0:0:0.2" Storyboard.TargetProperty="Background.Color"/>
+                                    <ColorAnimation To="{StaticResource ColorPrimary}" Duration="0:0:0.2" Storyboard.TargetProperty="Background.Color"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>

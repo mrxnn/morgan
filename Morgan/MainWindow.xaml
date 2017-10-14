@@ -9,7 +9,7 @@
         AllowsTransparency="True"
         Title="Morgan" Height="600" Width="800"
         WindowStartupLocation="CenterScreen"
-        Background="{StaticResource BackgroundDarkBrush}">
+        Background="{StaticResource BackgroundVeryDarkBrush}">
 
     <Window.Resources>
         <Style TargetType="{x:Type local:MainWindow}">
@@ -26,13 +26,13 @@
                                 <!-- Border that is used to clip the background mask -->
                                 <Border x:Name="ClippedBorder"
                                         CornerRadius="{Binding WindowCornerRadius, FallbackValue=5}"
-                                        Background="{StaticResource BackgroundDarkBrush}"/>
+                                        Background="{StaticResource BackgroundVeryDarkBrush}"/>
 
                                 <!-- 
                                 Background Border that has the background color and the drop shadow effect. It's necessary 
                                 to use a separate border for drop shadow in order to prevent inner content being blurred.
                                 -->
-                                <Border Background="{StaticResource BackgroundDarkBrush}"
+                                <Border Background="{StaticResource BackgroundVeryDarkBrush}"
                                         CornerRadius="{Binding WindowCornerRadius, FallbackValue=5}">
                                     <Border.Effect>
                                         <DropShadowEffect ShadowDepth="0" Opacity=".7" RenderingBias="Quality"/>

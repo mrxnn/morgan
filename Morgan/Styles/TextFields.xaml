@@ -2,10 +2,10 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:Morgan">
     
-    <!-- Normal Text Box Style -->
-    <Style x:Key="NormalTextBox" TargetType="{x:Type TextBox}">
+    <!-- Default Text Box Style -->
+    <Style TargetType="{x:Type TextBox}">
         <Setter Property="Background" Value="#303030"/>
-        <Setter Property="BorderBrush" Value="{StaticResource ForegroundDarkBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BackgroundDarkBrush}"/>
         <Setter Property="BorderThickness" Value="2"/>
         <Setter Property="Padding" Value="6"/>
         <Setter Property="Foreground" Value="{StaticResource ForegroundLightBrush}"/>
@@ -14,7 +14,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
-                    <Border x:Name="border" CornerRadius="3" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                    <Border x:Name="border" CornerRadius="2" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
                         <Grid>
                             <!-- Actual Text Box -->
                             <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
@@ -46,7 +46,7 @@
                             <Setter Property="Opacity" TargetName="border" Value="0.56"/>
                         </Trigger>
                         <Trigger Property="IsFocused" Value="True">
-                            <Setter Property="BorderBrush" Value="{StaticResource GreenSecondaryBrush}"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource ColorSecondaryBrush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

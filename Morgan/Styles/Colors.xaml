@@ -2,24 +2,25 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:Morgan">
 
-    <Color x:Key="BackgroundDark">#252525</Color>
+    <!-- APP THEME COLORS -->
+    
+    <Color x:Key="ColorSecondary">#01579b</Color>
+    <SolidColorBrush x:Key="ColorSecondaryBrush" Color="{StaticResource ColorSecondary}"/>
+
+    <Color x:Key="ColorPrimary">#0277bd</Color>
+    <SolidColorBrush x:Key="ColorPrimaryBrush" Color="{StaticResource ColorPrimary}"/>
+
+    <!-- BACKGROUND COLORS -->
+    
+    <Color x:Key="BackgroundVeryDark">#252525</Color>
+    <SolidColorBrush x:Key="BackgroundVeryDarkBrush" Color="{StaticResource BackgroundVeryDark}"/>
+
+    <Color x:Key="BackgroundDark">#333333</Color>
     <SolidColorBrush x:Key="BackgroundDarkBrush" Color="{StaticResource BackgroundDark}"/>
     
-
-    <Color x:Key="GreenTertiary">#448e32</Color>
-    <SolidColorBrush x:Key="GreenTertiaryBrush" Color="{StaticResource GreenTertiary}"/>
-
-    <Color x:Key="GreenSecondary">#01705e</Color>
-    <SolidColorBrush x:Key="GreenSecondaryBrush" Color="{StaticResource GreenSecondary}"/>
-
-    <Color x:Key="GreenPrimary">#01917a</Color>
-    <SolidColorBrush x:Key="GreenPrimaryBrush" Color="{StaticResource GreenPrimary}"/>
-
-
+    <!-- FOREGROUND COLORS -->
+    
     <Color x:Key="ForegroundLight">#f4f4f4</Color>
     <SolidColorBrush x:Key="ForegroundLightBrush" Color="{StaticResource ForegroundLight}"/>
-
-    <Color x:Key="ForegroundDark">#333333</Color>
-    <SolidColorBrush x:Key="ForegroundDarkBrush" Color="{StaticResource ForegroundDark}"/>
 
 </ResourceDictionary>

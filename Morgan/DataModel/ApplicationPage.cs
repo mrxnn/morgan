@@ -2,6 +2,6 @@
 {
     public enum ApplicationPage : byte
     {
-        WelcomePage = 0,
+        BaseFormPage = 0
     }
 }
