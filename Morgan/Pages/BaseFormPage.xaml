@@ -14,9 +14,10 @@
                     TextBlock.Foreground="White"
                     HorizontalAlignment="Left">
 
-            <TextBox Tag="Source location"
+            <TextBox Tag="Enter the location of the music folder"
                      Margin="5" Width="400"
-                     Text="{Binding Location}"/>
+                     Text="{Binding Location}"
+                     local:TextBoxAttachedProperties.FocusControlOnLoad="True"/>
 
             <Button Content="Load files"
                     Margin="5"
