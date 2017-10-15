@@ -27,7 +27,7 @@
 
             <!-- The button that the user can click to display the dialog -->
             <Button FontFamily="{StaticResource Ionicons}"
-                    Margin="0 20 0 0"
+                    Margin="0 30 0 0"
                     Padding="10"
                     FontSize="30"
                     HorizontalAlignment="Center"
@@ -42,7 +42,19 @@
                             VerticalAlignment="Center"/>
 
                     <!-- Location count -->
-                    <TextBlock Text="{Binding LocationCount, FallbackValue=99}"/>
+                    <Border Width="30" 
+                            Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
+                            CornerRadius="50"
+                            Background="{StaticResource ForegroundLightBrush}">
+
+                        <!-- Number of locations that are already specfied -->
+                        <TextBlock Text="{Binding LocationCount, FallbackValue=99}"
+                                   Foreground="{StaticResource BackgroundDarkBrush}"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontSize="15" FontWeight="Normal"/>
+                        
+                    </Border>
 
                 </StackPanel>
 
@@ -52,7 +64,8 @@
             <Button Content="Continue"
                     HorizontalAlignment="Center"
                     Margin="0 50 0 0"
-                    Command="{Binding LoadFilesCommand}"/>
+                    Command="{Binding LoadFilesCommand}"
+                    IsEnabled="{Binding HasLocation}"/>
 
         </StackPanel>
 

@@ -21,6 +21,11 @@ namespace Morgan
         /// </summary>
         public int LocationCount => LocationsList.Count;
 
+        /// <summary>
+        /// Flag indicating if there is at least one location in the list
+        /// </summary>
+        public bool HasLocation => LocationCount > 0;
+
         #endregion
 
         #region Commands
@@ -66,6 +71,7 @@ namespace Morgan
 
                 // Notify the UI
                 OnPropertyChanged(nameof(LocationCount));
+                OnPropertyChanged(nameof(HasLocation));
             }
         }
 

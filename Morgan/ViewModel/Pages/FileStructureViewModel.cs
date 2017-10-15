@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Morgan
 {
@@ -15,19 +17,15 @@ namespace Morgan
         public IList<string> LocationsList { get; set; } = new List<string>();
 
         /// <summary>
-        /// List of all the music files scanned from the specified locations
+        /// List of music files after each music file is mapped to <see cref="MusicFileViewModel"/> instances.
+        /// So that each music file contains all the required metadata that is used to re-arrange files
         /// </summary>
-        public IList<string> MusicFileList { get; set; } = new List<string>();
+        public IList<MusicFileViewModel> MusicFileList { get; set; } = new List<MusicFileViewModel>();
 
         /// <summary>
         /// Number of locations stored in the Location list
         /// </summary>
         public int LocationCount => LocationsList.Count;
-
-        /// <summary>
-        /// Number of music files stored in the Music File list
-        /// </summary>
-        public int MusicFileCount => MusicFileList.Count;
 
         #endregion
 
@@ -58,8 +56,23 @@ namespace Morgan
         private async void LoadMusicFiles()
         {
             // Get all the music files in the different locations
-            MusicFileList = await IoC.Get<IDirectoryService>().GetMusicFilesFromAMultipleLocationsAsync(LocationsList);
-            OnPropertyChanged(nameof(MusicFileCount));
+            var list = await IoC.Get<IDirectoryService>().GetMusicFilesFromAMultipleLocationsAsync(LocationsList);
+
+            // Map each music file into MusicFileViewModel objects
+            MusicFileList = await MapFilesToModelsAsync(list);
+        }
+
+        /// <summary>
+        /// Accepts a plain file list and returns a collection that each file is mapped to <see cref="MusicFileViewModel"/>
+        /// </summary>
+        /// <param name="list">List of plain music files</param>
+        /// <returns></returns>
+        private Task<List<MusicFileViewModel>> MapFilesToModelsAsync(List<string> list)
+        {
+            return Task.Run(() =>
+            {
+                return list.Select(f => new MusicFileViewModel(f)).ToList();
+            });
         }
 
         #endregion

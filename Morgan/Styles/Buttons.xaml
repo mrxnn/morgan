@@ -78,6 +78,10 @@
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{StaticResource ColorSecondaryBrush}"/>
+                            <Setter Property="Foreground" Value="{StaticResource ColorPrimaryBrush}"/>
+                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
