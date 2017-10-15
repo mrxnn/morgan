@@ -1,4 +1,6 @@
-﻿using System.Windows.Input;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Windows.Input;
 
 namespace Morgan
 {
@@ -10,9 +12,9 @@ namespace Morgan
         #region Public Properties
 
         /// <summary>
-        /// Location of the root music directory
+        /// List of folder locations to scan for music files
         /// </summary>
-        public string Location { get; set; }
+        public ObservableCollection<string> LocationsList { get; set; }
 
         #endregion
 

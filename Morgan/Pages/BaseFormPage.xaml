@@ -10,19 +10,42 @@
 
     <Grid>
 
-        <StackPanel Margin="30 30"
-                    TextBlock.Foreground="White"
-                    HorizontalAlignment="Left">
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    TextBlock.Foreground="{StaticResource ForegroundLightBrush}"
+                    TextBlock.TextAlignment="Center">
 
-            <TextBox Tag="Enter the location of the music folder"
-                     Margin="5" Width="400"
-                     Text="{Binding Location}"
-                     local:TextBoxAttachedProperties.FocusControlOnLoad="True"/>
+            <!-- header text -->
+            <TextBlock Text="Locations"
+                       FontSize="70"
+                       FontWeight="Light"/>
 
-            <Button Content="Load files"
-                    Margin="5"
-                    HorizontalAlignment="Left"
-                    Command="{Binding LoadFilesCommand}"/>
+            <!-- secondary header text -->
+            <TextBlock Text="First things first. Let's add your locations."
+                       FontSize="18"
+                       FontWeight="Light"/>
+
+            <!-- The button that the user can click to display the dialog -->
+            <Button FontFamily="{StaticResource Ionicons}"
+                    Margin="0 20 0 0"
+                    Padding="10"
+                    FontSize="30"
+                    HorizontalAlignment="Center"
+                    ToolTip="Add the locations that you need to scan for music files">
+
+                <StackPanel Orientation="Horizontal">
+
+                    <!-- Add icon -->
+                    <TextBlock Text=""/>
+
+                    <!-- Button text -->
+                    <TextBlock Text=" Add Location"
+                            FontSize="20"
+                            VerticalAlignment="Center"/>
+
+                </StackPanel>
+
+            </Button>
 
         </StackPanel>
 
