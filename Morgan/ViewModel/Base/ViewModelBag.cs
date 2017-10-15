@@ -8,6 +8,6 @@
         /// <summary>
         /// Instance of the application view model that is used across the application
         /// </summary>
-        public static ApplicationViewModel ApplicationViewModel { get; set; } = new ApplicationViewModel();
+        public static ApplicationViewModel ApplicationViewModel { get; set; } = IoC.Get<ApplicationViewModel>();
     }
 }

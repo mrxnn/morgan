@@ -31,7 +31,8 @@
                     Padding="10"
                     FontSize="30"
                     HorizontalAlignment="Center"
-                    ToolTip="Add the locations that you need to scan for music files">
+                    ToolTip="Add the locations that you need to scan for music files"
+                    Command="{Binding AddLocationCommand}">
 
                 <StackPanel Orientation="Horizontal">
 
@@ -39,9 +40,12 @@
                     <TextBlock Text=""/>
 
                     <!-- Button text -->
-                    <TextBlock Text=" Add Location"
+                    <TextBlock Text=" Add Location "
                             FontSize="20"
                             VerticalAlignment="Center"/>
+
+                    <!-- Location count -->
+                    <TextBlock Text="{Binding LocationCount, FallbackValue=99}"/>
 
                 </StackPanel>
 
