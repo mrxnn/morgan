@@ -60,10 +60,13 @@ namespace Morgan
         {
             var location = IoC.Get<IDirectoryService>().GetLocation();
             if (Directory.Exists(location))
+            {
+                // Add the new location
                 LocationsList.Add(location);
 
-            // Notify the UI
-            OnPropertyChanged(nameof(LocationCount));
+                // Notify the UI
+                OnPropertyChanged(nameof(LocationCount));
+            }
         }
 
         /// <summary>
@@ -71,6 +74,11 @@ namespace Morgan
         /// </summary>
         private void LoadFiles()
         {
+            // Set the root music directory location i a glabal scope
+            IoC.Get<ApplicationViewModel>().LocationsList = this.LocationsList;
+
+            // Change the current page of the application
+            IoC.Get<ApplicationViewModel>().CurrentPage = ApplicationPage.FileStructurePage;
         }
 
         #endregion

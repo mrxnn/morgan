@@ -15,6 +15,9 @@ namespace Morgan
                 case ApplicationPage.BaseFormPage:
                     return new BaseFormPage();
 
+                case ApplicationPage.FileStructurePage:
+                    return new FileStructurePage();
+
                 default: return null;
             }
         }

@@ -71,6 +71,9 @@
       <DependentUpon>BaseFormPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Base\BasePage.cs" />
+    <Compile Include="Pages\FileStructurePage.xaml.cs">
+      <DependentUpon>FileStructurePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Services\Implementation\DirectoryService.cs" />
     <Compile Include="Services\Interfaces\IDirectoryService.cs" />
     <Compile Include="ValueConverters\ApplicationPageToPageConverter.cs" />
@@ -81,6 +84,7 @@
     <Compile Include="ViewModel\Pages\BaseFormPageViewModel.cs" />
     <Compile Include="ViewModel\Base\BaseViewModel.cs" />
     <Compile Include="ViewModel\Base\ViewModelBag.cs" />
+    <Compile Include="ViewModel\Pages\FileStructureViewModel.cs" />
     <Compile Include="Window\WindowResizer.cs" />
     <Compile Include="Window\WindowViewModel.cs" />
     <Page Include="MainWindow.xaml">
@@ -96,6 +100,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Pages\BaseFormPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\FileStructurePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

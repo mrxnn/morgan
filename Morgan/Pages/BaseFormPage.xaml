@@ -36,9 +36,6 @@
 
                 <StackPanel Orientation="Horizontal">
 
-                    <!-- Add icon -->
-                    <TextBlock Text=""/>
-
                     <!-- Button text -->
                     <TextBlock Text=" Add Location "
                             FontSize="20"
@@ -50,6 +47,12 @@
                 </StackPanel>
 
             </Button>
+            
+            <!-- Continue Button -->
+            <Button Content="Continue"
+                    HorizontalAlignment="Center"
+                    Margin="0 50 0 0"
+                    Command="{Binding LoadFilesCommand}"/>
 
         </StackPanel>
 
