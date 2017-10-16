@@ -2,7 +2,15 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:Morgan">
 
+    <!-- Font used in the Window Control Buttons -->
     <FontFamily x:Key="LatoThin">pack://application:,,,/Fonts/#Lato Thin</FontFamily>
+    
+    <!-- Icon Font -->
     <FontFamily x:Key="Ionicons">pack://application:,,,/Fonts/#Ionicons</FontFamily>
     
+    <!-- Roboto - Default font used in the application UI -->
+    <FontFamily x:Key="RobotoRegular">pack://application:,,,/Fonts/#Roboto Regular</FontFamily>
+    <FontFamily x:Key="RobotoMedium">pack://application:,,,/Fonts/#Roboto Medium</FontFamily>
+    <FontFamily x:Key="RobotoLight">pack://application:,,,/Fonts/#Roboto Light</FontFamily>
+
 </ResourceDictionary>
