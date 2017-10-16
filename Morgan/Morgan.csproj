@@ -76,6 +76,7 @@
       <DependentUpon>MusicListItemControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataModel\ApplicationPage.cs" />
+    <Compile Include="Extensions\StringHelpers.cs" />
     <Compile Include="IoC\IoC.cs" />
     <Compile Include="Pages\BaseFormPage.xaml.cs">
       <DependentUpon>BaseFormPage.xaml</DependentUpon>
