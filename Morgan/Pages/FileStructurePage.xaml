@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Morgan"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="600" d:DesignWidth="800"
       Title="FileStructurePage">
 
     <Grid>
@@ -15,9 +15,25 @@
                     TextBlock.Foreground="{StaticResource ForegroundLightBrush}"
                     TextBlock.FontSize="40">
 
-            <TextBlock Text="{Binding LocationCount, FallbackValue=99}"
+            <!-- Number of locations scanned -->
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Locations Scanned "
                        HorizontalAlignment="Center"
                        Margin="0 0 0 20"/>
+                <TextBlock Text="{Binding LocationCount, FallbackValue=0}"
+                       HorizontalAlignment="Center"
+                       Margin="0 0 0 20"/>
+            </StackPanel>
+
+            <!-- Number of music files scanned -->
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Music Files Scanned "
+                       HorizontalAlignment="Center"
+                       Margin="0 0 0 20"/>
+                <TextBlock Text="{Binding MusicFileCount, FallbackValue=0}"
+                       HorizontalAlignment="Center"
+                       Margin="0 0 0 20"/>
+            </StackPanel>
 
         </StackPanel>
 

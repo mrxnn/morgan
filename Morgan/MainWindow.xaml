@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         WindowStyle="None"
         AllowsTransparency="True"
-        Title="Morgan" Height="600" Width="800"
+        Title="Morgan" Height="610" Width="520"
         WindowStartupLocation="CenterScreen"
         Background="{StaticResource BackgroundVeryDarkBrush}">
 
