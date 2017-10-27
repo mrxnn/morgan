@@ -11,13 +11,13 @@
     <Grid>
 
         <!-- An icon indicating how many locations are added to the list -->
-        <TextBlock Text=""
+        <TextBlock Text=""
                    Margin="20"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Bottom"
-                   Opacity=".2"
                    FontFamily="{StaticResource Ionicons}"
                    Foreground="{StaticResource ForegroundLightBrush}"
+                   Opacity="{Binding HasLocation, Converter={local:LocationAddedOpacityFlagConverter}}"
                    FontSize="30"/>
 
         <!-- Main content -->
