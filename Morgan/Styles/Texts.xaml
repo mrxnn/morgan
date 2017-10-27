@@ -49,6 +49,5 @@
     
     <!-- Unicode values for the icons used in the application -->
     <System:String x:Key="ApplicationIcon">&#xf13f;</System:String>
-    <System:String x:Key="ApplicationIcon-Outline">&#xf232;</System:String>
     
 </ResourceDictionary>

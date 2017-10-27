@@ -11,19 +11,28 @@
     <Grid>
 
         <Grid.ColumnDefinitions>
+            
+            <!-- Side Menu -->
             <ColumnDefinition Width="60"/>
+            <!-- Page Content -->
             <ColumnDefinition Width="*"/>
+            
         </Grid.ColumnDefinitions>
 
+        <!-- Side Menu Control -->
         <Grid>
-            <Border Background="#333"
+            
+            <!-- Bottom border that has the rounded corners -->
+            <Border Background="{StaticResource BackgroundDarkBrush}"
                     CornerRadius="3"
                     Height="20"
                     VerticalAlignment="Bottom"/>
 
-            <Border Background="#333"
+            <!-- Background border just in case if the side menu has any effect in future -->
+            <Border Background="{StaticResource BackgroundDarkBrush}"
                     Margin="0 0 0 15">
 
+                <!-- Side Menu Content -->
                 <StackPanel>
 
                     <Button Width="60"
@@ -59,46 +68,43 @@
             </Border>
         </Grid>
 
+        <!-- An icon indicating how many locations are added to the list -->
         <TextBlock Text=""
-                Grid.Column="1"
-                Margin="20"
-                HorizontalAlignment="Right"
-                VerticalAlignment="Bottom"
-                Foreground="White"
-                Opacity=".2"
-                FontWeight="Light"
-                FontFamily="{StaticResource Ionicons}"
-                FontSize="30"/>
+                   Grid.Column="1"
+                   Margin="20"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Bottom"
+                   Opacity=".2"
+                   FontFamily="{StaticResource Ionicons}"
+                   Foreground="{StaticResource ForegroundLightBrush}"
+                   FontSize="30"/>
 
-        <StackPanel HorizontalAlignment="Center"
-                    Grid.Column="1"
+        <!-- Main content -->
+        <StackPanel Grid.Column="1"
+                    HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     TextBlock.Foreground="{StaticResource ForegroundLightBrush}"
                     TextBlock.TextAlignment="Center">
 
+            <!-- Application Icon -->
             <TextBlock Text=""
                        Margin="0 -20 0 10"
-                       FontWeight="Light"
                        FontFamily="{StaticResource Ionicons}"
                        FontSize="55"/>
             
+            <!-- Page description -->
             <TextBlock Text="L E T ' S   A D D   Y O U R   L O C A T I O N S"
-                       FontFamily="Calibri"
-                       FontWeight="Light"
+                       FontFamily="{StaticResource CalibriLight}"
                        Opacity=".7"/>
 
             <!-- The button that the user can click to display the dialog -->
-            <Button FontFamily="{StaticResource Ionicons}"
-                    Margin="0 20 0 5"
-                    Padding="10"
-                    local:ButtonAttachedProperties.IsBusy="{Binding IsBusy}"
+            <Button Content="B R O W S E    L O C A T I O N"
+                    FontFamily="{StaticResource Ionicons}"
+                    Margin="0 20 0 5" Padding="10"
                     HorizontalAlignment="Center"
-                    Command="{Binding AddLocationCommand}"
-                    Content="B R O W S E    L O C A T I O N"/>
+                    Command="{Binding AddLocationCommand}"/>
 
         </StackPanel>
-
-        
 
     </Grid>
     

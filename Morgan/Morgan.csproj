@@ -72,9 +72,6 @@
     <Compile Include="AttachedProperties\TextBoxAttachedProperties.cs" />
     <Compile Include="Commands\ActionCommand.cs" />
     <Compile Include="Commands\ActionParameterCommand.cs" />
-    <Compile Include="Controls\MusicListItemControl.xaml.cs">
-      <DependentUpon>MusicListItemControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="DataModel\ApplicationPage.cs" />
     <Compile Include="Extensions\StringHelpers.cs" />
     <Compile Include="IoC\IoC.cs" />
@@ -101,10 +98,6 @@
     <Compile Include="ViewModel\Pages\FileStructureViewModel.cs" />
     <Compile Include="Window\WindowResizer.cs" />
     <Compile Include="Window\WindowViewModel.cs" />
-    <Page Include="Controls\MusicListItemControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -166,9 +159,8 @@
     </EmbeddedResource>
     <Resource Include="Fonts\ionicons.ttf" />
     <Resource Include="Fonts\Lato-Thin.ttf" />
-    <Resource Include="Fonts\Roboto-Light.ttf" />
-    <Resource Include="Fonts\Roboto-Medium.ttf" />
-    <Resource Include="Fonts\Roboto-Regular.ttf" />
+    <Resource Include="Fonts\calibri.ttf" />
+    <Resource Include="Fonts\calibril-light.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -179,6 +171,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Controls\" />
     <Folder Include="Images\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
