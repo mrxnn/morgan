@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="Morgan.SideMenuControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Morgan"
+             mc:Ignorable="d" 
+             d:DesignHeight="300"
+             Width="60">
+
+    <!-- Side Menu Control -->
+    <Grid>
+
+        <!-- Bottom border that has the rounded corners -->
+        <Border Background="{StaticResource BackgroundDarkBrush}"
+                    CornerRadius="3"
+                    Height="20"
+                    VerticalAlignment="Bottom"/>
+
+        <!-- Background border just in case if the side menu has any effect in future -->
+        <Border Background="{StaticResource BackgroundDarkBrush}"
+                    Margin="0 0 0 15">
+
+            <!-- Side Menu Content -->
+            <StackPanel>
+
+                <Button Width="60"
+                            Height="60"
+                            Content=""
+                            FontFamily="{StaticResource Ionicons}"
+                            FontSize="30"
+                            BorderThickness="0"/>
+
+                <Button Width="60"
+                            Height="60"
+                            Content=""
+                            FontFamily="{StaticResource Ionicons}"
+                            FontSize="30"
+                            BorderThickness="0"/>
+
+                <Button Width="60"
+                            Height="60"
+                            Content=""
+                            FontFamily="{StaticResource Ionicons}"
+                            FontSize="30"
+                            BorderThickness="0"/>
+
+                <Button Width="60"
+                            Height="60"
+                            Content=""
+                            FontFamily="{StaticResource Ionicons}"
+                            FontSize="30"
+                            BorderThickness="0"/>
+
+            </StackPanel>
+
+        </Border>
+    </Grid>
+
+</UserControl>

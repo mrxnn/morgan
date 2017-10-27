@@ -150,11 +150,22 @@
     <!-- Window Content -->
     <Grid>
 
+        <Grid.ColumnDefinitions>
+            <!-- Side Menu Control -->
+            <ColumnDefinition Width="Auto"/>
+            <!-- Pages -->
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- Side Menu -->
+        <local:SideMenuControl/>
+
         <!-- This is the page hosting location -->
         <Frame Content="{Binding CurrentPage, 
             Source={x:Static local:ViewModelBag.ApplicationViewModel},
             Converter={local:ApplicationPageToPageConverter}}"
-            NavigationUIVisibility="Hidden"/>
+            NavigationUIVisibility="Hidden"
+            Grid.Column="1"/>
 
     </Grid>
 

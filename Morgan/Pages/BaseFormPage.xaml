@@ -10,67 +10,8 @@
 
     <Grid>
 
-        <Grid.ColumnDefinitions>
-            
-            <!-- Side Menu -->
-            <ColumnDefinition Width="60"/>
-            <!-- Page Content -->
-            <ColumnDefinition Width="*"/>
-            
-        </Grid.ColumnDefinitions>
-
-        <!-- Side Menu Control -->
-        <Grid>
-            
-            <!-- Bottom border that has the rounded corners -->
-            <Border Background="{StaticResource BackgroundDarkBrush}"
-                    CornerRadius="3"
-                    Height="20"
-                    VerticalAlignment="Bottom"/>
-
-            <!-- Background border just in case if the side menu has any effect in future -->
-            <Border Background="{StaticResource BackgroundDarkBrush}"
-                    Margin="0 0 0 15">
-
-                <!-- Side Menu Content -->
-                <StackPanel>
-
-                    <Button Width="60"
-                            Height="60"
-                            Content=""
-                            FontFamily="{StaticResource Ionicons}"
-                            FontSize="30"
-                            BorderThickness="0"/>
-
-                    <Button Width="60"
-                            Height="60"
-                            Content=""
-                            FontFamily="{StaticResource Ionicons}"
-                            FontSize="30"
-                            BorderThickness="0"/>
-                    
-                    <Button Width="60"
-                            Height="60"
-                            Content=""
-                            FontFamily="{StaticResource Ionicons}"
-                            FontSize="30"
-                            BorderThickness="0"/>
-
-                    <Button Width="60"
-                            Height="60"
-                            Content=""
-                            FontFamily="{StaticResource Ionicons}"
-                            FontSize="30"
-                            BorderThickness="0"/>
-
-                </StackPanel>
-                
-            </Border>
-        </Grid>
-
         <!-- An icon indicating how many locations are added to the list -->
         <TextBlock Text=""
-                   Grid.Column="1"
                    Margin="20"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Bottom"
@@ -80,8 +21,7 @@
                    FontSize="30"/>
 
         <!-- Main content -->
-        <StackPanel Grid.Column="1"
-                    HorizontalAlignment="Center"
+        <StackPanel HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     TextBlock.Foreground="{StaticResource ForegroundLightBrush}"
                     TextBlock.TextAlignment="Center">
