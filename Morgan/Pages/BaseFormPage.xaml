@@ -5,69 +5,100 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Morgan"
       mc:Ignorable="d" 
-      d:DesignHeight="500" d:DesignWidth="600"
+      d:DesignHeight="610" d:DesignWidth="520"
       Title="BaseFormPage">
 
     <Grid>
 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid>
+            <Border Background="#333"
+                    CornerRadius="3"
+                    Height="20"
+                    VerticalAlignment="Bottom"/>
+
+            <Border Background="#333"
+                    Margin="0 0 0 15">
+
+                <StackPanel>
+
+                    <Button Width="60"
+                            Height="60"
+                            Content=""
+                            FontFamily="{StaticResource Ionicons}"
+                            FontSize="30"
+                            BorderThickness="0"/>
+
+                    <Button Width="60"
+                            Height="60"
+                            Content=""
+                            FontFamily="{StaticResource Ionicons}"
+                            FontSize="30"
+                            BorderThickness="0"/>
+                    
+                    <Button Width="60"
+                            Height="60"
+                            Content=""
+                            FontFamily="{StaticResource Ionicons}"
+                            FontSize="30"
+                            BorderThickness="0"/>
+
+                    <Button Width="60"
+                            Height="60"
+                            Content=""
+                            FontFamily="{StaticResource Ionicons}"
+                            FontSize="30"
+                            BorderThickness="0"/>
+
+                </StackPanel>
+                
+            </Border>
+        </Grid>
+
+        <TextBlock Text=""
+                Grid.Column="1"
+                Margin="20"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Foreground="White"
+                Opacity=".2"
+                FontWeight="Light"
+                FontFamily="{StaticResource Ionicons}"
+                FontSize="30"/>
+
         <StackPanel HorizontalAlignment="Center"
+                    Grid.Column="1"
                     VerticalAlignment="Center"
                     TextBlock.Foreground="{StaticResource ForegroundLightBrush}"
                     TextBlock.TextAlignment="Center">
 
-            <!-- header text -->
-            <TextBlock Text="Locations"
-                       FontSize="70"
-                       FontWeight="Light"/>
-
-            <!-- secondary header text -->
-            <TextBlock Text="First things first. Let's add your locations."
-                       FontSize="18"
-                       FontWeight="Light"/>
+            <TextBlock Text=""
+                       Margin="0 -20 0 10"
+                       FontWeight="Light"
+                       FontFamily="{StaticResource Ionicons}"
+                       FontSize="55"/>
+            
+            <TextBlock Text="L E T ' S   A D D   Y O U R   L O C A T I O N S"
+                       FontFamily="Calibri"
+                       FontWeight="Light"
+                       Opacity=".7"/>
 
             <!-- The button that the user can click to display the dialog -->
             <Button FontFamily="{StaticResource Ionicons}"
-                    Margin="0 30 0 0"
+                    Margin="0 20 0 5"
                     Padding="10"
-                    FontSize="30"
+                    local:ButtonAttachedProperties.IsBusy="{Binding IsBusy}"
                     HorizontalAlignment="Center"
-                    ToolTip="Add the locations that you need to scan for music files"
-                    Command="{Binding AddLocationCommand}">
-
-                <StackPanel Orientation="Horizontal">
-
-                    <!-- Button text -->
-                    <TextBlock Text=" Add Location "
-                            FontSize="20"
-                            VerticalAlignment="Center"/>
-
-                    <!-- Location count -->
-                    <Border Width="30" 
-                            Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
-                            CornerRadius="50"
-                            Background="{StaticResource ForegroundLightBrush}">
-
-                        <!-- Number of locations that are already specfied -->
-                        <TextBlock Text="{Binding LocationCount, FallbackValue=99}"
-                                   Foreground="{StaticResource BackgroundDarkBrush}"
-                                   HorizontalAlignment="Center"
-                                   VerticalAlignment="Center"
-                                   FontSize="15" FontWeight="Normal"/>
-                        
-                    </Border>
-
-                </StackPanel>
-
-            </Button>
-            
-            <!-- Continue Button -->
-            <Button Content="Continue"
-                    HorizontalAlignment="Center"
-                    Margin="0 50 0 0"
-                    Command="{Binding LoadFilesCommand}"
-                    IsEnabled="{Binding HasLocation}"/>
+                    Command="{Binding AddLocationCommand}"
+                    Content="B R O W S E    L O C A T I O N"/>
 
         </StackPanel>
+
+        
 
     </Grid>
     

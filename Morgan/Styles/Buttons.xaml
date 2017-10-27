@@ -39,25 +39,28 @@
     </Style>
 
     <!-- Default Button -->
-    <Style TargetType="{x:Type Button}">
-        <Setter Property="Background" Value="{StaticResource ColorPrimaryBrush}"/>
+    <Style TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="{StaticResource ForegroundLightBrush}"/>
         <Setter Property="Padding" Value="12,8"/>
-        <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="BorderThickness" Value="1 1 1 .7"/>
+        <Setter Property="BorderBrush" Value="#444"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="FontFamily" Value="Calibri"/>
+        <Setter Property="FontWeight" Value="Light"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="local:ButtonAttachedProperties.IsBusy" Value="False"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Border CornerRadius="2" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                    <Border CornerRadius="1" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
                         <Grid>
                             <!-- Button Content -->
                             <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" 
                                               RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                               Visibility="{Binding (local:ButtonAttachedProperties.IsBusy), RelativeSource={RelativeSource TemplatedParent}, 
                                                 Converter={local:BooleanToVisibilityInvertConverter}}"/>
-                            
+
                             <!-- Placeholder to show when the button is Busy -->
                             <TextBlock Style="{StaticResource SpinnerText}"
                                        Visibility="{Binding (local:ButtonAttachedProperties.IsBusy), RelativeSource={RelativeSource TemplatedParent}, Converter={local:BooleanToVisibilityConverter}}"/>
@@ -67,14 +70,18 @@
                         <EventTrigger RoutedEvent="MouseEnter">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <ColorAnimation To="{StaticResource ColorSecondary}" Duration="0:0:0.2" Storyboard.TargetProperty="Background.Color"/>
+                                    <ColorAnimation To="#fff" Duration="0:0:0.2" Storyboard.TargetProperty="Background.Color"/>
+                                    <ColorAnimation To="#fff" Duration="0:0:0.2" Storyboard.TargetProperty="BorderBrush.Color"/>
+                                    <ColorAnimation To="#000" Duration="0:0:0.2" Storyboard.TargetProperty="Foreground.Color"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
                         <EventTrigger RoutedEvent="MouseLeave">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <ColorAnimation To="{StaticResource ColorPrimary}" Duration="0:0:0.2" Storyboard.TargetProperty="Background.Color"/>
+                                    <ColorAnimation To="Transparent" Duration="0:0:0.2" Storyboard.TargetProperty="Background.Color"/>
+                                    <ColorAnimation To="#444" Duration="0:0:0.2" Storyboard.TargetProperty="BorderBrush.Color"/>
+                                    <ColorAnimation To="#f4f4f4" Duration="0:0:0.2" Storyboard.TargetProperty="Foreground.Color"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
@@ -86,6 +93,7 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+
     </Style>
 
 </ResourceDictionary>

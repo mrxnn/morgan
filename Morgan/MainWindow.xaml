@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         WindowStyle="None"
         AllowsTransparency="True"
-        Title="Morgan" Height="610" Width="520"
+        Title="Morgan" Height="600" Width="520"
         WindowStartupLocation="CenterScreen"
         Background="{StaticResource BackgroundVeryDarkBrush}">
 
@@ -102,15 +102,16 @@
                                             </TextBlock>
 
                                             <!-- Window Title -->
-                                            <TextBlock Text="{Binding Title, RelativeSource={RelativeSource TemplatedParent}}"
-                                                       Grid.Column="0"
-                                                       Grid.ColumnSpan="3"
-                                                       HorizontalAlignment="Center"
+                                            <TextBlock Text="{Binding Title, RelativeSource={RelativeSource TemplatedParent}, FallbackValue='Morgan'}"
+                                                       Grid.Column="1"
+                                                       HorizontalAlignment="Left"
+                                                       Padding="5 0 0 0"
                                                        VerticalAlignment="Center"
                                                        Foreground="{StaticResource ForegroundLightBrush}"
                                                        FontWeight="Medium"
                                                        Opacity=".6"
-                                                       FontSize="15"
+                                                       FontSize="11"
+                                                       FontFamily="Calibri Light"
                                                        Margin="0 0 0 2"/>
 
                                             <!-- Window Control Icons -->
