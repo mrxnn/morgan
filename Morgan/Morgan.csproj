@@ -72,7 +72,11 @@
     <Compile Include="AttachedProperties\TextBoxAttachedProperties.cs" />
     <Compile Include="Commands\ActionCommand.cs" />
     <Compile Include="Commands\ActionParameterCommand.cs" />
+    <Compile Include="Controls\SideMenuControl.xaml.cs">
+      <DependentUpon>SideMenuControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataModel\ApplicationPage.cs" />
+    <Compile Include="Extensions\StringHelpers.cs" />
     <Compile Include="IoC\IoC.cs" />
     <Compile Include="Pages\BaseFormPage.xaml.cs">
       <DependentUpon>BaseFormPage.xaml</DependentUpon>
@@ -85,10 +89,11 @@
     <Compile Include="Services\Implementation\MetadataService.cs" />
     <Compile Include="Services\Interfaces\IDirectoryService.cs" />
     <Compile Include="Services\Interfaces\IMetadataService.cs" />
-    <Compile Include="ValueConverters\ApplicationPageToPageConverter.cs" />
+    <Compile Include="ValueConverters\Common\ApplicationPageToPageConverter.cs" />
     <Compile Include="ValueConverters\Base\BaseValueConverter.cs" />
-    <Compile Include="ValueConverters\BooleanToVisibilityConverter.cs" />
-    <Compile Include="ValueConverters\BooleanToVisibilityInvertConverter.cs" />
+    <Compile Include="ValueConverters\Common\BooleanToVisibilityConverter.cs" />
+    <Compile Include="ValueConverters\Common\BooleanToVisibilityInvertConverter.cs" />
+    <Compile Include="ValueConverters\LocationAddedOpacityFlagConverter.cs" />
     <Compile Include="ViewModel\ApplicationViewModel.cs" />
     <Compile Include="ViewModel\Controls\MusicFileViewModel.cs" />
     <Compile Include="ViewModel\Pages\BaseFormPageViewModel.cs" />
@@ -97,6 +102,10 @@
     <Compile Include="ViewModel\Pages\FileStructureViewModel.cs" />
     <Compile Include="Window\WindowResizer.cs" />
     <Compile Include="Window\WindowViewModel.cs" />
+    <Page Include="Controls\SideMenuControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -158,9 +167,8 @@
     </EmbeddedResource>
     <Resource Include="Fonts\ionicons.ttf" />
     <Resource Include="Fonts\Lato-Thin.ttf" />
-    <Resource Include="Fonts\Roboto-Light.ttf" />
-    <Resource Include="Fonts\Roboto-Medium.ttf" />
-    <Resource Include="Fonts\Roboto-Regular.ttf" />
+    <Resource Include="Fonts\calibri.ttf" />
+    <Resource Include="Fonts\calibril-light.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -171,7 +179,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controls\" />
     <Folder Include="Images\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

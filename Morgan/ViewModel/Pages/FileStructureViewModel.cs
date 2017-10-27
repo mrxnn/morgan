@@ -27,6 +27,11 @@ namespace Morgan
         /// </summary>
         public int LocationCount => LocationsList.Count;
 
+        /// <summary>
+        /// Number of music files stored in the Music File list
+        /// </summary>
+        public int MusicFileCount => MusicFileList.Count;
+
         #endregion
 
         #region Constructors
@@ -60,6 +65,9 @@ namespace Morgan
 
             // Map each music file into MusicFileViewModel objects
             MusicFileList = await MapFilesToModelsAsync(list);
+
+            // Update the UI
+            OnPropertyChanged(nameof(MusicFileCount));
         }
 
         /// <summary>

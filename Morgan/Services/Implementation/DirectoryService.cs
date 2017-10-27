@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using System.Threading.Tasks;
@@ -40,18 +41,24 @@ namespace Morgan
         /// <returns></returns>
         public Task<List<string>> GetMusicFilesFromASingleLocationAsync(string location)
         {
-            /**
-             * NOTE:
-             * Although it's kind of I/O Bound, we have to run it from a pooled thread, since there is still
-             * no asynchronous equalant that uses TaskCompletionSource in the bottom level to get all the files
-             * in a directory. And since there is no multiple threads altogether trying to access the file
-             * system concurrenlty in this application, it's rather ok to use this approach for now...
-             */
-
-            return Task.Run(() =>
+            // Create a bottom level IO bound operation using tcs
+            var tcs = new TaskCompletionSource<List<string>>();
+            try
             {
-                return Directory.GetFiles(location, "*.mp3", SearchOption.AllDirectories).ToList();
-            });
+                // Get a list of files in the directory
+                var list = Directory.GetFiles(location, "*.mp3", SearchOption.AllDirectories).ToList();
+
+                // Set the task's result
+                tcs.SetResult(list);
+            }
+            catch (Exception e)
+            {
+                // Set the exception if any is thrown
+                tcs.SetException(e);
+            }
+
+            // Return the task
+            return tcs.Task;
         }
 
         /// <summary>

@@ -9,6 +9,13 @@ namespace Morgan
     /// </summary>
     public class BaseFormPageViewModel : BaseViewModel
     {
+        #region Private Members
+
+        // Backing Field for the Public Property
+        private bool _isLoadingALocation;
+
+        #endregion
+
         #region Public Properties
 
         /// <summary>
@@ -25,6 +32,21 @@ namespace Morgan
         /// Flag indicating if there is at least one location in the list
         /// </summary>
         public bool HasLocation => LocationCount > 0;
+
+        /// <summary>
+        /// Flag indicating if the Folder Browser Dialog is being displayed
+        /// </summary>
+        public bool IsLoadingALocation
+        {
+            get => _isLoadingALocation;
+            set
+            {
+                if (_isLoadingALocation == value)
+                    return;
+                _isLoadingALocation = value;
+                OnPropertyChanged();
+            }
+        }
 
         #endregion
 
@@ -63,6 +85,9 @@ namespace Morgan
         /// </summary>
         private void AddLocation()
         {
+            // Set the flag to indicate that the user is choosing a location
+            IsLoadingALocation = true;
+
             var location = IoC.Get<IDirectoryService>().GetLocation();
             if (Directory.Exists(location))
             {
@@ -73,6 +98,9 @@ namespace Morgan
                 OnPropertyChanged(nameof(LocationCount));
                 OnPropertyChanged(nameof(HasLocation));
             }
+
+            // Set the flag to indicate that the user has closed the dialog
+            IsLoadingALocation = false;
         }
 
         /// <summary>
