@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 namespace Morgan
 {
     /// <summary>
-    /// View Model for the <see cref="FileStructurePage"/>
+    /// View Model for the <see cref="ViewFilePage"/>
     /// </summary>
-    public class FileStructureViewModel : BaseViewModel
+    public class ViewFilePageViewModel : BaseViewModel
     {
         #region Public Properties
 
@@ -39,7 +39,7 @@ namespace Morgan
         /// <summary>
         /// Default constructor
         /// </summary>
-        public FileStructureViewModel()
+        public ViewFilePageViewModel()
         {
             // Initialize the prerequesite properties
             LocationsList = IoC.Get<ApplicationViewModel>().LocationsList;

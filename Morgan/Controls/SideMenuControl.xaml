@@ -27,9 +27,10 @@
                 <Button Width="60"
                         Height="60"
                         Content=""
-                        Background="{StaticResource ColorPrimaryBrush}"
                         FontFamily="{StaticResource Ionicons}"
                         FontSize="30"
+                        local:ButtonAttachedProperties.IsSelected="{Binding HomeIsSelected}"
+                        Command="{Binding NavigateToHomeCommand}"
                         BorderThickness="0"/>
 
                 <Button Width="60"
@@ -37,6 +38,8 @@
                         Content=""
                         FontFamily="{StaticResource Ionicons}"
                         FontSize="30"
+                        local:ButtonAttachedProperties.IsSelected="{Binding SettingsIsSelected}"
+                        Command="{Binding NavigateToSettingsCommand}"
                         BorderThickness="0"/>
 
                 <Button Width="60"

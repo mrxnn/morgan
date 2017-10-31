@@ -16,14 +16,14 @@ using System.Windows.Shapes;
 namespace Morgan
 {
     /// <summary>
-    /// Interaction logic for FileStructurePage.xaml
+    /// Interaction logic for ViewFilePage.xaml
     /// </summary>
-    public partial class FileStructurePage : Page
+    public partial class ViewFilePage : BasePage
     {
-        public FileStructurePage()
+        public ViewFilePage()
         {
             InitializeComponent();
-            DataContext = new FileStructureViewModel();
+            DataContext = new ViewFilePageViewModel();
         }
     }
 }

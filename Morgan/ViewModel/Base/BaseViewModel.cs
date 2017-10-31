@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Linq;
 
 namespace Morgan
 {
@@ -21,6 +22,15 @@ namespace Morgan
         protected virtual void OnPropertyChanged(string propertyName = null)
         {
             PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Call this method to fire up property changed notifications for several properties at once
+        /// </summary>
+        /// <param name="list">List of property names that was changed</param>
+        protected virtual void OnGroupOfPropertyChanged(params string[] list)
+        {
+            list.ToList().ForEach(OnPropertyChanged);
         }
 
         #endregion

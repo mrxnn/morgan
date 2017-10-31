@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 
 namespace Morgan
 {
@@ -22,6 +23,30 @@ namespace Morgan
         public static bool GetIsBusy(DependencyObject button)
         {
             return (bool)(button.GetValue(IsBusyProperty));
+        }
+
+        #endregion
+
+        #region IsSelected Attached Property
+
+        /// <summary>
+        /// This property is only used to pass information to the xaml about if the button is currently selected or not
+        /// </summary>
+        public static readonly DependencyProperty IsSelectedProperty =
+            DependencyProperty.RegisterAttached(
+                "IsSelected",
+                typeof(bool),
+                typeof(ButtonAttachedProperties),
+                new PropertyMetadata(false));
+
+        public static void SetIsSelected(DependencyObject button, bool value)
+        {
+            button.SetValue(IsSelectedProperty, value);
+        }
+
+        public static bool GetIsSelected(DependencyObject button)
+        {
+            return (bool)button.GetValue(IsSelectedProperty);
         } 
 
         #endregion

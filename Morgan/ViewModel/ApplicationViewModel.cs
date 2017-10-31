@@ -12,7 +12,7 @@ namespace Morgan
         /// <summary>
         /// Backing field for the Music Folder Location
         /// </summary>
-        IList<string> _locationsList;
+        IList<string> _locationsList = new List<string>();
 
         /// <summary>
         /// List of root music directories that the user has selected

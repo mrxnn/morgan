@@ -15,8 +15,11 @@ namespace Morgan
                 case ApplicationPage.HomePage:
                     return new HomePage();
 
-                case ApplicationPage.FileStructurePage:
-                    return new FileStructurePage();
+                case ApplicationPage.ViewFilePage:
+                    return new ViewFilePage();
+
+                case ApplicationPage.SettingsPage:
+                    return new SettingsPage();
 
                 default: return null;
             }

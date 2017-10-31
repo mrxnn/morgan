@@ -44,8 +44,8 @@ namespace Morgan
         public SideMenuControlViewModel()
         {
             // Initialize Commands
-            NavigateToHomeCommand = new ActionCommand(() => Navigate(ApplicationPage.BaseFormPage));
-            NavigateToSettingsCommand = new ActionCommand(() => Navigate(ApplicationPage.FileStructurePage));
+            NavigateToHomeCommand = new ActionCommand(() => Navigate(ApplicationPage.HomePage));
+            NavigateToSettingsCommand = new ActionCommand(() => Navigate(ApplicationPage.SettingsPage));
         }
 
         #endregion
@@ -60,13 +60,13 @@ namespace Morgan
         {
             switch (page)
             {
-                case ApplicationPage.BaseFormPage:
-                    IoC.Get<ApplicationViewModel>().CurrentPage = ApplicationPage.BaseFormPage;
+                case ApplicationPage.HomePage:
+                    IoC.Get<ApplicationViewModel>().CurrentPage = ApplicationPage.HomePage;
                     UpdateCurrentTab(() => HomeIsSelected = true);
                     break;
 
-                case ApplicationPage.FileStructurePage:
-                    IoC.Get<ApplicationViewModel>().CurrentPage = ApplicationPage.FileStructurePage;
+                case ApplicationPage.SettingsPage:
+                    IoC.Get<ApplicationViewModel>().CurrentPage = ApplicationPage.SettingsPage;
                     UpdateCurrentTab(() => SettingsIsSelected = true);
                     break;
 

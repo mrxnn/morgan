@@ -1,0 +1,34 @@
+﻿<local:BasePage x:Class="Morgan.SettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Morgan"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="500"
+      Title="SettingsPage">
+
+    <Grid>
+
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+
+            <TextBlock Text=""
+                   FontFamily="{StaticResource Ionicons}"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="100"
+                   Foreground="{StaticResource ForegroundLightBrush}"/>
+
+            <TextBlock Text="S E T T I N G S"
+                   FontFamily="{StaticResource CalibriLight}"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="30"
+                   Foreground="{StaticResource ForegroundLightBrush}"/>
+
+        </StackPanel>
+
+    </Grid>
+    
+</local:BasePage>

@@ -16,14 +16,13 @@ using System.Windows.Shapes;
 namespace Morgan
 {
     /// <summary>
-    /// Interaction logic for SideMenuControl.xaml
+    /// Interaction logic for SettingsPage.xaml
     /// </summary>
-    public partial class SideMenuControl : UserControl
+    public partial class SettingsPage : BasePage
     {
-        public SideMenuControl()
+        public SettingsPage()
         {
             InitializeComponent();
-            DataContext = IoC.Get<SideMenuControlViewModel>();
         }
     }
 }
