@@ -26,7 +26,7 @@
 
                 <Button Width="60"
                         Height="60"
-                        Content=""
+                        Content=""
                         Background="{StaticResource ColorPrimaryBrush}"
                         FontFamily="{StaticResource Ionicons}"
                         FontSize="30"
@@ -34,21 +34,14 @@
 
                 <Button Width="60"
                         Height="60"
-                        Content=""
-                        FontFamily="{StaticResource Ionicons}"
-                        FontSize="30"
-                        BorderThickness="0"/>
-
-                <Button Width="60"
-                        Height="60"
-                        Content=""
-                        FontFamily="{StaticResource Ionicons}"
-                        FontSize="30"
-                        BorderThickness="0"/>
-
-                <Button Width="60"
-                        Height="60"
                         Content=""
+                        FontFamily="{StaticResource Ionicons}"
+                        FontSize="30"
+                        BorderThickness="0"/>
+
+                <Button Width="60"
+                        Height="60"
+                        Content=""
                         FontFamily="{StaticResource Ionicons}"
                         FontSize="30"
                         BorderThickness="0"/>
