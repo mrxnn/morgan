@@ -78,8 +78,8 @@
     <Compile Include="DataModel\ApplicationPage.cs" />
     <Compile Include="Extensions\StringHelpers.cs" />
     <Compile Include="IoC\IoC.cs" />
-    <Compile Include="Pages\BaseFormPage.xaml.cs">
-      <DependentUpon>BaseFormPage.xaml</DependentUpon>
+    <Compile Include="Pages\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Base\BasePage.cs" />
     <Compile Include="Pages\FileStructurePage.xaml.cs">
@@ -96,10 +96,10 @@
     <Compile Include="ValueConverters\LocationAddedOpacityFlagConverter.cs" />
     <Compile Include="ViewModel\ApplicationViewModel.cs" />
     <Compile Include="ViewModel\Controls\MusicFileViewModel.cs" />
-    <Compile Include="ViewModel\Pages\BaseFormPageViewModel.cs" />
     <Compile Include="ViewModel\Base\BaseViewModel.cs" />
     <Compile Include="ViewModel\Base\ViewModelBag.cs" />
     <Compile Include="ViewModel\Pages\FileStructureViewModel.cs" />
+    <Compile Include="ViewModel\Pages\HomePageViewModel.cs" />
     <Compile Include="Window\WindowResizer.cs" />
     <Compile Include="Window\WindowViewModel.cs" />
     <Page Include="Controls\SideMenuControl.xaml">
@@ -118,7 +118,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\BaseFormPage.xaml">
+    <Page Include="Pages\HomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

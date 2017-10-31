@@ -2,7 +2,7 @@
 {
     public enum ApplicationPage : byte
     {
-        BaseFormPage = 0,
+        HomePage = 0,
         FileStructurePage = 1
     }
 }

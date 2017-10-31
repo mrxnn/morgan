@@ -5,9 +5,9 @@ using System.Collections.ObjectModel;
 namespace Morgan
 {
     /// <summary>
-    /// View Model associated with the <see cref="BaseFormPage"/>
+    /// View Model associated with the <see cref="HomePage"/>
     /// </summary>
-    public class BaseFormPageViewModel : BaseViewModel
+    public class HomePageViewModel : BaseViewModel
     {
         #region Private Members
 
@@ -69,7 +69,7 @@ namespace Morgan
         /// <summary>
         /// Default constructor
         /// </summary>
-        public BaseFormPageViewModel()
+        public HomePageViewModel()
         {
             // Initialize Commands
             AddLocationCommand = new ActionCommand(AddLocation);

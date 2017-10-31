@@ -16,14 +16,14 @@ using System.Windows.Shapes;
 namespace Morgan
 {
     /// <summary>
-    /// Interaction logic for BaseFormPage.xaml
+    /// Interaction logic for HomePage.xaml
     /// </summary>
-    public partial class BaseFormPage : BasePage
+    public partial class HomePage : BasePage
     {
-        public BaseFormPage()
+        public HomePage()
         {
             InitializeComponent();
-            DataContext = new BaseFormPageViewModel();
+            DataContext = new HomePageViewModel();
         }
     }
 }

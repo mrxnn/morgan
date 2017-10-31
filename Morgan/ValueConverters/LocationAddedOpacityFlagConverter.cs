@@ -4,7 +4,7 @@ using System.Globalization;
 namespace Morgan
 {
     /// <summary>
-    /// Converter used in BaseFormPage's location added indicator button;
+    /// Converter used in HomePage's location added indicator button;
     /// 
     /// This converter is used for changing the opacity of icons depending on weather any location (to search for
     /// music files) is added to the locations list or not. If at least one location is added to the location list,
