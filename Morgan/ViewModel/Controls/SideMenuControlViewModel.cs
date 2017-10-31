@@ -46,6 +46,9 @@ namespace Morgan
             // Initialize Commands
             NavigateToHomeCommand = new ActionCommand(() => Navigate(ApplicationPage.HomePage));
             NavigateToSettingsCommand = new ActionCommand(() => Navigate(ApplicationPage.SettingsPage));
+
+            // Set the default page
+            NavigateToHomeCommand.Execute(null);
         }
 
         #endregion

@@ -33,7 +33,7 @@ namespace Morgan
         /// <summary>
         /// Backing field for the application page
         /// </summary>
-        ApplicationPage _applicationPage = ApplicationPage.HomePage;
+        ApplicationPage _applicationPage = ApplicationPage.None;
 
         /// <summary>
         /// Controls the currently visible page of the application

@@ -28,9 +28,11 @@ namespace Morgan
             // Binds a single instance of the ApplicationViewModel
             Kernel.Bind<ApplicationViewModel>().ToSelf().InSingletonScope();
 
+            // TODO: This should stay same in the WPF specific project once the core project is added
             // Bind the directory service that interacts with the file system
             Kernel.Bind<IDirectoryService>().To<DirectoryService>();
 
+            // TODO: This should stay same in the WPF specific project once the core project is added
             // Bind the Metadata service that is used to load metadata from music files
             Kernel.Bind<IMetadataService>().To<MetadataService>();
         }
