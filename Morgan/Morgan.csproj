@@ -103,6 +103,7 @@
     <Compile Include="ViewModel\Base\BaseViewModel.cs" />
     <Compile Include="ViewModel\Base\ViewModelBag.cs" />
     <Compile Include="ViewModel\Controls\SideMenuControlViewModel.cs" />
+    <Compile Include="ViewModel\Design\SideMenuControlDesignModel.cs" />
     <Compile Include="ViewModel\Pages\ViewFilePageViewModel.cs" />
     <Compile Include="ViewModel\Pages\HomePageViewModel.cs" />
     <Compile Include="Window\WindowResizer.cs" />
