@@ -11,14 +11,15 @@
     <Grid>
 
         <!-- An icon indicating how many locations are added to the list -->
-        <TextBlock Text=""
-                   Margin="20"
-                   HorizontalAlignment="Right"
-                   VerticalAlignment="Top"
-                   FontFamily="{StaticResource Ionicons}"
-                   Foreground="{StaticResource ForegroundLightBrush}"
-                   Opacity="{Binding HasLocation, Converter={local:LocationAddedOpacityFlagConverter}}"
-                   FontSize="30"/>
+        <Button Content=""
+                Style="{StaticResource IconButton}"
+                Margin="20"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                FontFamily="{StaticResource Ionicons}"
+                Foreground="{StaticResource ForegroundLightBrush}"
+                IsEnabled="{Binding HasLocation}"
+                FontSize="30"/>
 
         <!-- Main content -->
         <StackPanel HorizontalAlignment="Center"
@@ -33,7 +34,7 @@
                        FontSize="55"/>
             
             <!-- Page description -->
-            <TextBlock Text="L E T ' S   A D D   Y O U R   L O C A T I O N S"
+            <TextBlock Text="L E T ' S   A D D   M U S I C   F O L D E R S"
                        FontFamily="{StaticResource CalibriLight}"
                        Opacity=".7"/>
 
