@@ -5,7 +5,7 @@ using System.Windows.Media.Animation;
 
 namespace Morgan
 {
-    public class AnimationAttachedProperty
+    public class SideMenuAttachedProperty
     {
         #region AnimateInFromLeftProperty
 
@@ -14,7 +14,7 @@ namespace Morgan
         /// </summary>
         public static readonly DependencyProperty AnimateInFromLeftProperty =
             DependencyProperty.RegisterAttached(
-                "AnimateInFromLeft", typeof(bool), typeof(AnimationAttachedProperty),
+                "AnimateInFromLeft", typeof(bool), typeof(SideMenuAttachedProperty),
                 new PropertyMetadata(false,
                     OnAnimateInFromLeftPropertyChanged));
 
