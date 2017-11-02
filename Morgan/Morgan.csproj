@@ -93,11 +93,10 @@
     <Compile Include="Services\Implementation\MetadataService.cs" />
     <Compile Include="Services\Interfaces\IDirectoryService.cs" />
     <Compile Include="Services\Interfaces\IMetadataService.cs" />
-    <Compile Include="ValueConverters\Common\ApplicationPageToPageConverter.cs" />
+    <Compile Include="ValueConverters\ApplicationPageConverter.cs" />
     <Compile Include="ValueConverters\Base\BaseValueConverter.cs" />
-    <Compile Include="ValueConverters\Common\BooleanToVisibilityConverter.cs" />
-    <Compile Include="ValueConverters\Common\BooleanToVisibilityInvertConverter.cs" />
-    <Compile Include="ValueConverters\LocationAddedOpacityFlagConverter.cs" />
+    <Compile Include="ValueConverters\BoolToVisibilityConverter.cs" />
+    <Compile Include="ValueConverters\BoolToVisibilityInvertConverter.cs" />
     <Compile Include="ViewModel\ApplicationViewModel.cs" />
     <Compile Include="ViewModel\Controls\MusicFileViewModel.cs" />
     <Compile Include="ViewModel\Base\BaseViewModel.cs" />

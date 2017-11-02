@@ -59,11 +59,11 @@
                             <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" 
                                               RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                               Visibility="{Binding (local:ButtonAttachedProperties.IsBusy), RelativeSource={RelativeSource TemplatedParent}, 
-                                                Converter={local:BooleanToVisibilityInvertConverter}}"/>
+                                                Converter={local:BoolToVisibilityInvertConverter}}"/>
 
                             <!-- Placeholder to show when the button is Busy -->
                             <TextBlock Style="{StaticResource SpinnerText}"
-                                       Visibility="{Binding (local:ButtonAttachedProperties.IsBusy), RelativeSource={RelativeSource TemplatedParent}, Converter={local:BooleanToVisibilityConverter}}"/>
+                                       Visibility="{Binding (local:ButtonAttachedProperties.IsBusy), RelativeSource={RelativeSource TemplatedParent}, Converter={local:BoolToVisibilityConverter}}"/>
                         </Grid>
                     </Border>
                     <ControlTemplate.Triggers>
@@ -116,11 +116,11 @@
                             <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" 
                                               RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                               Visibility="{Binding (local:ButtonAttachedProperties.IsBusy), RelativeSource={RelativeSource TemplatedParent}, 
-                                                Converter={local:BooleanToVisibilityInvertConverter}}"/>
+                                                Converter={local:BoolToVisibilityInvertConverter}}"/>
 
                             <!-- Placeholder to show when the button is Busy -->
                             <TextBlock Style="{StaticResource SpinnerText}"
-                                       Visibility="{Binding (local:ButtonAttachedProperties.IsBusy), RelativeSource={RelativeSource TemplatedParent}, Converter={local:BooleanToVisibilityConverter}}"/>
+                                       Visibility="{Binding (local:ButtonAttachedProperties.IsBusy), RelativeSource={RelativeSource TemplatedParent}, Converter={local:BoolToVisibilityConverter}}"/>
                         </Grid>
                     </Border>
                     <ControlTemplate.Triggers>
@@ -163,11 +163,11 @@
                             <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" 
                                               RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                               Visibility="{Binding (local:ButtonAttachedProperties.IsBusy), RelativeSource={RelativeSource TemplatedParent}, 
-                                                Converter={local:BooleanToVisibilityInvertConverter}}"/>
+                                                Converter={local:BoolToVisibilityInvertConverter}}"/>
 
                             <!-- Placeholder to show when the button is Busy -->
                             <TextBlock Style="{StaticResource SpinnerText}"
-                                       Visibility="{Binding (local:ButtonAttachedProperties.IsBusy), RelativeSource={RelativeSource TemplatedParent}, Converter={local:BooleanToVisibilityConverter}}"/>
+                                       Visibility="{Binding (local:ButtonAttachedProperties.IsBusy), RelativeSource={RelativeSource TemplatedParent}, Converter={local:BoolToVisibilityConverter}}"/>
                         </Grid>
                     </Border>
                     <ControlTemplate.Triggers>
