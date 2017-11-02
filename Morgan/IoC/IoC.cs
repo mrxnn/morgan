@@ -35,6 +35,11 @@ namespace Morgan
             // TODO: This should stay same in the WPF specific project once the core project is added
             // Bind the Metadata service that is used to load metadata from music files
             Kernel.Bind<IMetadataService>().To<MetadataService>();
+
+            // Binds single instances of the view models as required;
+            // This should remain in WPF Project unless cross application syncing isn't required
+            Kernel.Bind<HomePageViewModel>().ToSelf().InSingletonScope();
+            Kernel.Bind<ViewFilePageViewModel>().ToSelf().InSingletonScope();
         }
 
         /// <summary>

@@ -23,7 +23,7 @@ namespace Morgan
         public ViewFilePage()
         {
             InitializeComponent();
-            DataContext = new ViewFilePageViewModel();
+            DataContext = IoC.Get<ViewFilePageViewModel>();
         }
     }
 }
