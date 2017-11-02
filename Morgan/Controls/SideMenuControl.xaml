@@ -26,30 +26,18 @@
             <!-- Side Menu Content -->
             <StackPanel>
 
-                <Button Width="60"
-                        Height="60"
+                <Button Style="{StaticResource TileButton}"
                         Content=""
-                        FontFamily="{StaticResource Ionicons}"
-                        FontSize="30"
                         local:ButtonAttachedProperties.IsSelected="{Binding HomeIsSelected}"
-                        Command="{Binding NavigateToHomeCommand}"
-                        BorderThickness="0"/>
+                        Command="{Binding NavigateToHomeCommand}"/>
 
-                <Button Width="60"
-                        Height="60"
+                <Button Style="{StaticResource TileButton}"
                         Content=""
-                        FontFamily="{StaticResource Ionicons}"
-                        FontSize="30"
                         local:ButtonAttachedProperties.IsSelected="{Binding SettingsIsSelected}"
-                        Command="{Binding NavigateToSettingsCommand}"
-                        BorderThickness="0"/>
+                        Command="{Binding NavigateToSettingsCommand}"/>
 
-                <Button Width="60"
-                        Height="60"
-                        Content=""
-                        FontFamily="{StaticResource Ionicons}"
-                        FontSize="30"
-                        BorderThickness="0"/>
+                <Button Style="{StaticResource TileButton}"
+                        Content=""/>
 
             </StackPanel>
 

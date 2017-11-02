@@ -95,4 +95,47 @@
 
     </Style>
 
+    <!-- Tile Button -->
+    <Style TargetType="Button" x:Key="TileButton">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundLightBrush}"/>
+        <Setter Property="Width" Value="60"/>
+        <Setter Property="Height" Value="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="FontFamily" Value="{StaticResource Ionicons}"/>
+        <Setter Property="FontWeight" Value="Light"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="local:ButtonAttachedProperties.IsBusy" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border CornerRadius="1" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                        <Grid x:Name="grid">
+                            <!-- Button Content -->
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" 
+                                              RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Visibility="{Binding (local:ButtonAttachedProperties.IsBusy), RelativeSource={RelativeSource TemplatedParent}, 
+                                                Converter={local:BooleanToVisibilityInvertConverter}}"/>
+
+                            <!-- Placeholder to show when the button is Busy -->
+                            <TextBlock Style="{StaticResource SpinnerText}"
+                                       Visibility="{Binding (local:ButtonAttachedProperties.IsBusy), RelativeSource={RelativeSource TemplatedParent}, Converter={local:BooleanToVisibilityConverter}}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="local:ButtonAttachedProperties.IsSelected" Value="True">
+                            <Setter Property="Background" TargetName="grid" Value="{StaticResource ColorPrimaryBrush}"/>
+                            <Setter Property="Foreground" Value="{StaticResource ForegroundLightBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#474747"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
 </ResourceDictionary>

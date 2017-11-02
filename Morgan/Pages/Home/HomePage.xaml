@@ -14,7 +14,7 @@
         <TextBlock Text=""
                    Margin="20"
                    HorizontalAlignment="Right"
-                   VerticalAlignment="Bottom"
+                   VerticalAlignment="Top"
                    FontFamily="{StaticResource Ionicons}"
                    Foreground="{StaticResource ForegroundLightBrush}"
                    Opacity="{Binding HasLocation, Converter={local:LocationAddedOpacityFlagConverter}}"
