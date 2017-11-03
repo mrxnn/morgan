@@ -51,7 +51,7 @@ namespace Morgan
             #endregion
 
             // Make sure the value has changed
-            if (element.GetValue(SlideInOutFromBottomProperty) == baseValue && !FirstLoad)
+            if (((bool)element.GetValue(SlideInOutFromBottomProperty)) == ((bool)baseValue) && !FirstLoad)
                 return baseValue;
 
             // If this is the first load, wait for the element to be loaded
@@ -96,6 +96,14 @@ namespace Morgan
         /// <param name="baseValue">value, indicating the slide direction</param>
         private static void PlayTheAnimation(FrameworkElement element, bool baseValue)
         {
+            //if ((baseValue && Visible) || (!baseValue && !Visible))
+            //{
+            //    if (FirstLoad)
+            //        goto JUMP;
+            //    return;
+            //}
+            //JUMP:
+
             // Storyboard!
             var storyboard = new Storyboard();
 
