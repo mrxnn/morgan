@@ -62,21 +62,8 @@ namespace Morgan
             // Create the storyboard
             var sb = new Storyboard();
 
-            // Create the animation
-            var animation = new ThicknessAnimation
-            {
-                From = new Thickness(-element.ActualWidth, 0, 0, 0),
-                To = new Thickness(0),
-                Duration = new Duration(TimeSpan.FromSeconds(.5)),
-                DecelerationRatio = .9F,
-                EasingFunction = new PowerEase { Power = 10, EasingMode = EasingMode.EaseIn }
-            };
-
-            // Set the property to animate
-            Storyboard.SetTargetProperty(animation, new PropertyPath("Margin"));
-
-            // Add the animation to the storyboard
-            sb.Children.Add(animation);
+            // Add the animation
+            sb.AddSlideInAnimation(element.ActualWidth, SlideInFrom.Left, .5F, true);
 
             // Play the animation
             sb.Begin(element);
