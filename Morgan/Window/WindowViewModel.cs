@@ -87,10 +87,10 @@ namespace Morgan
             // Listen out for Window events
             _window.StateChanged += (ss, ee) =>
             {
-                OnPropertyChanged(nameof(ResizeBorderThickness));
-                OnPropertyChanged(nameof(OuterBorderPaddingThickness));
-                OnPropertyChanged(nameof(WindowCornerRadius));
-                OnPropertyChanged(nameof(TitleBarCornerRadius));
+                OnGroupOfPropertyChanged(nameof(ResizeBorderThickness),
+                    nameof(OuterBorderPaddingThickness),
+                    nameof(WindowCornerRadius),
+                    nameof(TitleBarCornerRadius));
             };
         }
 

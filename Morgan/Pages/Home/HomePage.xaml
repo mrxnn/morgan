@@ -52,9 +52,35 @@
         <local:ButtonPanelControl VerticalAlignment="Bottom"
             local:SlideFromBottomProperty.SlideInOutFromBottom="{Binding HasLocation}">
 
-            <Button Content="C O N T I N U E" 
-                    HorizontalAlignment="Right"
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Locations Count -->
+                <StackPanel HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal"
+                            TextBlock.Foreground="{StaticResource ForegroundLightBrush}">
+
+                    <TextBlock Text=""
+                               FontSize="30"
+                               FontFamily="{StaticResource Ionicons}"/>
+
+                    <TextBlock Text="{Binding LocationCount, FallbackValue=81}"
+                               FontSize="30"
+                               FontFamily="{StaticResource CalibriLight}"/>
+
+                </StackPanel>
+
+                <!-- Continue Button -->
+                <Button Content="C O N T I N U E" 
+                    Grid.Column="1"
                     Command="{Binding LoadFilesCommand}"/>
+
+            </Grid>
 
         </local:ButtonPanelControl>
 

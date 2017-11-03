@@ -93,10 +93,6 @@ namespace Morgan
             {
                 // Add the new location
                 LocationsList.Add(location);
-
-                // Notify the UI
-                OnPropertyChanged(nameof(LocationCount));
-                OnPropertyChanged(nameof(HasLocation));
             }
 
             // Set the flag to indicate that the user has closed the dialog
