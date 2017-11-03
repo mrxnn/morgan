@@ -1,10 +1,12 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Windows;
 using System.Windows.Media.Animation;
 
 namespace Morgan
 {
+    /// <summary>
+    /// Attached Properties used for <see cref="SideMenuControl"/>
+    /// </summary>
     public class SideMenuAttachedProperty
     {
         #region AnimateInFromLeftProperty

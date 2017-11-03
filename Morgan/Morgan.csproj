@@ -72,9 +72,13 @@
     <Compile Include="Animation\FrameworkElementAnimation.cs" />
     <Compile Include="AttachedProperties\SideMenuAttachedProperty.cs" />
     <Compile Include="AttachedProperties\ButtonAttachedProperties.cs" />
+    <Compile Include="Animation\Property\SlideFromBottomProperty.cs" />
     <Compile Include="AttachedProperties\TextBoxAttachedProperties.cs" />
     <Compile Include="Commands\ActionCommand.cs" />
     <Compile Include="Commands\ActionParameterCommand.cs" />
+    <Compile Include="Controls\ButtonPanelControl.xaml.cs">
+      <DependentUpon>ButtonPanelControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\SideMenuControl.xaml.cs">
       <DependentUpon>SideMenuControl.xaml</DependentUpon>
     </Compile>
@@ -109,6 +113,10 @@
     <Compile Include="ViewModel\Pages\HomePageViewModel.cs" />
     <Compile Include="Window\WindowResizer.cs" />
     <Compile Include="Window\WindowViewModel.cs" />
+    <Page Include="Controls\ButtonPanelControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\SideMenuControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -48,6 +48,16 @@
 
         </StackPanel>
 
+        <!-- Button Panel -->
+        <local:ButtonPanelControl VerticalAlignment="Bottom"
+            local:SlideFromBottomProperty.SlideInOutFromBottom="{Binding HasLocation}">
+
+            <Button Content="C O N T I N U E" 
+                    HorizontalAlignment="Right"
+                    Command="{Binding LoadFilesCommand}"/>
+
+        </local:ButtonPanelControl>
+
     </Grid>
     
 </local:BasePage>
