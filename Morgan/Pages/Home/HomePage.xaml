@@ -71,7 +71,20 @@
 
                     <TextBlock Text="{Binding LocationCount, FallbackValue=81}"
                                FontSize="30"
+                               Margin="10 -2 0 0"
                                FontFamily="{StaticResource CalibriLight}"/>
+
+                    <StackPanel Margin="10 -2 0 0">
+
+                        <TextBlock Text="locations"
+                               FontSize="20"
+                               FontFamily="{StaticResource CalibriLight}"/>
+
+                        <TextBlock Text="are selected"
+                               FontSize="10"
+                               FontFamily="{StaticResource CalibriLight}"/>
+
+                    </StackPanel>
 
                 </StackPanel>
 

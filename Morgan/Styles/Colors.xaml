@@ -4,10 +4,10 @@
 
     <!-- BACKGROUND COLORS -->
     
-    <Color x:Key="BackgroundVeryDark">#252525</Color>
+    <Color x:Key="BackgroundVeryDark">#1a1a1a</Color>
     <SolidColorBrush x:Key="BackgroundVeryDarkBrush" Color="{StaticResource BackgroundVeryDark}"/>
 
-    <Color x:Key="BackgroundDark">#333333</Color>
+    <Color x:Key="BackgroundDark">#252525</Color>
     <SolidColorBrush x:Key="BackgroundDarkBrush" Color="{StaticResource BackgroundDark}"/>
     
     <!-- FOREGROUND COLORS -->
@@ -19,8 +19,8 @@
     <SolidColorBrush x:Key="ForegroundDarkBrush" Color="{StaticResource ForegroundDark}"/>
 
     <!-- PRIMARY COLORS -->
-    
-    <Color x:Key="ColorPrimary">#fb5154</Color>
+
+    <Color x:Key="ColorPrimary">#0c9ae6</Color>
     <SolidColorBrush x:Key="ColorPrimaryBrush" Color="{StaticResource ColorPrimary}"/>
 
 </ResourceDictionary>
