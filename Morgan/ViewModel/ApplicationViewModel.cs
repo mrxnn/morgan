@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Morgan
 {
@@ -10,24 +11,9 @@ namespace Morgan
         #region Public Properties
 
         /// <summary>
-        /// Backing field for the Music Folder Location
-        /// </summary>
-        IList<string> _locationsList = new List<string>();
-
-        /// <summary>
         /// List of root music directories that the user has selected
         /// </summary>
-        public IList<string> LocationsList
-        {
-            get => _locationsList;
-            set
-            {
-                if (value == _locationsList)
-                    return;
-                _locationsList = value;
-                OnPropertyChanged();
-            }
-        }
+        public ObservableCollection<string> LocationList { get; set; } = new ObservableCollection<string>();
 
 
         /// <summary>

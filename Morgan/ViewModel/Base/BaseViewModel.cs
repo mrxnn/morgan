@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace Morgan
 {
@@ -19,7 +20,7 @@ namespace Morgan
         /// Calls to this method will raise the <see cref="PropertyChanged"/> event
         /// </summary>
         /// <param name="propertyName">Name of the property that was changed</param>
-        protected virtual void OnPropertyChanged(string propertyName = null)
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
@@ -30,6 +31,9 @@ namespace Morgan
         /// <param name="list">List of property names that was changed</param>
         protected virtual void OnGroupOfPropertyChanged(params string[] list)
         {
+            // Just a reminder
+            if (list.Count() == 0) throw null;
+
             list.ToList().ForEach(OnPropertyChanged);
         }
 

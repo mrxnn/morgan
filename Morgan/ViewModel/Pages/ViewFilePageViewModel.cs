@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -20,7 +21,7 @@ namespace Morgan
         /// List of music files after each music file is mapped to <see cref="MusicFileViewModel"/> instances.
         /// So that each music file contains all the required metadata that is used to re-arrange files
         /// </summary>
-        public IList<MusicFileViewModel> MusicFileList { get; set; } = new List<MusicFileViewModel>();
+        public ObservableCollection<MusicFileViewModel> MusicFileList { get; set; } = new ObservableCollection<MusicFileViewModel>();
 
         /// <summary>
         /// Number of locations stored in the Location list
@@ -42,7 +43,7 @@ namespace Morgan
         public ViewFilePageViewModel()
         {
             // Initialize the prerequesite properties
-            LocationsList = IoC.Get<ApplicationViewModel>().LocationsList;
+            LocationsList = IoC.Get<ApplicationViewModel>().LocationList;
 
             // Update the UI
             OnPropertyChanged(nameof(LocationCount));
@@ -64,7 +65,7 @@ namespace Morgan
             var list = await IoC.Get<IDirectoryService>().GetMusicFilesFromAMultipleLocationsAsync(LocationsList);
 
             // Map each music file into MusicFileViewModel objects
-            MusicFileList = await MapFilesToModelsAsync(list);
+            MusicFileList = new ObservableCollection<MusicFileViewModel>(await MapFilesToModelsAsync(list));
 
             // Update the UI
             OnPropertyChanged(nameof(MusicFileCount));

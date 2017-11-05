@@ -74,6 +74,9 @@ namespace Morgan
             // Initialize Commands
             AddLocationCommand = new ActionCommand(AddLocation);
             LoadFilesCommand = new ActionCommand(LoadFiles);
+
+            // Update the UI whenever a new item is added to the location list
+            LocationsList.CollectionChanged += (ss, ee) => OnGroupOfPropertyChanged(nameof(LocationCount), nameof(HasLocation));
         }
 
         #endregion
@@ -85,18 +88,24 @@ namespace Morgan
         /// </summary>
         private void AddLocation()
         {
-            // Set the flag to indicate that the user is choosing a location
-            IsLoadingALocation = true;
-
-            var location = IoC.Get<IDirectoryService>().GetLocation();
-            if (Directory.Exists(location))
+            try
             {
-                // Add the new location
-                LocationsList.Add(location);
-            }
+                // Set the flag to indicate that the user is choosing a location
+                IsLoadingALocation = true;
 
-            // Set the flag to indicate that the user has closed the dialog
-            IsLoadingALocation = false;
+                var location = IoC.Get<IDirectoryService>().GetLocation();
+                if (Directory.Exists(location))
+                {
+                    // Add the new location
+                    if (!LocationsList.Contains(location))
+                        LocationsList.Add(location);
+                }
+            }
+            finally
+            {
+                // Set the flag to indicate that the user has closed the dialog
+                IsLoadingALocation = false;
+            }
         }
 
         /// <summary>
@@ -105,7 +114,7 @@ namespace Morgan
         private void LoadFiles()
         {
             // Set the root music directory location i a glabal scope
-            IoC.Get<ApplicationViewModel>().LocationsList = this.LocationsList;
+            IoC.Get<ApplicationViewModel>().LocationList = this.LocationsList;
 
             // Change the current page of the application
             IoC.Get<ApplicationViewModel>().CurrentPage = ApplicationPage.ViewFilePage;
