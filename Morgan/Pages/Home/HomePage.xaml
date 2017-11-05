@@ -89,7 +89,8 @@
                 </StackPanel>
 
                 <!-- Continue Button -->
-                <Button Content="C O N T I N U E" 
+                <Button Content="C O N T I N U E"
+                    Style="{StaticResource SecondaryButton}"
                     Grid.Column="1"
                     Command="{Binding LoadFilesCommand}"/>
 

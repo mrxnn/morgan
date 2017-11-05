@@ -96,6 +96,9 @@ namespace Morgan
                 var location = IoC.Get<IDirectoryService>().GetLocation();
                 if (Directory.Exists(location))
                 {
+                    // TODO:
+                    // Prevent adding drives
+
                     // Add the new location
                     if (!LocationsList.Contains(location))
                         LocationsList.Add(location);
