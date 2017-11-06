@@ -9,13 +9,6 @@ namespace Morgan
     /// </summary>
     public class HomePageViewModel : BaseViewModel
     {
-        #region Private Members
-
-        // Backing Field for the Public Property
-        private bool _isLoadingALocation;
-
-        #endregion
-
         #region Public Properties
 
         /// <summary>
@@ -36,17 +29,7 @@ namespace Morgan
         /// <summary>
         /// Flag indicating if the Folder Browser Dialog is being displayed
         /// </summary>
-        public bool IsLoadingALocation
-        {
-            get => _isLoadingALocation;
-            set
-            {
-                if (_isLoadingALocation == value)
-                    return;
-                _isLoadingALocation = value;
-                OnPropertyChanged();
-            }
-        }
+        public bool IsLoadingALocation { get; set; }
 
         #endregion
 

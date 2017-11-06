@@ -20,13 +20,13 @@
             <!-- Field 1 -->
             <StackPanel Orientation="Horizontal" Margin="0 2.5 0 2.5">
                 <TextBlock Text="F I L E S    S C A N N E D" Margin="0 0 5 0" VerticalAlignment="Center"/>
-                <TextBlock Text="⓲" Margin="5 0 0 0" FontSize="30"/>
+                <TextBlock Text="{Binding MusicFileCount, FallbackValue=⓲}" Margin="5 0 0 0" FontSize="30"/>
             </StackPanel>
 
             <!-- Field 2 -->
             <StackPanel Orientation="Horizontal" Margin="0 2.5 0 2.5">
                 <TextBlock Text="L O C A T I O N S    S C A N N E D" Margin="0 0 5 0" VerticalAlignment="Center"/>
-                <TextBlock Text="❻" Margin="5 0 0 0" FontSize="30"/>
+                <TextBlock Text="{Binding LocationCount, FallbackValue=❻}" Margin="5 0 0 0" FontSize="30"/>
             </StackPanel>
 
             <!-- Edit tags buttton -->

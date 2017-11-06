@@ -45,9 +45,6 @@ namespace Morgan
             // Initialize the prerequesite properties
             LocationsList = IoC.Get<ApplicationViewModel>().LocationList;
 
-            // Update the UI
-            OnPropertyChanged(nameof(LocationCount));
-
             // Load the music files
             LoadMusicFiles();
         }
@@ -66,9 +63,6 @@ namespace Morgan
 
             // Map each music file into MusicFileViewModel objects
             MusicFileList = new ObservableCollection<MusicFileViewModel>(await MapFilesToModelsAsync(list));
-
-            // Update the UI
-            OnPropertyChanged(nameof(MusicFileCount));
         }
 
         /// <summary>

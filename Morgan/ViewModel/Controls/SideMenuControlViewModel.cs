@@ -90,10 +90,6 @@ namespace Morgan
 
             // Highlight the current tab
             action();
-
-            // Fire the property changed notifications to adapt the UI
-            OnGroupOfPropertyChanged(nameof(HomeIsSelected),
-                nameof(SettingsIsSelected));
         }
 
         #endregion
