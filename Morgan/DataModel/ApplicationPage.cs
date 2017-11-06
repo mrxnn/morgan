@@ -5,11 +5,12 @@
         // Nothing
         None = 0,
 
-        // Home
-        HomePage = 1,
-        ViewFilePage = 2,
+        // Base Home
+        // This is not just a page, it is the root page that hosts mutiple pages related to Home tab
+        // This was necessary because there are few other pages that can be accessed via Home tab
+        BaseHomePage = 1,
 
         // Settings
-        SettingsPage = 4,
+        SettingsPage = 2,
     }
 }

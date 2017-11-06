@@ -12,11 +12,8 @@ namespace Morgan
         {
             switch((ApplicationPage)value)
             {
-                case ApplicationPage.HomePage:
-                    return new HomePage();
-
-                case ApplicationPage.ViewFilePage:
-                    return new ViewFilePage();
+                case ApplicationPage.BaseHomePage:
+                    return new BaseHomePage();
 
                 case ApplicationPage.SettingsPage:
                     return new SettingsPage();

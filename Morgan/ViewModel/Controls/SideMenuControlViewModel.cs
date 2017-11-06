@@ -25,9 +25,9 @@ namespace Morgan
         #region Commands
 
         /// <summary>
-        /// Command to navigate to the Home Page
+        /// Command to navigate to the root page of the Home, and the current sub page will be shown
         /// </summary>
-        public ICommand NavigateToHomeCommand { get; set; }
+        public ICommand NavigateToBaseHomeCommand { get; set; }
 
         /// <summary>
         /// Command to navigate to the settings Page
@@ -44,11 +44,11 @@ namespace Morgan
         public SideMenuControlViewModel()
         {
             // Initialize Commands
-            NavigateToHomeCommand = new ActionCommand(() => Navigate(ApplicationPage.HomePage));
+            NavigateToBaseHomeCommand = new ActionCommand(() => Navigate(ApplicationPage.BaseHomePage));
             NavigateToSettingsCommand = new ActionCommand(() => Navigate(ApplicationPage.SettingsPage));
 
             // Set the default page
-            NavigateToHomeCommand.Execute(null);
+            NavigateToBaseHomeCommand.Execute(null);
         }
 
         #endregion
@@ -63,8 +63,8 @@ namespace Morgan
         {
             switch (page)
             {
-                case ApplicationPage.HomePage:
-                    IoC.Get<ApplicationViewModel>().CurrentPage = ApplicationPage.HomePage;
+                case ApplicationPage.BaseHomePage:
+                    IoC.Get<ApplicationViewModel>().CurrentPage = ApplicationPage.BaseHomePage;
                     UpdateCurrentTab(() => HomeIsSelected = true);
                     break;
 

@@ -120,7 +120,7 @@ namespace Morgan
             IoC.Get<ApplicationViewModel>().LocationList = this.LocationsList;
 
             // Change the current page of the application
-            IoC.Get<ApplicationViewModel>().CurrentPage = ApplicationPage.ViewFilePage;
+            IoC.Get<ApplicationViewModel>().ApplicationSubHomePage = ApplicationSubHomePage.ViewFilePage;
         }
 
         #endregion

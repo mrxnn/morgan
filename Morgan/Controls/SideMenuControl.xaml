@@ -29,7 +29,7 @@
                 <Button Style="{StaticResource TileButton}"
                         Content=""
                         local:ButtonAttachedProperties.IsSelected="{Binding HomeIsSelected}"
-                        Command="{Binding NavigateToHomeCommand}"/>
+                        Command="{Binding NavigateToBaseHomeCommand}"/>
 
                 <Button Style="{StaticResource TileButton}"
                         Content=""

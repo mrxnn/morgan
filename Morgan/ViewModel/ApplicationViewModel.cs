@@ -22,7 +22,7 @@ namespace Morgan
         ApplicationPage _applicationPage = ApplicationPage.None;
 
         /// <summary>
-        /// Controls the currently visible page of the application
+        /// Controls the currently visible root page of the application
         /// </summary>
         public ApplicationPage CurrentPage
         {
@@ -32,6 +32,26 @@ namespace Morgan
                 if (value == _applicationPage)
                     return;
                 _applicationPage = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        /// Backing field for the application sub page
+        /// </summary>
+        ApplicationSubHomePage _applicationSubHomePage = ApplicationSubHomePage.HomePage;
+
+        /// <summary>
+        /// Controls the currently selected sub page of the root <see cref="HomePage"/>
+        /// </summary>
+        public ApplicationSubHomePage ApplicationSubHomePage
+        {
+            get => _applicationSubHomePage;
+            set
+            {
+                if (value == _applicationSubHomePage)
+                    return;
+                _applicationSubHomePage = value;
                 OnPropertyChanged();
             }
         }
