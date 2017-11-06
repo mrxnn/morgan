@@ -5,35 +5,32 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Morgan"
       mc:Ignorable="d" 
-      d:DesignHeight="600" d:DesignWidth="800"
+      d:DesignHeight="600" d:DesignWidth="520"
       Title="ViewFilePage">
 
     <Grid>
 
-        <StackPanel HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
+        <StackPanel Margin="20"
                     TextBlock.Foreground="{StaticResource ForegroundLightBrush}"
-                    TextBlock.FontSize="40">
+                    TextBlock.FontFamily="{StaticResource CalibriLight}">
 
-            <!-- Number of locations scanned -->
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Locations Scanned "
-                       HorizontalAlignment="Center"
-                       Margin="0 0 0 20"/>
-                <TextBlock Text="{Binding LocationCount, FallbackValue=0}"
-                       HorizontalAlignment="Center"
-                       Margin="0 0 0 20"/>
+            <!-- Header 1 -->
+            <TextBlock Text="Summary" FontSize="20" Margin="0 0 0 10"/>
+
+            <!-- Field 1 -->
+            <StackPanel Orientation="Horizontal" Margin="0 2.5 0 2.5">
+                <TextBlock Text="F I L E S    S C A N N E D" Margin="0 0 5 0" VerticalAlignment="Center"/>
+                <TextBlock Text="⓲" Margin="5 0 0 0" FontSize="30"/>
             </StackPanel>
 
-            <!-- Number of music files scanned -->
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Music Files Scanned "
-                       HorizontalAlignment="Center"
-                       Margin="0 0 0 20"/>
-                <TextBlock Text="{Binding MusicFileCount, FallbackValue=0}"
-                       HorizontalAlignment="Center"
-                       Margin="0 0 0 20"/>
+            <!-- Field 2 -->
+            <StackPanel Orientation="Horizontal" Margin="0 2.5 0 2.5">
+                <TextBlock Text="L O C A T I O N S    S C A N N E D" Margin="0 0 5 0" VerticalAlignment="Center"/>
+                <TextBlock Text="❻" Margin="5 0 0 0" FontSize="30"/>
             </StackPanel>
+
+            <!-- Edit tags buttton -->
+            <Button Content=" E D I T    T A G S" HorizontalAlignment="Left" Margin="0 10"/>
 
         </StackPanel>
 
