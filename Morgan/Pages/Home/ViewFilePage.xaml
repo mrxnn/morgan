@@ -15,50 +15,95 @@
                     TextBlock.FontFamily="{StaticResource CalibriLight}">
 
             <!-- Header 1 -->
-            <TextBlock Text="Summary" FontSize="20" Margin="0 0 0 10"/>
+            <TextBlock Text="Summary" FontSize="20" Margin="0 0 0 10" Foreground="{StaticResource ColorPrimaryBrush}"/>
 
             <!-- Field 1 -->
             <StackPanel Orientation="Horizontal" Margin="0 2.5 0 2.5">
                 <TextBlock Text="F I L E S    S C A N N E D" Margin="0 0 5 0" VerticalAlignment="Center" Width="160"/>
-                <TextBlock Text="{Binding MusicFileCount, FallbackValue=0}" FontSize="30"/>
+                <TextBlock Text="{Binding MusicFileCount, FallbackValue=0}" FontSize="20"/>
             </StackPanel>
 
             <!-- Field 2 -->
             <StackPanel Orientation="Horizontal" Margin="0 2.5 0 2.5">
                 <TextBlock Text="L O C A T I O N S    S C A N N E D" Margin="0 0 5 0" VerticalAlignment="Center" Width="160"/>
-                <TextBlock Text="{Binding LocationCount, FallbackValue=0}" FontSize="30"/>
+                <TextBlock Text="{Binding LocationCount, FallbackValue=0}" FontSize="20"/>
             </StackPanel>
 
             
             <!-- Header 2 -->
-            <TextBlock Text="Metadata" FontSize="20" Margin="0 20 0 10"/>
+            <TextBlock Text="Music Tags" FontSize="20" Margin="0 20 0 10" Foreground="{StaticResource ColorPrimaryBrush}"/>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Field 1 -->
+                <StackPanel Orientation="Horizontal" Margin="0 2.5 0 2.5">
+                    <TextBlock Text="G E N R E S" Margin="0 0 5 0" VerticalAlignment="Center" Width="60"/>
+                    <TextBlock Text="{Binding GenreCount, FallbackValue=0}" Margin="5 0 0 0" FontSize="20"/>
+                </StackPanel>
+
+                <!-- Field 2 -->
+                <StackPanel Orientation="Horizontal" Margin="0 2.5 0 2.5" Grid.Column="1">
+                    <TextBlock Text="A R T I S T S" Margin="0 0 5 0" VerticalAlignment="Center" Width="60"/>
+                    <TextBlock Text="{Binding ArtistCount, FallbackValue=0}" Margin="5 0 0 0" FontSize="20"/>
+                </StackPanel>
+
+                <!-- Field 1 -->
+                <StackPanel Orientation="Horizontal" Margin="0 2.5 0 2.5" Grid.Row="1">
+                    <TextBlock Text="A L B U M S" Margin="0 0 5 0" VerticalAlignment="Center" Width="60"/>
+                    <TextBlock Text="{Binding AlbumCount, FallbackValue=0}" Margin="5 0 0 0" FontSize="20"/>
+                </StackPanel>
+
+                <!-- Field 2 -->
+                <StackPanel Orientation="Horizontal" Margin="0 2.5 0 2.5" Grid.Row="1" Grid.Column="1">
+                    <TextBlock Text="T I T L E S" Margin="0 0 5 0" VerticalAlignment="Center" Width="60"/>
+                    <TextBlock Text="{Binding TitleCount, FallbackValue=0}" Margin="5 0 0 0" FontSize="20"/>
+                </StackPanel>
+            </Grid>
+
+
+            <!-- Option 1 -->
+            <TextBlock Text="Edit music tags" FontSize="20" Margin="0 20 0 10" Foreground="{StaticResource ColorPrimaryBrush}"/>
 
             <!-- Field 1 -->
-            <StackPanel Orientation="Horizontal" Margin="0 2.5 0 2.5">
-                <TextBlock Text="G E N R E S" Margin="0 0 5 0" VerticalAlignment="Center" Width="60"/>
-                <TextBlock Text="{Binding GenreCount, FallbackValue=0}" Margin="5 0 0 0" FontSize="30"/>
+            <StackPanel Margin="0 2.5 0 2.5">
+                <TextBlock Text="Edit music tags, update them, or fix missing tags or add album covers to the music files" Margin="0 0 0 10" 
+                           VerticalAlignment="Center" Opacity=".8" FontSize="15" TextWrapping="WrapWithOverflow"/>
+                <Button Content="E D I T" HorizontalAlignment="Left" Command="{Binding EditCommand}"/>
             </StackPanel>
 
-            <!-- Field 2 -->
-            <StackPanel Orientation="Horizontal" Margin="0 2.5 0 2.5">
-                <TextBlock Text="A R T I S T S" Margin="0 0 5 0" VerticalAlignment="Center" Width="60"/>
-                <TextBlock Text="{Binding ArtistCount, FallbackValue=0}" Margin="5 0 0 0" FontSize="30"/>
-            </StackPanel>
+
+            <!-- Option 2 -->
+            <TextBlock Text="Edit folder structure" FontSize="20" Margin="0 20 0 10" Foreground="{StaticResource ColorPrimaryBrush}"/>
 
             <!-- Field 1 -->
-            <StackPanel Orientation="Horizontal" Margin="0 2.5 0 2.5">
-                <TextBlock Text="A L B U M S" Margin="0 0 5 0" VerticalAlignment="Center" Width="60"/>
-                <TextBlock Text="{Binding AlbumCount, FallbackValue=0}" Margin="5 0 0 0" FontSize="30"/>
-            </StackPanel>
-
-            <!-- Field 2 -->
-            <StackPanel Orientation="Horizontal" Margin="0 2.5 0 2.5">
-                <TextBlock Text="T I T L E S" Margin="0 0 5 0" VerticalAlignment="Center" Width="60"/>
-                <TextBlock Text="{Binding TitleCount, FallbackValue=0}" Margin="5 0 0 0" FontSize="30"/>
+            <StackPanel Margin="0 2.5 0 2.5">
+                <TextBlock Text="Transform your music folder structure into a logical way" Margin="0 0 0 10" 
+                           VerticalAlignment="Center" Opacity=".8" FontSize="15" TextWrapping="WrapWithOverflow"/>
+                <Button Content="S T A R T" HorizontalAlignment="Left" Command="{Binding OrganizeCommand}"/>
             </StackPanel>
 
         </StackPanel>
 
+        <!-- Loading spinners -->
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Bottom"
+                    TextBlock.Foreground="{StaticResource ForegroundLightBrush}"
+                    Margin="10">
+
+            <TextBlock Style="{StaticResource SpinnerText}" Visibility="{Binding MusicFileListLoaded, Converter={local:BoolToVisibilityInvertConverter}}"/>
+            <TextBlock Style="{StaticResource SpinnerText}" Visibility="{Binding TagCountsLoaded, Converter={local:BoolToVisibilityInvertConverter}}" Margin="7 0 0 0"/>
+            
+        </StackPanel>
+        
     </Grid>
     
 </local:BasePage>
