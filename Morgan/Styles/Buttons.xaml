@@ -46,7 +46,7 @@
         <Setter Property="BorderThickness" Value="1 1 1 .7"/>
         <Setter Property="BorderBrush" Value="#444"/>
         <Setter Property="FontSize" Value="13"/>
-        <Setter Property="FontFamily" Value="{StaticResource CalibriLight}"/>
+        <Setter Property="FontFamily" Value="{StaticResource RobotoMedium}"/>
         <Setter Property="FontWeight" Value="Light"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="local:ButtonAttachedProperties.IsBusy" Value="False"/>
@@ -103,7 +103,7 @@
         <Setter Property="BorderThickness" Value="1 1 1 .7"/>
         <Setter Property="BorderBrush" Value="{StaticResource ForegroundLightBrush}"/>
         <Setter Property="FontSize" Value="13"/>
-        <Setter Property="FontFamily" Value="{StaticResource CalibriLight}"/>
+        <Setter Property="FontFamily" Value="{StaticResource RobotoLight}"/>
         <Setter Property="FontWeight" Value="Light"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="local:ButtonAttachedProperties.IsBusy" Value="False"/>

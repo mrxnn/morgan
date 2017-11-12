@@ -9,100 +9,156 @@
       Title="ViewFilePage">
 
     <Grid>
+        
+        <!--#region Grid Factors-->
 
-        <StackPanel Margin="20"
-                    TextBlock.Foreground="{StaticResource ForegroundLightBrush}"
-                    TextBlock.FontFamily="{StaticResource CalibriLight}">
+        <Grid.RowDefinitions>
+            <!-- Header Grid -->
+            <RowDefinition Height="4*"/>
+            <!-- Options Grid -->
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        
+        <!--#endregion-->
 
-            <!-- Header 1 -->
-            <TextBlock Text="Summary" FontSize="20" Margin="0 0 0 10" Foreground="{StaticResource ColorPrimaryBrush}"/>
+        <!--#region Header Grid-->
+        
+        <Grid TextBlock.Foreground="{StaticResource ForegroundLightBrush}"
+              TextBlock.FontFamily="{StaticResource RobotoRegular}"
+              TextBlock.FontSize="16">
 
-            <!-- Field 1 -->
-            <StackPanel Orientation="Horizontal" Margin="0 2.5 0 2.5">
-                <TextBlock Text="F I L E S    S C A N N E D" Margin="0 0 5 0" VerticalAlignment="Center" Width="160"/>
-                <TextBlock Text="{Binding MusicFileCount, FallbackValue=0}" FontSize="20"/>
-            </StackPanel>
-
-            <!-- Field 2 -->
-            <StackPanel Orientation="Horizontal" Margin="0 2.5 0 2.5">
-                <TextBlock Text="L O C A T I O N S    S C A N N E D" Margin="0 0 5 0" VerticalAlignment="Center" Width="160"/>
-                <TextBlock Text="{Binding LocationCount, FallbackValue=0}" FontSize="20"/>
-            </StackPanel>
-
+            <!--#region Grid header properties-->
             
-            <!-- Header 2 -->
-            <TextBlock Text="Music Tags" FontSize="20" Margin="0 20 0 10" Foreground="{StaticResource ColorPrimaryBrush}"/>
+            <!-- Shadow effect of the header border -->
+            <Grid.Effect>
+                <DropShadowEffect ShadowDepth="2" Opacity=".2"/>
+            </Grid.Effect>
 
+            <!-- header background -->
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="1,1">
+                    <GradientStop Offset="1" Color="#252525"/>
+                    <GradientStop Offset="0" Color="#303030"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            
+            <!--#endregion-->
+
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                <!-- Status Indicator Icon -->
+                <Grid HorizontalAlignment="Center">
+                    
+                    <!-- the icon that is displayed when the loading is finished -->
+                    <TextBlock Text="" FontFamily="{StaticResource Ionicons}"
+                           FontSize="100" Foreground="{StaticResource ColorPrimaryBrush}"
+                           Visibility="{Binding MusicFileListLoaded, Converter={local:BoolToVisibilityConverter}, FallbackValue=Visible}"/>
+                    
+                    <!-- the icon for displaying when the operation is in progress -->
+                    <TextBlock Style="{StaticResource SpinnerText}"
+                           FontSize="100" Foreground="{StaticResource ColorPrimaryBrush}"
+                           Visibility="{Binding MusicFileListLoaded, Converter={local:BoolToVisibilityInvertConverter}, FallbackValue=Hidden}"/>
+                </Grid>
+
+                <Grid>
+                    <!-- text to display when the operation is still in progress -->
+                    <TextBlock Text="loading..." HorizontalAlignment="Center" VerticalAlignment="Center"
+                               Visibility="{Binding MusicFileListLoaded, Converter={local:BoolToVisibilityInvertConverter}, FallbackValue=Hidden}"/>
+
+                    <!-- text to display when the operation is finished -->
+                    <StackPanel Visibility="{Binding MusicFileListLoaded, Converter={local:BoolToVisibilityConverter}, FallbackValue=Visible}" HorizontalAlignment="Center">
+                        
+                        <TextBlock Text="Scanning Completed" FontSize="20"/>
+                        
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="-10 8 0 8" Opacity=".8">
+                            <TextBlock Text="{Binding LocationCount, FallbackValue=12}"/>
+                            <TextBlock Text=" locations"/>
+                        </StackPanel>
+                        
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Opacity=".8" Margin="-10 0 0 0">
+                            <TextBlock Text="{Binding MusicFileCount, FallbackValue=998}"/>
+                            <TextBlock Text=" files"/>
+                        </StackPanel>
+                        
+                    </StackPanel>
+
+                </Grid>
+            </StackPanel>
+
+        </Grid>
+        
+        <!--#endregion-->
+        
+        <!--#region Options Grid-->
+
+        <StackPanel Grid.Row="1" Margin="10 20 10 10"
+                    TextBlock.Foreground="{StaticResource ForegroundLightBrush}"
+                    TextBlock.FontFamily="{StaticResource RobotoRegular}"
+                    TextBlock.FontSize="16"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top">
+
+            <!-- Header Text -->
+            <TextBlock Text="Summary" FontSize="20" HorizontalAlignment="Left" Margin="0 0 0 10"/>
+
+            <!-- Metadata tag counts -->
             <Grid>
+
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
 
-                <!-- Field 1 -->
-                <StackPanel Orientation="Horizontal" Margin="0 2.5 0 2.5">
-                    <TextBlock Text="G E N R E S" Margin="0 0 5 0" VerticalAlignment="Center" Width="60"/>
-                    <TextBlock Text="{Binding GenreCount, FallbackValue=0}" Margin="5 0 0 0" FontSize="20"/>
-                </StackPanel>
+                <!--#region Tag Count Button Style-->
+                
+                <Grid.Resources>
+                    <Style TargetType="Button" x:Key="TagCountButtonStyle" BasedOn="{StaticResource TileButton}">
+                        <Setter Property="Background" Value="#282828"/>
+                        <Setter Property="Width" Value="100"/>
+                        <Setter Property="FontFamily" Value="{StaticResource RobotoMedium}"/>
+                        <Setter Property="FontSize" Value="28"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Grid>
+                                        <Border CornerRadius="3" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                                            <Border.Effect>
+                                                <DropShadowEffect ShadowDepth="1" Opacity=".5"/>
+                                            </Border.Effect>
+                                        </Border>
+                                        <Border CornerRadius="3" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                                            <StackPanel VerticalAlignment="Center" ClipToBounds="True">
+                                                <!-- Count -->
+                                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" 
+                                                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                                <!-- Name -->
+                                                <TextBlock Text="{TemplateBinding Tag}" FontSize="15" HorizontalAlignment="Center"
+                                                       FontFamily="{StaticResource RobotoRegular}" Margin="0 -0 0 5"/>
+                                            </StackPanel>
+                                        </Border>
+                                    </Grid>
+                                    <ControlTemplate.Triggers>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Grid.Resources>
+                
+                <!--#endregion-->
 
-                <!-- Field 2 -->
-                <StackPanel Orientation="Horizontal" Margin="0 2.5 0 2.5" Grid.Column="1">
-                    <TextBlock Text="A R T I S T S" Margin="0 0 5 0" VerticalAlignment="Center" Width="60"/>
-                    <TextBlock Text="{Binding ArtistCount, FallbackValue=0}" Margin="5 0 0 0" FontSize="20"/>
-                </StackPanel>
+                <Button Style="{StaticResource TagCountButtonStyle}" Grid.Column="0" Content="{Binding GenreCount, FallbackValue=99}" Tag="Genres"/>
+                <Button Style="{StaticResource TagCountButtonStyle}" Grid.Column="1" Content="{Binding ArtistCount, FallbackValue=22}" Tag="Artists"/>
+                <Button Style="{StaticResource TagCountButtonStyle}" Grid.Column="2" Content="{Binding AlbumCount, FallbackValue=98}" Tag="Albums"/>
+                <Button Style="{StaticResource TagCountButtonStyle}" Grid.Column="3" Content="{Binding TitleCount, FallbackValue=11}" Tag="Titles"/>
 
-                <!-- Field 1 -->
-                <StackPanel Orientation="Horizontal" Margin="0 2.5 0 2.5" Grid.Row="1">
-                    <TextBlock Text="A L B U M S" Margin="0 0 5 0" VerticalAlignment="Center" Width="60"/>
-                    <TextBlock Text="{Binding AlbumCount, FallbackValue=0}" Margin="5 0 0 0" FontSize="20"/>
-                </StackPanel>
-
-                <!-- Field 2 -->
-                <StackPanel Orientation="Horizontal" Margin="0 2.5 0 2.5" Grid.Row="1" Grid.Column="1">
-                    <TextBlock Text="T I T L E S" Margin="0 0 5 0" VerticalAlignment="Center" Width="60"/>
-                    <TextBlock Text="{Binding TitleCount, FallbackValue=0}" Margin="5 0 0 0" FontSize="20"/>
-                </StackPanel>
             </Grid>
 
-
-            <!-- Option 1 -->
-            <TextBlock Text="Edit music tags" FontSize="20" Margin="0 20 0 10" Foreground="{StaticResource ColorPrimaryBrush}"/>
-
-            <!-- Field 1 -->
-            <StackPanel Margin="0 2.5 0 2.5">
-                <TextBlock Text="Edit music tags, update them, or fix missing tags or add album covers to the music files" Margin="0 0 0 10" 
-                           VerticalAlignment="Center" Opacity=".8" FontSize="15" TextWrapping="WrapWithOverflow"/>
-                <Button Content="E D I T" HorizontalAlignment="Left" Command="{Binding EditCommand}"/>
-            </StackPanel>
-
-
-            <!-- Option 2 -->
-            <TextBlock Text="Edit folder structure" FontSize="20" Margin="0 20 0 10" Foreground="{StaticResource ColorPrimaryBrush}"/>
-
-            <!-- Field 1 -->
-            <StackPanel Margin="0 2.5 0 2.5">
-                <TextBlock Text="Transform your music folder structure into a logical way" Margin="0 0 0 10" 
-                           VerticalAlignment="Center" Opacity=".8" FontSize="15" TextWrapping="WrapWithOverflow"/>
-                <Button Content="S T A R T" HorizontalAlignment="Left" Command="{Binding OrganizeCommand}"/>
-            </StackPanel>
-
         </StackPanel>
-
-        <!-- Loading spinners -->
-        <StackPanel Orientation="Horizontal"
-                    HorizontalAlignment="Right"
-                    VerticalAlignment="Bottom"
-                    TextBlock.Foreground="{StaticResource ForegroundLightBrush}"
-                    Margin="10">
-
-            <TextBlock Style="{StaticResource SpinnerText}" Visibility="{Binding MusicFileListLoaded, Converter={local:BoolToVisibilityInvertConverter}}"/>
-            <TextBlock Style="{StaticResource SpinnerText}" Visibility="{Binding TagCountsLoaded, Converter={local:BoolToVisibilityInvertConverter}}" Margin="7 0 0 0"/>
-            
-        </StackPanel>
+        
+        <!--#endregion-->
         
     </Grid>
     

@@ -34,13 +34,19 @@
                        FontSize="55"/>
             
             <!-- Page description -->
-            <TextBlock Text="L E T ' S   A D D   M U S I C   F O L D E R S"
-                       FontFamily="{StaticResource CalibriLight}"
-                       Opacity=".7"/>
+            <TextBlock Text="Lets add your music folders"
+                       FontFamily="{StaticResource RobotoRegular}"
+                       Opacity=".7"
+                       FontSize="18"/>
+
+            <TextBlock Text="click the browse location button and select the folders"
+                       FontFamily="{StaticResource RobotoLight}"
+                       Opacity=".5"
+                       FontSize="11"/>
 
             <!-- The button that the user can click to display the dialog -->
-            <Button Content="B R O W S E    L O C A T I O N"
-                    FontFamily="{StaticResource Ionicons}"
+            <Button Content="Browse locations"
+                    FontSize="15"
                     Margin="0 20 0 5" Padding="10"
                     HorizontalAlignment="Center"
                     Command="{Binding AddLocationCommand}"
@@ -73,24 +79,26 @@
                     <TextBlock Text="{Binding LocationCount, FallbackValue=81}"
                                FontSize="30"
                                Margin="10 -2 0 0"
-                               FontFamily="{StaticResource CalibriLight}"/>
+                               FontFamily="{StaticResource RobotoLight}"/>
 
                     <StackPanel Margin="10 -2 0 0">
 
-                        <TextBlock Text="locations"
+                        <TextBlock Text="location(s)"
                                FontSize="20"
-                               FontFamily="{StaticResource CalibriLight}"/>
+                               FontFamily="{StaticResource RobotoLight}"/>
 
                         <TextBlock Text="are selected"
                                FontSize="10"
-                               FontFamily="{StaticResource CalibriLight}"/>
+                               FontFamily="{StaticResource RobotoLight}"/>
 
                     </StackPanel>
 
                 </StackPanel>
 
                 <!-- Continue Button -->
-                <Button Content="C O N T I N U E"
+                <Button Content="Continue"
+                    FontFamily="{StaticResource RobotoMedium}"
+                    FontSize="15"
                     Style="{StaticResource SecondaryButton}"
                     Grid.Column="1"
                     Command="{Binding LoadFilesCommand}"/>
