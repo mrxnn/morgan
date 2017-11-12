@@ -55,14 +55,9 @@ namespace Morgan
         public int TitleCount { get; set; }
 
         /// <summary>
-        /// Flag indicating if all the tag counts are loaded
+        /// Flag indicating if everything is finished loading
         /// </summary>
-        public bool TagCountsLoaded { get; set; } = false;
-
-        /// <summary>
-        /// Flag indicating if the <see cref="MusicFileList"/> is loaded
-        /// </summary>
-        public bool MusicFileListLoaded { get; set; } = false;
+        public bool EverythingLoaded { get; set; } = false;
 
         #endregion
 
@@ -132,10 +127,13 @@ namespace Morgan
 
             // Map each music file into MusicFileViewModel objects
             MusicFileList = new ObservableCollection<MusicFileViewModel>(await MapFilesToModelsAsync(list));
-            MusicFileListLoaded = true;
+
+            // At least take one second when there is no music files, to make it more realistic
+            if (MusicFileCount < 10)
+                await Task.Delay(2000);
 
             // Load tag counters
-            TagCountsLoaded = await LoadTagCountsAsync();
+            EverythingLoaded = await LoadTagCountsAsync();
         }
 
         /// <summary>

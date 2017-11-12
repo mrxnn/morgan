@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Globalization;
 
 namespace Morgan
@@ -18,7 +19,9 @@ namespace Morgan
                 case ApplicationPage.SettingsPage:
                     return new SettingsPage();
 
-                default: return null;
+                default:
+                    Debugger.Break();
+                    return null;
             }
         }
     }
