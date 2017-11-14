@@ -6,7 +6,7 @@
     <FontFamily x:Key="LatoThin">pack://application:,,,/Fonts/#Lato Thin</FontFamily>
     
     <!-- Icon Font -->
-    <FontFamily x:Key="Ionicons">pack://application:,,,/Fonts/#Ionicons</FontFamily>
+    <FontFamily x:Key="Ionicons">Ionicons, pack://application:,,,/Fonts/#Ionicons</FontFamily>
     
     <!-- Calibri Font -->
     <FontFamily x:Key="RobotoRegular">pack://application:,,,/Fonts/#Roboto Regular</FontFamily>
