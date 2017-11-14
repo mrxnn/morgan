@@ -19,7 +19,8 @@
                 FontFamily="{StaticResource Ionicons}"
                 Foreground="{StaticResource ForegroundLightBrush}"
                 IsEnabled="{Binding HasLocation}"
-                FontSize="30"/>
+                FontSize="30"
+                Command="{Binding ListLocationsCommand}"/>
 
         <!-- Main content -->
         <StackPanel HorizontalAlignment="Center"

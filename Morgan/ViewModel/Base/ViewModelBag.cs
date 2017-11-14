@@ -9,5 +9,10 @@
         /// Instance of the application view model that is used across the application
         /// </summary>
         public static ApplicationViewModel ApplicationViewModel { get; set; } = IoC.Get<ApplicationViewModel>();
+
+        /// <summary>
+        /// Instance of the popup menu view model that is used across the application
+        /// </summary>
+        public static PopupMenuViewModel PopupMenuViewModel { get; set; } = IoC.Get<PopupMenuViewModel>();
     }
 }

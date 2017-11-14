@@ -28,6 +28,9 @@ namespace Morgan
             // Binds a single instance of the ApplicationViewModel
             Kernel.Bind<ApplicationViewModel>().ToSelf().InSingletonScope();
 
+            // Binds a single instance of the PopupMenuViewModel
+            Kernel.Bind<PopupMenuViewModel>().ToSelf().InSingletonScope();
+
             // TODO: This should stay same in the WPF specific project once the core project is added
             // Bind the directory service that interacts with the file system
             Kernel.Bind<IDirectoryService>().To<DirectoryService>();
