@@ -99,7 +99,7 @@ namespace Morgan
                     // Display a hint when the first location is added
                     if (!FirstLocationAdded)
                     {
-                        IoC.Get<PopupMenuViewModel>().ShowMenu("Hint: You can add as many locations as you like",
+                        IoC.PopupMenuViewModel.ShowMenu("Hint: You can add as many locations as you like",
                         "keep adding locations if your collection is widely spread!", "Got it", null, 10000);
                         FirstLocationAdded = true;
                     }
@@ -118,10 +118,10 @@ namespace Morgan
         private void LoadFiles()
         {
             // Set the root music directory location i a glabal scope
-            IoC.Get<ApplicationViewModel>().LocationList = this.LocationsList;
+            IoC.ApplicationViewModel.LocationList = this.LocationsList;
 
             // Change the current page of the application
-            IoC.Get<ApplicationViewModel>().ApplicationSubHomePage = ApplicationSubHomePage.ViewFilePage;
+            IoC.ApplicationViewModel.ApplicationSubHomePage = ApplicationSubHomePage.ViewFilePage;
         }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace Morgan
         /// </summary>
         private void ListLocations()
         {
-            IoC.Get<PopupMenuViewModel>().ShowMenu("Be patient dude! This will list locations before the final release",
+            IoC.PopupMenuViewModel.ShowMenu("Be patient dude! This will list locations before the final release",
                 "Eg: London, New York, Capital of Hell etc...");
         }
 

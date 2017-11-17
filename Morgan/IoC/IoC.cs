@@ -7,11 +7,31 @@ namespace Morgan
     /// </summary>
     public static class IoC
     {
+        #region Public Properties
+        
         /// <summary>
         /// Kernel of the IoC container
         /// </summary>
         public static IKernel Kernel { get; set; } = new StandardKernel();
 
+        #endregion
+
+        #region Shorthand Properties
+
+        /// <summary>
+        /// Shorthand property to get the <see cref="ApplicationViewModel"/> single instance
+        /// </summary>
+        public static ApplicationViewModel ApplicationViewModel => Kernel.Get<ApplicationViewModel>();
+
+        /// <summary>
+        /// Shorthand property to get the <see cref="PopupMenuViewModel"/> single instance
+        /// </summary>
+        public static PopupMenuViewModel PopupMenuViewModel => Kernel.Get<PopupMenuViewModel>();
+
+        #endregion
+
+        #region Constructors
+        
         /// <summary>
         /// Takes care of initialization of the IoC container prior to any service being used
         /// </summary>
@@ -20,6 +40,10 @@ namespace Morgan
             Initialize();
         }
 
+        #endregion
+
+        #region Public Methods
+        
         /// <summary>
         /// Initializes the IoC container
         /// </summary>
@@ -51,5 +75,7 @@ namespace Morgan
         /// <typeparam name="T">Type of the service to get</typeparam>
         /// <returns></returns>
         public static T Get<T>() where T : class => Kernel.Get<T>();
+
+        #endregion
     }
 }

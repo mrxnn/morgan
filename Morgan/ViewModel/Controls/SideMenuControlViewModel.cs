@@ -64,12 +64,12 @@ namespace Morgan
             switch (page)
             {
                 case ApplicationPage.BaseHomePage:
-                    IoC.Get<ApplicationViewModel>().CurrentPage = ApplicationPage.BaseHomePage;
+                    IoC.ApplicationViewModel.CurrentPage = ApplicationPage.BaseHomePage;
                     UpdateCurrentTab(() => HomeIsSelected = true);
                     break;
 
                 case ApplicationPage.SettingsPage:
-                    IoC.Get<ApplicationViewModel>().CurrentPage = ApplicationPage.SettingsPage;
+                    IoC.ApplicationViewModel.CurrentPage = ApplicationPage.SettingsPage;
                     UpdateCurrentTab(() => SettingsIsSelected = true);
                     break;
 

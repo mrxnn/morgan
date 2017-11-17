@@ -87,7 +87,7 @@ namespace Morgan
             OrganizeCommand = new ActionCommand(Organize);
 
             // Initialize the prerequesite properties
-            LocationsList = IoC.Get<ApplicationViewModel>().LocationList;
+            LocationsList = IoC.ApplicationViewModel.LocationList;
 
             // Load the music files
             LoadMusicFiles();
