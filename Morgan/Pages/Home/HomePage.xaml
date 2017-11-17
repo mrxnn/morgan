@@ -47,8 +47,7 @@
 
             <!-- The button that the user can click to display the dialog -->
             <Button Content="Browse locations"
-                    FontSize="15"
-                    Margin="0 20 0 5" Padding="10"
+                    Margin="0 20 0 5"
                     HorizontalAlignment="Center"
                     Command="{Binding AddLocationCommand}"
                     local:ButtonAttachedProperties.IsBusy="{Binding IsLoadingALocation}"/>
@@ -98,8 +97,6 @@
 
                 <!-- Continue Button -->
                 <Button Content="Continue"
-                    FontFamily="{StaticResource RobotoMedium}"
-                    FontSize="15"
                     Style="{StaticResource SecondaryButton}"
                     Grid.Column="1"
                     Command="{Binding LoadFilesCommand}"/>

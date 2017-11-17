@@ -40,20 +40,18 @@
 
     <!-- Default Button -->
     <Style TargetType="Button">
-        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Background" Value="{StaticResource BackgroundSemiDarkBrush}"/>
         <Setter Property="Foreground" Value="{StaticResource ForegroundLightBrush}"/>
-        <Setter Property="Padding" Value="12,8"/>
-        <Setter Property="BorderThickness" Value="1 1 1 .7"/>
-        <Setter Property="BorderBrush" Value="#444"/>
-        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="FontFamily" Value="{StaticResource RobotoMedium}"/>
-        <Setter Property="FontWeight" Value="Light"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="local:ButtonAttachedProperties.IsBusy" Value="False"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Border CornerRadius="1" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                    <Border CornerRadius="2" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
                         <Grid x:Name="grid">
                             <!-- Button Content -->
                             <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" 
@@ -73,18 +71,16 @@
                         <EventTrigger RoutedEvent="MouseEnter">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <ColorAnimation To="#fff" Duration="0:0:0.2" Storyboard.TargetProperty="Background.Color"/>
-                                    <ColorAnimation To="#fff" Duration="0:0:0.2" Storyboard.TargetProperty="BorderBrush.Color"/>
-                                    <ColorAnimation To="#000" Duration="0:0:0.2" Storyboard.TargetProperty="Foreground.Color"/>
+                                    <ColorAnimation To="{StaticResource ColorLight}" Duration="0:0:0.2" Storyboard.TargetProperty="Background.Color"/>
+                                    <ColorAnimation To="{StaticResource ColorDark}" Duration="0:0:0.2" Storyboard.TargetProperty="Foreground.Color"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
                         <EventTrigger RoutedEvent="MouseLeave">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <ColorAnimation To="Transparent" Duration="0:0:0.2" Storyboard.TargetProperty="Background.Color"/>
-                                    <ColorAnimation To="#444" Duration="0:0:0.2" Storyboard.TargetProperty="BorderBrush.Color"/>
-                                    <ColorAnimation To="#f4f4f4" Duration="0:0:0.2" Storyboard.TargetProperty="Foreground.Color"/>
+                                    <ColorAnimation To="{StaticResource BackgroundSemiDark}" Duration="0:0:0.2" Storyboard.TargetProperty="Background.Color"/>
+                                    <ColorAnimation To="{StaticResource ForegroundLight}" Duration="0:0:0.2" Storyboard.TargetProperty="Foreground.Color"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
@@ -98,11 +94,10 @@
     <!-- Default Secondary Button -->
     <Style TargetType="Button" x:Key="SecondaryButton">
         <Setter Property="Background" Value="{StaticResource ForegroundLightBrush}"/>
-        <Setter Property="Foreground" Value="#000"/>
-        <Setter Property="Padding" Value="12,8"/>
-        <Setter Property="BorderThickness" Value="1 1 1 .7"/>
-        <Setter Property="BorderBrush" Value="{StaticResource ForegroundLightBrush}"/>
-        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="Foreground" Value="{StaticResource ColorDarkBrush}"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="FontFamily" Value="{StaticResource RobotoMedium}"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="local:ButtonAttachedProperties.IsBusy" Value="False"/>
@@ -130,8 +125,7 @@
                             <BeginStoryboard>
                                 <Storyboard>
                                     <ColorAnimation To="{StaticResource BackgroundVeryDark}" Duration="0:0:0.2" Storyboard.TargetProperty="Background.Color"/>
-                                    <ColorAnimation To="{StaticResource BackgroundVeryDark}" Duration="0:0:0.2" Storyboard.TargetProperty="BorderBrush.Color"/>
-                                    <ColorAnimation To="#fff" Duration="0:0:0.2" Storyboard.TargetProperty="Foreground.Color"/>
+                                    <ColorAnimation To="{StaticResource ColorLight}" Duration="0:0:0.2" Storyboard.TargetProperty="Foreground.Color"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
@@ -139,8 +133,7 @@
                             <BeginStoryboard>
                                 <Storyboard>
                                     <ColorAnimation To="{StaticResource ForegroundLight}" Duration="0:0:0.2" Storyboard.TargetProperty="Background.Color"/>
-                                    <ColorAnimation To="{StaticResource ForegroundLight}" Duration="0:0:0.2" Storyboard.TargetProperty="BorderBrush.Color"/>
-                                    <ColorAnimation To="#000" Duration="0:0:0.2" Storyboard.TargetProperty="Foreground.Color"/>
+                                    <ColorAnimation To="{StaticResource ColorDark}" Duration="0:0:0.2" Storyboard.TargetProperty="Foreground.Color"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>

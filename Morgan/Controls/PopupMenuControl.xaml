@@ -33,6 +33,7 @@
             <!-- Secondary message -->
             <TextBlock Text="{Binding SecondaryMessage}"
                        FontSize="11" Margin="0 2 0 2" Opacity=".5"
+                       TextOptions.TextRenderingMode="ClearType"
                        TextWrapping="WrapWithOverflow"/>
 
             <!-- Menu Button -->

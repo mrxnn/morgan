@@ -37,8 +37,8 @@
             <!-- header background -->
             <Grid.Background>
                 <LinearGradientBrush EndPoint="1,1">
-                    <GradientStop Offset="1" Color="#252525"/>
-                    <GradientStop Offset="0" Color="#303030"/>
+                    <GradientStop Offset="1" Color="{StaticResource BackgroundDark}"/>
+                    <GradientStop Offset="0" Color="{StaticResource BackgroundSemiDark}"/>
                 </LinearGradientBrush>
             </Grid.Background>
             
@@ -99,7 +99,7 @@
                     VerticalAlignment="Top">
 
             <!-- Header Text -->
-            <TextBlock Text="Summary" FontSize="18" HorizontalAlignment="Left" Margin="0 0 0 10"/>
+            <TextBlock Text="Edit music tags" FontSize="18" HorizontalAlignment="Left" Margin="0 0 0 10"/>
 
             <!-- Metadata tag counts -->
             <Grid>
@@ -157,9 +157,9 @@
             </Grid>
 
             <!-- Header Text -->
-            <TextBlock Text="Next steps" FontSize="18" HorizontalAlignment="Left" Margin="0 30 0 10"/>
+            <TextBlock Text="Finally" FontSize="18" HorizontalAlignment="Left" Margin="0 30 0 10"/>
             <StackPanel Orientation="Horizontal">
-                <Button Content="Organize files" Margin="0 0 5 0" Command="{Binding OrganizeCommand}"/>
+                <Button Content="Start organizing" Margin="0 0 5 0" Command="{Binding OrganizeCommand}"/>
                 <!--<Button Content="Edit tags" Style="{StaticResource SecondaryButton}" Command="{Binding EditCommand}"/>-->
             </StackPanel>
 
