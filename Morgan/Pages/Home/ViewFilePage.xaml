@@ -5,38 +5,168 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Morgan"
       mc:Ignorable="d" 
-      d:DesignHeight="600" d:DesignWidth="800"
+      d:DesignHeight="600" d:DesignWidth="520"
       Title="ViewFilePage">
 
     <Grid>
+        
+        <!--#region Grid Factors-->
 
-        <StackPanel HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    TextBlock.Foreground="{StaticResource ForegroundLightBrush}"
-                    TextBlock.FontSize="40">
+        <Grid.RowDefinitions>
+            <!-- Header Grid -->
+            <RowDefinition Height="4*"/>
+            <!-- Options Grid -->
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        
+        <!--#endregion-->
 
-            <!-- Number of locations scanned -->
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Locations Scanned "
-                       HorizontalAlignment="Center"
-                       Margin="0 0 0 20"/>
-                <TextBlock Text="{Binding LocationCount, FallbackValue=0}"
-                       HorizontalAlignment="Center"
-                       Margin="0 0 0 20"/>
+        <!--#region Header Grid-->
+        
+        <Grid TextBlock.Foreground="{StaticResource ForegroundLightBrush}"
+              TextBlock.FontFamily="{StaticResource RobotoRegular}"
+              TextBlock.FontSize="16">
+
+            <!--#region Grid header properties-->
+            
+            <!-- Shadow effect of the header border -->
+            <Grid.Effect>
+                <DropShadowEffect ShadowDepth="2" Opacity=".2"/>
+            </Grid.Effect>
+
+            <!-- header background -->
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="1,1">
+                    <GradientStop Offset="1" Color="#252525"/>
+                    <GradientStop Offset="0" Color="#303030"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            
+            <!--#endregion-->
+
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                <!-- Status Indicator Icon -->
+                <Grid HorizontalAlignment="Center">
+                    
+                    <!-- the icon that is displayed when the loading is finished -->
+                    <TextBlock Text="" FontFamily="{StaticResource Ionicons}"
+                           FontSize="100" Foreground="{StaticResource ColorPrimaryBrush}"
+                           Visibility="{Binding EverythingLoaded, Converter={local:BoolToVisibilityConverter}, FallbackValue=Visible}"/>
+                    
+                    <!-- the icon for displaying when the operation is in progress -->
+                    <TextBlock Style="{StaticResource SpinnerText}"
+                           FontSize="95" Foreground="{StaticResource ColorPrimaryBrush}"
+                           Visibility="{Binding EverythingLoaded, Converter={local:BoolToVisibilityInvertConverter}, FallbackValue=Hidden}"/>
+                </Grid>
+
+                <Grid>
+                    <!-- text to display when the operation is still in progress -->
+                    <TextBlock Text="loading! please wait..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"
+                               Visibility="{Binding EverythingLoaded, Converter={local:BoolToVisibilityInvertConverter}, FallbackValue=Hidden}"/>
+
+                    <!-- text to display when the operation is finished -->
+                    <StackPanel Visibility="{Binding EverythingLoaded, Converter={local:BoolToVisibilityConverter}, FallbackValue=Visible}" HorizontalAlignment="Center">
+                        
+                        <TextBlock Text="Scanning Completed" FontSize="20"/>
+                        
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="-10 8 0 8" Opacity=".8">
+                            <TextBlock Text="{Binding LocationCount, FallbackValue=12}"/>
+                            <TextBlock Text=" locations"/>
+                        </StackPanel>
+                        
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Opacity=".8" Margin="-10 0 0 0">
+                            <TextBlock Text="{Binding MusicFileCount, FallbackValue=998}"/>
+                            <TextBlock Text=" files"/>
+                        </StackPanel>
+                        
+                    </StackPanel>
+
+                </Grid>
             </StackPanel>
 
-            <!-- Number of music files scanned -->
+        </Grid>
+        
+        <!--#endregion-->
+        
+        <!--#region Options Grid-->
+
+        <StackPanel Grid.Row="1" Margin="10 20 10 10"
+                    TextBlock.Foreground="{StaticResource ForegroundLightBrush}"
+                    TextBlock.FontFamily="{StaticResource RobotoRegular}"
+                    TextBlock.FontSize="16"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top">
+
+            <!-- Header Text -->
+            <TextBlock Text="Summary" FontSize="18" HorizontalAlignment="Left" Margin="0 0 0 10"/>
+
+            <!-- Metadata tag counts -->
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!--#region Tag Count Button Style-->
+                
+                <Grid.Resources>
+                    <Style TargetType="Button" x:Key="TagCountButtonStyle" BasedOn="{StaticResource TileButton}">
+                        <Setter Property="Background" Value="#282828"/>
+                        <Setter Property="Width" Value="100"/>
+                        <Setter Property="FontFamily" Value="{StaticResource RobotoMedium}"/>
+                        <Setter Property="FontSize" Value="28"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Grid>
+                                        <Border CornerRadius="3" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                                            <Border.Effect>
+                                                <DropShadowEffect ShadowDepth="1" Opacity=".5"/>
+                                            </Border.Effect>
+                                        </Border>
+                                        <Border CornerRadius="3" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                                            <StackPanel VerticalAlignment="Center" ClipToBounds="True">
+                                                <!-- Count -->
+                                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" 
+                                                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                                <!-- Name -->
+                                                <TextBlock Text="{TemplateBinding Tag}" FontSize="15" HorizontalAlignment="Center"
+                                                       FontFamily="{StaticResource RobotoRegular}" Margin="0 -0 0 5"/>
+                                            </StackPanel>
+                                        </Border>
+                                    </Grid>
+                                    <ControlTemplate.Triggers>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Grid.Resources>
+                
+                <!--#endregion-->
+
+                <Button Style="{StaticResource TagCountButtonStyle}" Grid.Column="0" Content="{Binding GenreCount, FallbackValue=99}" Tag="Genres"/>
+                <Button Style="{StaticResource TagCountButtonStyle}" Grid.Column="1" Content="{Binding ArtistCount, FallbackValue=22}" Tag="Artists"/>
+                <Button Style="{StaticResource TagCountButtonStyle}" Grid.Column="2" Content="{Binding AlbumCount, FallbackValue=98}" Tag="Albums"/>
+                <Button Style="{StaticResource TagCountButtonStyle}" Grid.Column="3" Content="{Binding TitleCount, FallbackValue=11}" Tag="Titles"/>
+
+            </Grid>
+
+            <!-- Header Text -->
+            <TextBlock Text="Next steps" FontSize="18" HorizontalAlignment="Left" Margin="0 30 0 10"/>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Music Files Scanned "
-                       HorizontalAlignment="Center"
-                       Margin="0 0 0 20"/>
-                <TextBlock Text="{Binding MusicFileCount, FallbackValue=0}"
-                       HorizontalAlignment="Center"
-                       Margin="0 0 0 20"/>
+                <Button Content="Organize files" Margin="0 0 5 0" Command="{Binding OrganizeCommand}"/>
+                <!--<Button Content="Edit tags" Style="{StaticResource SecondaryButton}" Command="{Binding EditCommand}"/>-->
             </StackPanel>
 
         </StackPanel>
-
+        
+        <!--#endregion-->
+        
     </Grid>
     
 </local:BasePage>

@@ -57,6 +57,7 @@
 
                                     <!-- Window Title Bar -->
                                     <Border Grid.Row="0"
+                                            Panel.ZIndex="20000"
                                             CornerRadius="{Binding TitleBarCornerRadius, FallbackValue=3}">
 
                                         <!-- Linear Gradient of the Window Title -->
@@ -159,6 +160,15 @@
         
         <!-- Side Menu -->
         <local:SideMenuControl/>
+        
+        <!-- Popup Menu -->
+        <local:PopupMenuControl
+            Grid.Column="1"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center"
+            Panel.ZIndex="10000"
+            local:SlideFromTopProperty.SlideInOutFromTop="{Binding MenuVisible, 
+                Source={x:Static local:ViewModelBag.PopupMenuViewModel}}"/>
 
         <!-- This is the page hosting location -->
         <Frame Content="{Binding CurrentPage, 

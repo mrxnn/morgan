@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Morgan
 {
@@ -33,6 +34,45 @@ namespace Morgan
         /// </summary>
         public int MusicFileCount => MusicFileList.Count;
 
+        /// <summary>
+        /// Number of music genres
+        /// </summary>
+        public int GenreCount { get; set; }
+
+        /// <summary>
+        /// Number of music artists
+        /// </summary>
+        public int ArtistCount { get; set; }
+
+        /// <summary>
+        /// Number of music albums
+        /// </summary>
+        public int AlbumCount { get; set; }
+
+        /// <summary>
+        /// Number of music titles, or files
+        /// </summary>
+        public int TitleCount { get; set; }
+
+        /// <summary>
+        /// Flag indicating if everything is finished loading
+        /// </summary>
+        public bool EverythingLoaded { get; set; } = false;
+
+        #endregion
+
+        #region Commands
+
+        /// <summary>
+        /// Command to edit music files
+        /// </summary>
+        public ICommand EditCommand { get; set; }
+
+        /// <summary>
+        /// Command to organize music files in a folder structure
+        /// </summary>
+        public ICommand OrganizeCommand { get; set; }
+
         #endregion
 
         #region Constructors
@@ -42,14 +82,35 @@ namespace Morgan
         /// </summary>
         public ViewFilePageViewModel()
         {
-            // Initialize the prerequesite properties
-            LocationsList = IoC.Get<ApplicationViewModel>().LocationList;
+            // Create commands
+            EditCommand = new ActionCommand(Edit);
+            OrganizeCommand = new ActionCommand(Organize);
 
-            // Update the UI
-            OnPropertyChanged(nameof(LocationCount));
+            // Initialize the prerequesite properties
+            LocationsList = IoC.ApplicationViewModel.LocationList;
 
             // Load the music files
             LoadMusicFiles();
+        }
+
+        #endregion
+
+        #region Command Methods
+
+        /// <summary>
+        /// <see cref="EditCommand"/> handler
+        /// </summary>
+        private void Edit()
+        {
+
+        }
+
+        /// <summary>
+        /// Handler for the <see cref="OrganizeCommand"/>
+        /// </summary>
+        private void Organize()
+        {
+
         }
 
         #endregion
@@ -67,8 +128,12 @@ namespace Morgan
             // Map each music file into MusicFileViewModel objects
             MusicFileList = new ObservableCollection<MusicFileViewModel>(await MapFilesToModelsAsync(list));
 
-            // Update the UI
-            OnPropertyChanged(nameof(MusicFileCount));
+            // At least take one second when there is no music files, to make it more realistic
+            if (MusicFileCount < 10)
+                await Task.Delay(2000);
+
+            // Load tag counters
+            EverythingLoaded = await LoadTagCountsAsync();
         }
 
         /// <summary>
@@ -81,6 +146,21 @@ namespace Morgan
             return Task.Run(() =>
             {
                 return list.Select(f => new MusicFileViewModel(f)).ToList();
+            });
+        }
+
+        /// <summary>
+        /// Initializes the tag counts
+        /// </summary>
+        private Task<bool> LoadTagCountsAsync()
+        {
+            return Task.Run(() =>
+            {
+                GenreCount = MusicFileList.Select(t => t.Genre).Distinct().Count();
+                ArtistCount = MusicFileList.Select(t => t.Artist).Distinct().Count();
+                AlbumCount = MusicFileList.Select(t => t.Album).Distinct().Count();
+                TitleCount = MusicFileList.Select(t => t.Title).Distinct().Count();
+                return true;
             });
         }
 

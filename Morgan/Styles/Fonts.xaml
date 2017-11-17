@@ -6,10 +6,11 @@
     <FontFamily x:Key="LatoThin">pack://application:,,,/Fonts/#Lato Thin</FontFamily>
     
     <!-- Icon Font -->
-    <FontFamily x:Key="Ionicons">pack://application:,,,/Fonts/#Ionicons</FontFamily>
+    <FontFamily x:Key="Ionicons">Ionicons, pack://application:,,,/Fonts/#Ionicons</FontFamily>
     
     <!-- Calibri Font -->
-    <FontFamily x:Key="CalibriRegular">pack://application:,,,/Fonts/#Calibri</FontFamily>
-    <FontFamily x:Key="CalibriLight">pack://application:,,,/Fonts/#Calibri Light</FontFamily>
+    <FontFamily x:Key="RobotoRegular">pack://application:,,,/Fonts/#Roboto Regular</FontFamily>
+    <FontFamily x:Key="RobotoLight">pack://application:,,,/Fonts/#Roboto Light</FontFamily>
+    <FontFamily x:Key="RobotoMedium">pack://application:,,,/Fonts/#Roboto Medium</FontFamily>
 
 </ResourceDictionary>

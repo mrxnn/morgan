@@ -1,7 +1,6 @@
 ﻿using System.IO;
 using System.Windows.Input;
 using System.Collections.ObjectModel;
-
 namespace Morgan
 {
     /// <summary>
@@ -9,13 +8,6 @@ namespace Morgan
     /// </summary>
     public class HomePageViewModel : BaseViewModel
     {
-        #region Private Members
-
-        // Backing Field for the Public Property
-        private bool _isLoadingALocation;
-
-        #endregion
-
         #region Public Properties
 
         /// <summary>
@@ -36,17 +28,12 @@ namespace Morgan
         /// <summary>
         /// Flag indicating if the Folder Browser Dialog is being displayed
         /// </summary>
-        public bool IsLoadingALocation
-        {
-            get => _isLoadingALocation;
-            set
-            {
-                if (_isLoadingALocation == value)
-                    return;
-                _isLoadingALocation = value;
-                OnPropertyChanged();
-            }
-        }
+        public bool IsLoadingALocation { get; set; }
+
+        /// <summary>
+        /// Flag indicating if this is the first time a location is added to the list
+        /// </summary>
+        public bool FirstLocationAdded { get; set; }
 
         #endregion
 
@@ -62,6 +49,11 @@ namespace Morgan
         /// </summary>
         public ICommand LoadFilesCommand { get; set; }
 
+        /// <summary>
+        /// Command to list all the added locations
+        /// </summary>
+        public ICommand ListLocationsCommand { get; set; }
+
         #endregion
 
         #region Constructors
@@ -74,6 +66,7 @@ namespace Morgan
             // Initialize Commands
             AddLocationCommand = new ActionCommand(AddLocation);
             LoadFilesCommand = new ActionCommand(LoadFiles);
+            ListLocationsCommand = new ActionCommand(ListLocations);
 
             // Update the UI whenever a new item is added to the location list
             LocationsList.CollectionChanged += (ss, ee) => OnGroupOfPropertyChanged(nameof(LocationCount), nameof(HasLocation));
@@ -102,6 +95,14 @@ namespace Morgan
                     // Add the new location
                     if (!LocationsList.Contains(location))
                         LocationsList.Add(location);
+
+                    // Display a hint when the first location is added
+                    if (!FirstLocationAdded)
+                    {
+                        IoC.PopupMenuViewModel.ShowMenu("Hint: You can add as many locations as you like",
+                        "keep adding locations if your collection is widely spread!", "Got it", null, 10000);
+                        FirstLocationAdded = true;
+                    }
                 }
             }
             finally
@@ -117,10 +118,19 @@ namespace Morgan
         private void LoadFiles()
         {
             // Set the root music directory location i a glabal scope
-            IoC.Get<ApplicationViewModel>().LocationList = this.LocationsList;
+            IoC.ApplicationViewModel.LocationList = this.LocationsList;
 
             // Change the current page of the application
-            IoC.Get<ApplicationViewModel>().ApplicationSubHomePage = ApplicationSubHomePage.ViewFilePage;
+            IoC.ApplicationViewModel.ApplicationSubHomePage = ApplicationSubHomePage.ViewFilePage;
+        }
+
+        /// <summary>
+        /// Display all the locations that are already added to the location list
+        /// </summary>
+        private void ListLocations()
+        {
+            IoC.PopupMenuViewModel.ShowMenu("Be patient dude! This will list locations before the final release",
+                "Eg: London, New York, Capital of Hell etc...");
         }
 
         #endregion

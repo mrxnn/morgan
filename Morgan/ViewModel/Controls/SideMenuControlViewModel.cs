@@ -64,12 +64,12 @@ namespace Morgan
             switch (page)
             {
                 case ApplicationPage.BaseHomePage:
-                    IoC.Get<ApplicationViewModel>().CurrentPage = ApplicationPage.BaseHomePage;
+                    IoC.ApplicationViewModel.CurrentPage = ApplicationPage.BaseHomePage;
                     UpdateCurrentTab(() => HomeIsSelected = true);
                     break;
 
                 case ApplicationPage.SettingsPage:
-                    IoC.Get<ApplicationViewModel>().CurrentPage = ApplicationPage.SettingsPage;
+                    IoC.ApplicationViewModel.CurrentPage = ApplicationPage.SettingsPage;
                     UpdateCurrentTab(() => SettingsIsSelected = true);
                     break;
 
@@ -90,10 +90,6 @@ namespace Morgan
 
             // Highlight the current tab
             action();
-
-            // Fire the property changed notifications to adapt the UI
-            OnGroupOfPropertyChanged(nameof(HomeIsSelected),
-                nameof(SettingsIsSelected));
         }
 
         #endregion
