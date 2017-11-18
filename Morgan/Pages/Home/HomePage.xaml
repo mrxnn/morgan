@@ -57,7 +57,7 @@
         <!-- Button Panel -->
         <local:ButtonPanelControl VerticalAlignment="Bottom"
             Visibility="{Binding HasLocation, Converter={local:BoolToVisibilityConverter}}"
-            local:SlideFromBottomProperty.SlideInOutFromBottom="{Binding HasLocation}">
+            local:SlideFromBottomAnimationProperty.Value="{Binding HasLocation}">
 
             <Grid>
 

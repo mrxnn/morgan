@@ -7,7 +7,7 @@ namespace Morgan
     /// </summary>
     public static class StringHelpers
     {
-        public static string ToValidFileName(this string fileName)
+        public static string NormalizePath(this string fileName)
         {
             return Regex.Replace(fileName, @"[\\/\*:?<>|]", "");
         }

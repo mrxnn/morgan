@@ -75,10 +75,9 @@
     </ApplicationDefinition>
     <Compile Include="Animation\Data\SlideDirections.cs" />
     <Compile Include="Animation\FrameworkElementAnimation.cs" />
-    <Compile Include="Animation\Property\SlideFromTopProperty.cs" />
+    <Compile Include="Animation\Property\SlideAnimationProperty.cs" />
     <Compile Include="AttachedProperties\SideMenuAttachedProperty.cs" />
     <Compile Include="AttachedProperties\ButtonAttachedProperties.cs" />
-    <Compile Include="Animation\Property\SlideFromBottomProperty.cs" />
     <Compile Include="AttachedProperties\TextBoxAttachedProperties.cs" />
     <Compile Include="Commands\ActionCommand.cs" />
     <Compile Include="Commands\ActionParameterCommand.cs" />
