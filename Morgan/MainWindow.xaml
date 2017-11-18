@@ -167,7 +167,7 @@
             VerticalAlignment="Top"
             HorizontalAlignment="Center"
             Panel.ZIndex="10000"
-            local:SlideFromTopProperty.SlideInOutFromTop="{Binding MenuVisible, 
+            local:SlideFromTopAnimationProperty.Value="{Binding MenuVisible, 
                 Source={x:Static local:ViewModelBag.PopupMenuViewModel}}"/>
 
         <!-- This is the page hosting location -->
