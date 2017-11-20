@@ -59,6 +59,11 @@ namespace Morgan
         /// </summary>
         public bool EverythingLoaded { get; set; } = false;
 
+        /// <summary>
+        /// Data context of the settings form
+        /// </summary>
+        public SettingsFormViewModel SettingsForm { get; set; } = new SettingsFormViewModel();
+
         #endregion
 
         #region Commands
@@ -110,7 +115,8 @@ namespace Morgan
         /// </summary>
         private void Organize()
         {
-
+            // First, show the configuration form
+            SettingsForm.SettingsFormVisible ^= true;
         }
 
         #endregion

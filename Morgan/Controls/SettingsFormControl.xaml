@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="Morgan.SettingsFormControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Morgan"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="450">
+
+    <Grid Background="{StaticResource BackgroundSemiDarkBrush}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+
+            <!-- Back button -->
+            <Button Content=""
+                    Style="{StaticResource IconButton}"
+                    HorizontalAlignment="Left"
+                    Padding="15,10"
+                    Command="{Binding ToggleFormVisibilityCommand}"/>
+
+            <!-- Head text -->
+            <TextBlock HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontFamily="{StaticResource Ionicons}"
+                       Foreground="{StaticResource ForegroundLightBrush}"
+                       FontSize="25">
+                
+                <Run Text=""/>
+                <Run Text="Settings"/>
+
+            </TextBlock>
+
+        </Grid>
+        
+    </Grid>
+    
+</UserControl>

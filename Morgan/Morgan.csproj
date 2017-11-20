@@ -76,6 +76,9 @@
     <Compile Include="Animation\Data\SlideDirections.cs" />
     <Compile Include="Animation\FrameworkElementAnimation.cs" />
     <Compile Include="Animation\Property\SlideAnimationProperty.cs" />
+    <Compile Include="AttachedProperties\ButtonPanelAttachedProperty.cs" />
+    <Compile Include="AttachedProperties\PopupMenuAttachedProperty.cs" />
+    <Compile Include="AttachedProperties\SettingsFormAttachedProperty.cs" />
     <Compile Include="AttachedProperties\SideMenuAttachedProperty.cs" />
     <Compile Include="AttachedProperties\ButtonAttachedProperties.cs" />
     <Compile Include="AttachedProperties\TextBoxAttachedProperties.cs" />
@@ -86,6 +89,9 @@
     </Compile>
     <Compile Include="Controls\PopupMenuControl.xaml.cs">
       <DependentUpon>PopupMenuControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SettingsFormControl.xaml.cs">
+      <DependentUpon>SettingsFormControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\SideMenuControl.xaml.cs">
       <DependentUpon>SideMenuControl.xaml</DependentUpon>
@@ -121,6 +127,7 @@
     <Compile Include="ViewModel\Base\BaseViewModel.cs" />
     <Compile Include="ViewModel\Base\ViewModelBag.cs" />
     <Compile Include="ViewModel\Controls\PopupMenuViewModel.cs" />
+    <Compile Include="ViewModel\Controls\SettingsFormViewModel.cs" />
     <Compile Include="ViewModel\Controls\SideMenuControlViewModel.cs" />
     <Compile Include="ViewModel\Design\PopupMenuDesignModel.cs" />
     <Compile Include="ViewModel\Design\SideMenuControlDesignModel.cs" />
@@ -133,6 +140,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\PopupMenuControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SettingsFormControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
