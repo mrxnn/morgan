@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Windows.Input;
 using System.Collections.ObjectModel;
+
 namespace Morgan
 {
     /// <summary>
@@ -23,7 +24,7 @@ namespace Morgan
         /// <summary>
         /// Flag indicating if there is at least one location in the list
         /// </summary>
-        public bool HasLocation => LocationCount > 0;
+        public bool HasLocation { get; set; }
 
         /// <summary>
         /// Flag indicating if the Folder Browser Dialog is being displayed
@@ -94,7 +95,10 @@ namespace Morgan
 
                     // Add the new location
                     if (!LocationsList.Contains(location))
+                    {
                         LocationsList.Add(location);
+                        HasLocation = true;
+                    }
 
                     // Display a hint when the first location is added
                     if (!FirstLocationAdded)

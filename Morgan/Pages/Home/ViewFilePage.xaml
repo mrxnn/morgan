@@ -167,6 +167,13 @@
         
         <!--#endregion-->
         
+        <!-- Settings Form Control -->
+        <local:SettingsFormControl
+            Grid.RowSpan="2"
+            Visibility="Hidden"
+            DataContext="{Binding SettingsForm}"
+            local:SettingsSlideInFromBottomProperty.Value="{Binding SettingsFormVisible}"/>
+
     </Grid>
     
 </local:BasePage>
