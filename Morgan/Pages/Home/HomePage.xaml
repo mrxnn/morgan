@@ -36,13 +36,12 @@
             
             <!-- Page description -->
             <TextBlock Text="Lets add your music folders"
-                       FontFamily="{StaticResource RobotoRegular}"
                        Opacity=".7"
                        FontSize="18"/>
 
             <TextBlock Text="click the browse location button and select the folders"
-                       FontFamily="{StaticResource RobotoLight}"
                        Opacity=".5"
+                       FontWeight="Light"
                        FontSize="11"/>
 
             <!-- The button that the user can click to display the dialog -->
@@ -78,18 +77,17 @@
 
                     <TextBlock Text="{Binding LocationCount, FallbackValue=81}"
                                FontSize="30"
-                               Margin="10 -2 0 0"
-                               FontFamily="{StaticResource RobotoLight}"/>
+                               FontWeight="Light"
+                               Margin="10 -2 0 0"/>
 
                     <StackPanel Margin="10 -2 0 0">
 
                         <TextBlock Text="location(s)"
-                               FontSize="20"
-                               FontFamily="{StaticResource RobotoLight}"/>
+                                   FontSize="20"
+                                   FontWeight="Light"/>
 
                         <TextBlock Text="are selected"
-                               FontSize="10"
-                               FontFamily="{StaticResource RobotoLight}"/>
+                                   FontSize="10"/>
 
                     </StackPanel>
 

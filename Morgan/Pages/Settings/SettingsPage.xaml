@@ -21,7 +21,6 @@
                    Foreground="{StaticResource ForegroundLightBrush}"/>
 
             <TextBlock Text="S E T T I N G S"
-                   FontFamily="{StaticResource RobotoLight}"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    FontSize="30"
