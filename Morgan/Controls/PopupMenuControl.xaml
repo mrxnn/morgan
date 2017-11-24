@@ -22,7 +22,7 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     TextBlock.Foreground="{StaticResource ForegroundLightBrush}"
-                    TextBlock.FontFamily="{StaticResource RobotoLight}"
+                    TextBlock.FontWeight="Light"
                     TextBlock.FontSize="14">
 
             <!-- Main message -->

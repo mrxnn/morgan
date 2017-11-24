@@ -22,39 +22,64 @@
                 FontSize="30"
                 Command="{Binding ListLocationsCommand}"/>
 
-        <!-- Main content -->
+        <!--#region Main content-->
+        
         <StackPanel HorizontalAlignment="Center"
                     VerticalAlignment="Center"
-                    TextBlock.Foreground="{StaticResource ForegroundLightBrush}"
-                    TextBlock.TextAlignment="Center">
+                    TextBlock.Foreground="{StaticResource ForegroundDarkBrush}"
+                    TextBlock.TextAlignment="Left"
+                    TextBlock.FontSize="15">
 
-            <!-- Application Icon -->
-            <TextBlock Text=""
-                       Margin="0 -20 0 10"
-                       FontFamily="{StaticResource Ionicons}"
-                       FontSize="55"/>
-            
-            <!-- Page description -->
-            <TextBlock Text="Lets add your music folders"
-                       FontFamily="{StaticResource RobotoRegular}"
-                       Opacity=".7"
-                       FontSize="18"/>
+            <!-- App logo -->
+            <TextBlock Text="" 
+                       Margin="59 -30 0 10" 
+                       FontFamily="{StaticResource Ionicons}" 
+                       FontSize="100">
+                <TextBlock.RenderTransform>
+                    <RotateTransform Angle="46"/>
+                </TextBlock.RenderTransform>
+            </TextBlock>
 
-            <TextBlock Text="click the browse location button and select the folders"
-                       FontFamily="{StaticResource RobotoLight}"
-                       Opacity=".5"
-                       FontSize="11"/>
+            <!-- Heading text -->
+            <TextBlock Text="Getting Started"
+                       Foreground="{StaticResource ColorPrimaryBrush}"
+                       FontSize="25"/>
+
+            <!-- Instruction 1 -->
+            <StackPanel Orientation="Horizontal" Margin="0 15 0 0">
+                <TextBlock Text="Press " VerticalAlignment="Center"/>
+                <Border Background="{StaticResource BackgroundSemiDarkBrush}" CornerRadius="3">
+                    <TextBlock Text="locate" Foreground="White" Padding="3 2 3 3" FontSize="14"/>
+                </Border>
+                <TextBlock Text=" button to select new locations " VerticalAlignment="Center"/>
+            </StackPanel>
+
+            <!-- Instruction 2 -->
+            <TextBlock Text="Select the directories that contains music files"
+                       Margin="0 10 0 0"/>
+
+            <!-- Instruction 3 -->
+            <StackPanel Orientation="Horizontal"  Margin="0 10 0 0">
+                <TextBlock Text="Then " VerticalAlignment="Center"/>
+                <Border Background="{StaticResource BackgroundSemiDarkBrush}" CornerRadius="3">
+                    <TextBlock Text="continue" Foreground="White" Padding="3 2 3 3" FontSize="14"/>
+                </Border>
+            </StackPanel>
 
             <!-- The button that the user can click to display the dialog -->
-            <Button Content="Browse locations"
+            <Button Content="LOCATE"
+                    Width="120"
                     Margin="0 20 0 5"
-                    HorizontalAlignment="Center"
+                    HorizontalAlignment="Left"
                     Command="{Binding AddLocationCommand}"
                     local:ButtonAttachedProperties.IsBusy="{Binding IsLoadingALocation}"/>
 
         </StackPanel>
+        
+        <!--#endregion-->
 
-        <!-- Button Panel -->
+        <!--#region Bottom panel that contains Navigation-->
+        
         <local:ButtonPanelControl VerticalAlignment="Bottom"
             Visibility="{Binding HasLocation, Converter={local:BoolToVisibilityConverter}}"
             local:ButtonPanelSlideFromBottomProperty.Value="{Binding HasLocation}">
@@ -78,25 +103,24 @@
 
                     <TextBlock Text="{Binding LocationCount, FallbackValue=81}"
                                FontSize="30"
-                               Margin="10 -2 0 0"
-                               FontFamily="{StaticResource RobotoLight}"/>
+                               FontWeight="Light"
+                               Margin="10 -2 0 0"/>
 
                     <StackPanel Margin="10 -2 0 0">
 
                         <TextBlock Text="location(s)"
-                               FontSize="20"
-                               FontFamily="{StaticResource RobotoLight}"/>
+                                   FontSize="20"/>
 
-                        <TextBlock Text="are selected"
-                               FontSize="10"
-                               FontFamily="{StaticResource RobotoLight}"/>
+                        <TextBlock Text="# of locations added"
+                                   FontSize="10"/>
 
                     </StackPanel>
 
                 </StackPanel>
 
                 <!-- Continue Button -->
-                <Button Content="Continue"
+                <Button Content="CONTINUE"
+                    Width="110"
                     Style="{StaticResource SecondaryButton}"
                     Grid.Column="1"
                     Command="{Binding LoadFilesCommand}"/>
@@ -104,6 +128,8 @@
             </Grid>
 
         </local:ButtonPanelControl>
+        
+        <!--#endregion-->
 
     </Grid>
     

@@ -24,7 +24,6 @@
         <!--#region Header Grid-->
         
         <Grid TextBlock.Foreground="{StaticResource ForegroundLightBrush}"
-              TextBlock.FontFamily="{StaticResource RobotoRegular}"
               TextBlock.FontSize="16">
 
             <!--#region Grid header properties-->
@@ -93,7 +92,6 @@
 
         <StackPanel Grid.Row="1" Margin="10 20 10 10"
                     TextBlock.Foreground="{StaticResource ForegroundLightBrush}"
-                    TextBlock.FontFamily="{StaticResource RobotoRegular}"
                     TextBlock.FontSize="16"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Top">
@@ -117,8 +115,8 @@
                     <Style TargetType="Button" x:Key="TagCountButtonStyle" BasedOn="{StaticResource TileButton}">
                         <Setter Property="Background" Value="#282828"/>
                         <Setter Property="Width" Value="100"/>
-                        <Setter Property="FontFamily" Value="{StaticResource RobotoMedium}"/>
                         <Setter Property="FontSize" Value="28"/>
+                        <Setter Property="FontWeight" Value="Regular"/>
                         <Setter Property="Template">
                             <Setter.Value>
                                 <ControlTemplate TargetType="{x:Type Button}">
@@ -135,7 +133,7 @@
                                                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                                                 <!-- Name -->
                                                 <TextBlock Text="{TemplateBinding Tag}" FontSize="15" HorizontalAlignment="Center"
-                                                       FontFamily="{StaticResource RobotoRegular}" Margin="0 -0 0 5"/>
+                                                       Margin="0 -0 0 5"/>
                                             </StackPanel>
                                         </Border>
                                     </Grid>
@@ -159,8 +157,7 @@
             <!-- Header Text -->
             <TextBlock Text="Finally" FontSize="18" HorizontalAlignment="Left" Margin="0 30 0 10"/>
             <StackPanel Orientation="Horizontal">
-                <Button Content="Start organizing" Margin="0 0 5 0" Command="{Binding OrganizeCommand}"/>
-                <!--<Button Content="Edit tags" Style="{StaticResource SecondaryButton}" Command="{Binding EditCommand}"/>-->
+                <Button Content="START" Width="120" Margin="0 0 5 0" Command="{Binding OrganizeCommand}"/>
             </StackPanel>
 
         </StackPanel>

@@ -220,9 +220,6 @@
     </EmbeddedResource>
     <Resource Include="Fonts\ionicons.ttf" />
     <Resource Include="Fonts\Lato-Thin.ttf" />
-    <Resource Include="Fonts\Roboto-Light.ttf" />
-    <Resource Include="Fonts\Roboto-Medium.ttf" />
-    <Resource Include="Fonts\Roboto-Regular.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

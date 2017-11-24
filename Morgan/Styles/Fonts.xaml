@@ -7,10 +7,5 @@
     
     <!-- Icon Font -->
     <FontFamily x:Key="Ionicons">Ionicons, pack://application:,,,/Fonts/#Ionicons</FontFamily>
-    
-    <!-- Calibri Font -->
-    <FontFamily x:Key="RobotoRegular">pack://application:,,,/Fonts/#Roboto Regular</FontFamily>
-    <FontFamily x:Key="RobotoLight">pack://application:,,,/Fonts/#Roboto Light</FontFamily>
-    <FontFamily x:Key="RobotoMedium">pack://application:,,,/Fonts/#Roboto Medium</FontFamily>
 
 </ResourceDictionary>

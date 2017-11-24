@@ -45,8 +45,8 @@
         <Setter Property="Padding" Value="10"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="FontSize" Value="14"/>
-        <Setter Property="FontFamily" Value="{StaticResource RobotoMedium}"/>
         <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="FontWeight" Value="Medium"/>
         <Setter Property="local:ButtonAttachedProperties.IsBusy" Value="False"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -98,8 +98,8 @@
         <Setter Property="Padding" Value="10"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="FontSize" Value="14"/>
-        <Setter Property="FontFamily" Value="{StaticResource RobotoMedium}"/>
         <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="FontWeight" Value="Medium"/>
         <Setter Property="local:ButtonAttachedProperties.IsBusy" Value="False"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -194,7 +194,6 @@
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="FontSize" Value="30"/>
         <Setter Property="FontFamily" Value="{StaticResource Ionicons}"/>
-        <Setter Property="FontWeight" Value="Light"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="RenderTransform">
             <Setter.Value>
