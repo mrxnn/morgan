@@ -115,6 +115,7 @@
                     <Style TargetType="Button" x:Key="TagCountButtonStyle" BasedOn="{StaticResource TileButton}">
                         <Setter Property="Background" Value="#282828"/>
                         <Setter Property="Width" Value="100"/>
+                        <Setter Property="Foreground" Value="#FFCFCFCF"/>
                         <Setter Property="FontSize" Value="28"/>
                         <Setter Property="FontWeight" Value="Regular"/>
                         <Setter Property="Template">
@@ -138,6 +139,20 @@
                                         </Border>
                                     </Grid>
                                     <ControlTemplate.Triggers>
+                                        <EventTrigger RoutedEvent="MouseEnter">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <ColorAnimation To="White" Duration="0:0:0.2" Storyboard.TargetProperty="Foreground.Color"/>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                        <EventTrigger RoutedEvent="MouseLeave">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <ColorAnimation To="#FFCFCFCF" Duration="0:0:0.2" Storyboard.TargetProperty="Foreground.Color"/>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
                                     </ControlTemplate.Triggers>
                                 </ControlTemplate>
                             </Setter.Value>
@@ -154,8 +169,12 @@
 
             </Grid>
 
+            <TextBlock Text="click the tag count buttons to edit specific tags"
+                       Foreground="{StaticResource ForegroundDarkBrush}"
+                       FontSize="13" Margin="0 4 0 0" Opacity=".7"/>
+
             <!-- Header Text -->
-            <TextBlock Text="Finally" FontSize="18" HorizontalAlignment="Left" Margin="0 30 0 10"/>
+            <TextBlock Text="Finally, let's organize!" FontSize="18" HorizontalAlignment="Left" Margin="0 30 0 10"/>
             <StackPanel Orientation="Horizontal">
                 <Button Content="START" Width="120" Margin="0 0 5 0" Command="{Binding OrganizeCommand}"/>
             </StackPanel>
