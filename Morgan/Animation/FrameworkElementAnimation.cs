@@ -43,6 +43,13 @@ namespace Morgan
                     break;
             }
 
+            // Determine the easing function based on the element's offset
+            IEasingFunction _easingFunction = null;
+            if (offset < 75)
+                _easingFunction = new PowerEase { EasingMode = easing, Power = 10 };
+            else
+                _easingFunction = new QuadraticEase() { EasingMode = EasingMode.EaseOut };
+
             // Init the animation to play
             var animation = new ThicknessAnimation
             {
@@ -50,7 +57,7 @@ namespace Morgan
                 To= new Thickness(0),
                 Duration = new Duration(TimeSpan.FromSeconds(duration)),
                 DecelerationRatio = decelerationRatio,
-                EasingFunction = new PowerEase { EasingMode = easing, Power=10 }
+                EasingFunction = _easingFunction
             };
 
             // Set the target property
@@ -102,7 +109,7 @@ namespace Morgan
                 To = _expectedThickness,
                 Duration = new Duration(TimeSpan.FromSeconds(duration)),
                 DecelerationRatio = decelerationRatio,
-                EasingFunction = new PowerEase { EasingMode = easing, Power = 10 }
+                EasingFunction = new QuadraticEase() { EasingMode = EasingMode.EaseIn }
             };
 
             // Set the target property
