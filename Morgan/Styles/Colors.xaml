@@ -23,7 +23,7 @@
 
     <!-- PRIMARY COLORS -->
 
-    <Color x:Key="ColorPrimary">#0c9ae6</Color>
+    <Color x:Key="ColorPrimary">#1976d2</Color>
     <SolidColorBrush x:Key="ColorPrimaryBrush" Color="{StaticResource ColorPrimary}"/>
     
     <!-- LIGHT AND DARK -->

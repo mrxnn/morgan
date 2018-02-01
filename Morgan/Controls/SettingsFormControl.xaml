@@ -36,6 +36,17 @@
             </TextBlock>
 
         </Grid>
+
+        <StackPanel Margin="20" Grid.Row="1">
+
+            <TextBlock Text="Location" Foreground="{StaticResource ForegroundLightBrush}" FontSize="22"/>
+            <TextBox Tag="Location to store the music files" Margin="0 10 0 15"
+                     local:TextBoxAttachedProperties.FocusControlOnLoad="True"/>
+
+            <TextBlock Text="Hierachy" Foreground="{StaticResource ForegroundLightBrush}" FontSize="22" Margin="0 15 0 10"/>
+            <TextBox Tag="Hierachy of the tags to make the structure"/>
+
+        </StackPanel>
         
     </Grid>
     
