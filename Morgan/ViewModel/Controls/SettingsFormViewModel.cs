@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using System;
+using System.Windows.Input;
 
 namespace Morgan
 {
@@ -14,6 +15,16 @@ namespace Morgan
         /// </summary>
         public bool SettingsFormVisible { get; set; }
 
+        /// <summary>
+        /// Path to the directory to save the organized files
+        /// </summary>
+        public string SaveFilePath { get; set; }
+
+        /// <summary>
+        /// String containing the structure to build
+        /// </summary>
+        public string FileStructure { get; set; }
+
         #endregion
 
         #region Commands
@@ -22,6 +33,11 @@ namespace Morgan
         /// Command to hide or show the settings form control
         /// </summary>
         public ICommand ToggleFormVisibilityCommand { get; set; }
+
+        /// <summary>
+        /// Command to organize the music files based on the <see cref="FileStructure"/>
+        /// </summary>
+        public ICommand OrganizeFilesCommand { get; set; }
 
         #endregion
 
@@ -32,7 +48,13 @@ namespace Morgan
         /// </summary>
         public SettingsFormViewModel()
         {
+            // Create Commands
             ToggleFormVisibilityCommand = new ActionCommand(ToggleVisibility);
+            OrganizeFilesCommand = new ActionCommand(OrganizeFiles);
+
+            // Set the default file location and the structure
+            SaveFilePath = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
+            FileStructure = "genre, artist, album, file";
         }
 
         #endregion
@@ -45,6 +67,14 @@ namespace Morgan
         private void ToggleVisibility()
         {
             SettingsFormVisible ^= true;
+        }
+
+        /// <summary>
+        /// Puts all the files in a logical structure based on the Music tags
+        /// </summary>
+        private async void OrganizeFiles()
+        {
+            // TODO:
         }
 
         #endregion
