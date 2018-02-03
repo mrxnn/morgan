@@ -23,17 +23,12 @@
                             <!-- Inner content -->
                             <Grid>
 
-                                <!-- Border that is used to clip the background mask -->
-                                <Border x:Name="ClippedBorder"
-                                        CornerRadius="{Binding WindowCornerRadius, FallbackValue=5}"
-                                        Background="{StaticResource BackgroundVeryDarkBrush}"/>
-
                                 <!-- 
                                 Background Border that has the background color and the drop shadow effect. It's necessary 
                                 to use a separate border for drop shadow in order to prevent inner content being blurred.
                                 -->
                                 <Border Background="{StaticResource BackgroundVeryDarkBrush}"
-                                        CornerRadius="{Binding WindowCornerRadius, FallbackValue=5}">
+                                        CornerRadius="{Binding WindowCornerRadius, FallbackValue=3}">
                                     <Border.Effect>
                                         <DropShadowEffect ShadowDepth="0" Opacity=".7" RenderingBias="Quality"/>
                                     </Border.Effect>
@@ -41,10 +36,6 @@
 
                                 <!-- Actual Content Grid -->
                                 <Grid ClipToBounds="True">
-
-                                    <Grid.OpacityMask>
-                                        <VisualBrush Visual="{Binding ElementName=ClippedBorder}"/>
-                                    </Grid.OpacityMask>
 
                                     <Grid.RowDefinitions>
 
@@ -58,7 +49,7 @@
                                     <!-- Window Title Bar -->
                                     <Border Grid.Row="0"
                                             Panel.ZIndex="20000"
-                                            CornerRadius="{Binding TitleBarCornerRadius, FallbackValue=3}">
+                                            CornerRadius="{Binding TitleBarCornerRadius, FallbackValue=2}">
 
                                         <!-- Linear Gradient of the Window Title -->
                                         <Border.Background>

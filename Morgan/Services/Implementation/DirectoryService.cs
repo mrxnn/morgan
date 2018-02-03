@@ -77,6 +77,15 @@ namespace Morgan
                 foreach (var item in locations)
                 {
                     // Get the files from a single location
+
+                    /**
+                     * NOTE: 
+                     * 
+                     * Eventhough here we call a method that runs on the UI thread, framework can automatically handle
+                     * any possible deadlock scenario. If the called method is transitioned into something else later, 
+                     * its better to review this method call.
+                     */
+
                     var musicFiles = await GetMusicFilesFromASingleLocationAsync(item);
 
                     // Add the files to the list

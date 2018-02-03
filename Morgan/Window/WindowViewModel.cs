@@ -32,12 +32,12 @@ namespace Morgan
         /// <summary>
         /// The Window Corner Radius (Rounded Corners of the Main Window)
         /// </summary>
-        public CornerRadius WindowCornerRadius => _window.WindowState == WindowState.Maximized ? new CornerRadius(0) : new CornerRadius(5);
+        public CornerRadius WindowCornerRadius => _window.WindowState == WindowState.Maximized ? new CornerRadius(0) : new CornerRadius(3);
 
         /// <summary>
         /// Corner Radius of the Window Title Bar
         /// </summary>
-        public CornerRadius TitleBarCornerRadius => _window.WindowState == WindowState.Maximized ? new CornerRadius(1) : new CornerRadius(4);
+        public CornerRadius TitleBarCornerRadius => _window.WindowState == WindowState.Maximized ? new CornerRadius(1) : new CornerRadius(2);
 
         #endregion
 

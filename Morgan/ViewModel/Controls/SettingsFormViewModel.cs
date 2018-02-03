@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Input;
 
 namespace Morgan
@@ -21,9 +22,19 @@ namespace Morgan
         public string SaveFilePath { get; set; }
 
         /// <summary>
+        /// The file path that is displayed on the control, used for validations
+        /// </summary>
+        public string DisplaySaveFilePath { get; set; }
+
+        /// <summary>
         /// String containing the structure to build
         /// </summary>
         public string FileStructure { get; set; }
+
+        /// <summary>
+        /// The file structure used to to display on the control, used for validations
+        /// </summary>
+        public string DisplayFileStructure { get; set; }
 
         #endregion
 
@@ -35,9 +46,9 @@ namespace Morgan
         public ICommand ToggleFormVisibilityCommand { get; set; }
 
         /// <summary>
-        /// Command to organize the music files based on the <see cref="FileStructure"/>
+        /// Command to save the two required settings and hides the settings control
         /// </summary>
-        public ICommand OrganizeFilesCommand { get; set; }
+        public ICommand SaveStructureSettingsCommand { get; set; }
 
         #endregion
 
@@ -50,11 +61,15 @@ namespace Morgan
         {
             // Create Commands
             ToggleFormVisibilityCommand = new ActionCommand(ToggleVisibility);
-            OrganizeFilesCommand = new ActionCommand(OrganizeFiles);
+            SaveStructureSettingsCommand = new ActionCommand(SaveStructureSettings);
 
             // Set the default file location and the structure
-            SaveFilePath = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
+            SaveFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyMusic), "Structure");
             FileStructure = "genre, artist, album, file";
+
+            // Set the displayed values
+            DisplaySaveFilePath = SaveFilePath;
+            DisplayFileStructure = FileStructure;
         }
 
         #endregion
@@ -66,15 +81,37 @@ namespace Morgan
         /// </summary>
         private void ToggleVisibility()
         {
+            // Hide the control
             SettingsFormVisible ^= true;
+
+            // Set the displayed values
+            DisplaySaveFilePath = SaveFilePath;
+            DisplayFileStructure = FileStructure;
         }
 
         /// <summary>
-        /// Puts all the files in a logical structure based on the Music tags
+        /// Save the two required settings and hides the settings control
         /// </summary>
-        private async void OrganizeFiles()
+        private void SaveStructureSettings()
         {
-            // TODO:
+            try
+            {
+
+                // TODO: Validation - Make sure the entered settings are valid
+
+                // Update the actual values with the displayed values
+                SaveFilePath = DisplaySaveFilePath;
+                FileStructure = DisplayFileStructure;
+            }
+            catch (Exception e)
+            {
+                // TODO: Log the exception to loggers
+            }
+            finally
+            {
+                // Hide this control
+                SettingsFormVisible ^= true;
+            }
         }
 
         #endregion

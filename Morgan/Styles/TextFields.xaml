@@ -6,8 +6,8 @@
     <Style TargetType="{x:Type TextBox}">
         <Setter Property="Background" Value="{StaticResource BackgroundSemiDarkBrush}"/>
         <Setter Property="BorderBrush" Value="Gray"/>
-        <Setter Property="BorderThickness" Value="0 0 0 2"/>
-        <Setter Property="Padding" Value="0 6 6 6"/>
+        <Setter Property="BorderThickness" Value="0 0 0 1"/>
+        <Setter Property="Padding" Value="0 10 0 2"/>
         <Setter Property="Foreground" Value="{StaticResource ForegroundLightBrush}"/>
         <Setter Property="FontSize" Value="17"/>
         <Setter Property="FontFamily" Value="Calibri"/>
@@ -38,8 +38,8 @@
                                             <!-- Float to top animation -->
                                             <Storyboard x:Key="floatUpStoryboard">
                                                 <ThicknessAnimation To="0 -18 0 18" Duration="0:0:0.2" Storyboard.TargetProperty="Margin"/>
-                                                <DoubleAnimation To="12" Duration="0:0:0.2" Storyboard.TargetProperty="FontSize"/>
-                                                <DoubleAnimation To="12" Duration="0:0:0.2" Storyboard.TargetProperty="FontSize"/>
+                                                <DoubleAnimation To="13" Duration="0:0:0.2" Storyboard.TargetProperty="FontSize"/>
+                                                <DoubleAnimation To="13" Duration="0:0:0.2" Storyboard.TargetProperty="FontSize"/>
                                                 <ColorAnimation To="{StaticResource ColorPrimary}" Duration="0:0:0.2" Storyboard.TargetProperty="Foreground.Color"/>
                                             </Storyboard>
 

@@ -10,8 +10,6 @@
 
     <Grid>
         
-        <!--#region Grid Factors-->
-
         <Grid.RowDefinitions>
             <!-- Header Grid -->
             <RowDefinition Height="4*"/>
@@ -19,15 +17,9 @@
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
         
-        <!--#endregion-->
-
-        <!--#region Header Grid-->
-        
         <Grid TextBlock.Foreground="{StaticResource ForegroundLightBrush}"
               TextBlock.FontSize="16">
 
-            <!--#region Grid header properties-->
-            
             <!-- Shadow effect of the header border -->
             <Grid.Effect>
                 <DropShadowEffect ShadowDepth="2" Opacity=".2"/>
@@ -41,8 +33,6 @@
                 </LinearGradientBrush>
             </Grid.Background>
             
-            <!--#endregion-->
-
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
 
                 <!-- Status Indicator Icon -->
@@ -86,10 +76,6 @@
 
         </Grid>
         
-        <!--#endregion-->
-        
-        <!--#region Options Grid-->
-
         <StackPanel Grid.Row="1" Margin="10 20 10 10"
                     TextBlock.Foreground="{StaticResource ForegroundLightBrush}"
                     TextBlock.FontSize="16"
@@ -176,12 +162,11 @@
             <!-- Header Text -->
             <TextBlock Text="Finally, let's organize!" FontSize="18" HorizontalAlignment="Left" Margin="0 30 0 10"/>
             <StackPanel Orientation="Horizontal">
-                <Button Content="START" Width="120" Margin="0 0 5 0" Command="{Binding OrganizeCommand}"/>
+                <Button Content="START" Width="120" Margin="0 0 10 0" Command="{Binding OrganizeCommand}"/>
+                <Button Content="" Style="{StaticResource IconButton}" Command="{Binding ShowSettingCommand}" Opacity=".8"/>
             </StackPanel>
 
         </StackPanel>
-        
-        <!--#endregion-->
         
         <!-- Settings Form Control -->
         <local:SettingsFormControl

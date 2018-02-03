@@ -78,6 +78,11 @@ namespace Morgan
         /// </summary>
         public ICommand OrganizeCommand { get; set; }
 
+        /// <summary>
+        /// Command to show the file organize settings
+        /// </summary>
+        public ICommand ShowSettingCommand { get; set; }
+
         #endregion
 
         #region Constructors
@@ -90,6 +95,7 @@ namespace Morgan
             // Create commands
             EditCommand = new ActionCommand(Edit);
             OrganizeCommand = new ActionCommand(Organize);
+            ShowSettingCommand = new ActionCommand(ShowSettingsForm);
 
             // Initialize the prerequesite properties
             LocationsList = IoC.ApplicationViewModel.LocationList;
@@ -115,7 +121,15 @@ namespace Morgan
         /// </summary>
         private void Organize()
         {
-            // First, show the configuration form
+            
+        }
+
+        /// <summary>
+        /// Displays the <see cref="SettingsFormControl"/>
+        /// </summary>
+        private void ShowSettingsForm()
+        {
+            // Show the configuration form
             SettingsForm.SettingsFormVisible ^= true;
         }
 
