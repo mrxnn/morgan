@@ -163,7 +163,7 @@
             <TextBlock Text="Finally, let's organize!" FontSize="18" HorizontalAlignment="Left" Margin="0 30 0 10"/>
             <StackPanel Orientation="Horizontal">
                 <Button Content="START" Width="120" Margin="0 0 10 0" Command="{Binding OrganizeCommand}"/>
-                <Button Content="" Style="{StaticResource IconButton}" Command="{Binding ShowSettingCommand}" Opacity=".8"/>
+                <Button Content="" Style="{StaticResource IconButton}" Command="{Binding ShowSettingCommand}" Opacity=".8"/>
             </StackPanel>
 
         </StackPanel>

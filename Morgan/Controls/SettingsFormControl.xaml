@@ -30,7 +30,6 @@
                        Foreground="{StaticResource ForegroundLightBrush}"
                        FontSize="25">
                 
-                <Run Text=""/>
                 <Run Text="Settings"/>
 
             </TextBlock>
@@ -38,6 +37,10 @@
         </Grid>
 
         <StackPanel Margin="20" Grid.Row="1">
+
+            <TextBlock Text="Provide new values only if you want to override the default settings"
+                       TextWrapping="Wrap" Margin="0 0 0 20" Opacity=".5"
+                       Foreground="{StaticResource ForegroundLightBrush}" FontSize="16"/>
 
             <TextBlock Text="Location" Foreground="{StaticResource ForegroundLightBrush}" FontSize="22"/>
             <TextBox Tag="Location to store the music files" Margin="0 10 0 15"
