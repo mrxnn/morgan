@@ -14,6 +14,11 @@ namespace Morgan
         #region Public Properties
 
         /// <summary>
+        /// Service to organize the music files in a hierachical order!
+        /// </summary>
+        public IFileStructureService FileStructureService { get; set; }
+
+        /// <summary>
         /// List of all the music folder locations to scan for music files
         /// </summary>
         public IList<string> LocationsList { get; set; } = new List<string>();
@@ -22,7 +27,8 @@ namespace Morgan
         /// List of music files after each music file is mapped to <see cref="MusicFileViewModel"/> instances.
         /// So that each music file contains all the required metadata that is used to re-arrange files
         /// </summary>
-        public ObservableCollection<MusicFileViewModel> MusicFileList { get; set; } = new ObservableCollection<MusicFileViewModel>();
+        public ObservableCollection<MusicFileViewModel> MusicFileList { get; set; }
+            = new ObservableCollection<MusicFileViewModel>();
 
         /// <summary>
         /// Number of locations stored in the Location list
@@ -69,11 +75,6 @@ namespace Morgan
         #region Commands
 
         /// <summary>
-        /// Command to edit music files
-        /// </summary>
-        public ICommand EditCommand { get; set; }
-
-        /// <summary>
         /// Command to organize music files in a folder structure
         /// </summary>
         public ICommand OrganizeCommand { get; set; }
@@ -90,15 +91,15 @@ namespace Morgan
         /// <summary>
         /// Default constructor
         /// </summary>
-        public ViewFilePageViewModel()
+        public ViewFilePageViewModel(IFileStructureService fileStructureService)
         {
+            // Init Services
+            FileStructureService = fileStructureService;
+            LocationsList = IoC.ApplicationViewModel.LocationList;
+
             // Create commands
-            EditCommand = new ActionCommand(Edit);
             OrganizeCommand = new ActionCommand(Organize);
             ShowSettingCommand = new ActionCommand(ShowSettingsForm);
-
-            // Initialize the prerequesite properties
-            LocationsList = IoC.ApplicationViewModel.LocationList;
 
             // Load the music files
             LoadMusicFiles();
@@ -109,19 +110,14 @@ namespace Morgan
         #region Command Methods
 
         /// <summary>
-        /// <see cref="EditCommand"/> handler
-        /// </summary>
-        private void Edit()
-        {
-
-        }
-
-        /// <summary>
         /// Handler for the <see cref="OrganizeCommand"/>
         /// </summary>
-        private void Organize()
+        private async void Organize()
         {
-            
+            await FileStructureService.OrganizeAsync(
+                SettingsForm.SaveFilePath,
+                MusicFileList, 
+                new FileHierachicalOrder());
         }
 
         /// <summary>

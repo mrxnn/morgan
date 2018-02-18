@@ -121,7 +121,7 @@ namespace Morgan
         /// </summary>
         private void LoadFiles()
         {
-            // Set the root music directory location i a glabal scope
+            // Set the root music directory location in a glabal scope
             IoC.ApplicationViewModel.LocationList = this.LocationsList;
 
             // Change the current page of the application
@@ -133,8 +133,8 @@ namespace Morgan
         /// </summary>
         private void ListLocations()
         {
-            IoC.PopupMenuViewModel.ShowMenu("Be patient dude! This will list locations before the final release",
-                "Eg: London, New York, Capital of Hell etc...");
+            IoC.PopupMenuViewModel.ShowMenu("Ooops! This function isn't implemented yet", 
+                "All the functionality will be added after the beta version");
         }
 
         #endregion

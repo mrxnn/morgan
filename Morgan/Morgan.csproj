@@ -115,8 +115,12 @@
     </Compile>
     <Compile Include="Services\Implementation\DirectoryService.cs" />
     <Compile Include="Services\Implementation\MetadataService.cs" />
+    <Compile Include="Services\Implementation\FileStructureService.cs" />
     <Compile Include="Services\Interfaces\IDirectoryService.cs" />
+    <Compile Include="Services\Interfaces\IFileStructureService.cs" />
     <Compile Include="Services\Interfaces\IMetadataService.cs" />
+    <Compile Include="DataModel\FileHierachicalOrder.cs" />
+    <Compile Include="DataModel\TagType.cs" />
     <Compile Include="ValueConverters\ApplicationPageConverter.cs" />
     <Compile Include="ValueConverters\ApplicationSubPageConverter.cs" />
     <Compile Include="ValueConverters\Base\BaseValueConverter.cs" />

@@ -36,6 +36,11 @@ namespace Morgan
         /// </summary>
         public string Title { get; set; }
 
+        /// <summary>
+        /// The file extension
+        /// </summary>
+        public string Extension => Path.GetExtension(Location);
+
         #endregion
 
         #region Constructors
@@ -54,25 +59,46 @@ namespace Morgan
 
         #endregion
 
-        #region Private Methods
+        #region Methods
 
         /// <summary>
         /// Loads the required metadata such as genre, album for this file
         /// </summary>
         private void LoadMetaData()
         {
-            // If the file is deleted at this moment after it's loaded,
             if (!File.Exists(Location))
                 return;
 
             // Get all the metadata for this file
-            var md = IoC.Get<IMetadataService>().GetMetaData(Location);
+            var (genre, artist, album, title) = IoC.Get<IMetadataService>().GetMetaData(Location);
 
             // Initialize the properties with the metadata
-            Genre = string.IsNullOrEmpty(md.genre) ? "Unknown Genre" : md.genre;
-            Artist = string.IsNullOrEmpty(md.artist) ? "Unknown Artist" : md.artist;
-            Album = string.IsNullOrEmpty(md.album) ? "Unknown Album" : md.album;
-            Title = md.title;
+            Genre = (string.IsNullOrEmpty(genre) ? "Unknown Genre" : genre).NormalizeString();
+            Artist = (string.IsNullOrEmpty(artist) ? "Unknown Artist" : artist).NormalizeString();
+            Album = (string.IsNullOrEmpty(album) ? "Unknown Album" : album).NormalizeString();
+            Title = title.NormalizeString();
+        }
+
+        /// <summary>
+        /// Returns the metadata for a specific tag
+        /// </summary>
+        /// <param name="tag"></param>
+        /// <returns></returns>
+        public object Get(TagType tag)
+        {
+            switch (tag)
+            {
+                case TagType.Genre:
+                    return this.Genre;
+                case TagType.Artist:
+                    return this.Artist;
+                case TagType.Album:
+                    return this.Album;
+                case TagType.Title:
+                    return this.Title;
+                default:
+                    return "Unknown";
+            }
         }
 
         #endregion
