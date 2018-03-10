@@ -4,13 +4,14 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Morgan"
+      xmlns:core="clr-namespace:Morgan.Core;assembly=Morgan.Core"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="520"
       Title="BaseHomePage">
 
     <Grid>
         <Frame Content="{Binding ApplicationSubHomePage, 
-            Source={x:Static local:ViewModelBag.ApplicationViewModel},
+            Source={x:Static core:ViewModelBag.ApplicationViewModel},
             Converter={local:ApplicationSubHomePageConverter}}"/>
     </Grid>
     

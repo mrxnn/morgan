@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ninject" Version="3.2.2" />
+    <PackageReference Include="PropertyChanged.Fody" Version="2.2.2" />
+    <PackageReference Include="taglib" Version="2.1.0" />
+  </ItemGroup>
+
+</Project>

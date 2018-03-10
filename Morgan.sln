@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.8
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Morgan", "Morgan\Morgan.csproj", "{286F3DED-F966-4934-9F6C-D5BA47E06FDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Morgan.Core", "Morgan.Core\Morgan.Core.csproj", "{9D13AF8E-0F20-4C94-B641-8555D18B92FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{286F3DED-F966-4934-9F6C-D5BA47E06FDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{286F3DED-F966-4934-9F6C-D5BA47E06FDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{286F3DED-F966-4934-9F6C-D5BA47E06FDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D13AF8E-0F20-4C94-B641-8555D18B92FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D13AF8E-0F20-4C94-B641-8555D18B92FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D13AF8E-0F20-4C94-B641-8555D18B92FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D13AF8E-0F20-4C94-B641-8555D18B92FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

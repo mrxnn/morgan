@@ -4,9 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Morgan"
+             xmlns:core="clr-namespace:Morgan.Core;assembly=Morgan.Core"
              mc:Ignorable="d" d:DesignWidth="300"
              MaxWidth="320" MinWidth="250"
-             d:DataContext="{x:Static local:PopupMenuDesignModel.Instance}">
+             d:DataContext="{x:Static core:PopupMenuDesignModel.Instance}">
 
     <Grid>
 

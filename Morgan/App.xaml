@@ -1,8 +1,7 @@
 ﻿<Application x:Class="Morgan.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Morgan"
-             StartupUri="MainWindow.xaml">
+             xmlns:local="clr-namespace:Morgan">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

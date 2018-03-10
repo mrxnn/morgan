@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using Morgan.Core;
+using System.Windows;
 using System.Windows.Input;
 
 namespace Morgan

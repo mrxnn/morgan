@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Morgan"
+        xmlns:core="clr-namespace:Morgan.Core;assembly=Morgan.Core"
         mc:Ignorable="d"
         WindowStyle="None"
         AllowsTransparency="True"
@@ -159,11 +160,11 @@
             HorizontalAlignment="Center"
             Panel.ZIndex="10000"
             local:PopupMenuSlideFromTopProperty.Value="{Binding MenuVisible, 
-                Source={x:Static local:ViewModelBag.PopupMenuViewModel}}"/>
+                Source={x:Static core:ViewModelBag.PopupMenuViewModel}}"/>
 
         <!-- This is the page hosting location -->
         <Frame Content="{Binding CurrentPage, 
-            Source={x:Static local:ViewModelBag.ApplicationViewModel},
+            Source={x:Static core:ViewModelBag.ApplicationViewModel},
             Converter={local:ApplicationPageConverter}}"
             NavigationUIVisibility="Hidden"
             Grid.Column="1"/>
