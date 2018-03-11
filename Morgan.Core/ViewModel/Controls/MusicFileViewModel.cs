@@ -72,10 +72,10 @@ namespace Morgan.Core
             var (genre, artist, album, title) = IoC.Get<IMetadataService>().GetMetaData(Location);
 
             // Initialize the properties with the metadata
-            Genre = (string.IsNullOrEmpty(genre) ? "Unknown Genre" : genre).NormalizeString();
-            Artist = (string.IsNullOrEmpty(artist) ? "Unknown Artist" : artist).NormalizeString();
-            Album = (string.IsNullOrEmpty(album) ? "Unknown Album" : album).NormalizeString();
-            Title = title.NormalizeString();
+            Genre = (string.IsNullOrEmpty(genre) ? "Unknown Genre" : genre);
+            Artist = (string.IsNullOrEmpty(artist) ? "Unknown Artist" : artist);
+            Album = (string.IsNullOrEmpty(album) ? "Unknown Album" : album);
+            Title = title;
         }
 
         /// <summary>
@@ -83,21 +83,23 @@ namespace Morgan.Core
         /// </summary>
         /// <param name="tag"></param>
         /// <returns></returns>
-        public object Get(TagType tag)
+        public string Get(TagType? tag)
         {
             switch (tag)
             {
-                case TagType.Genre:
+                case TagType.GENRE:
                     return Genre;
-                case TagType.Artist:
+                case TagType.ARTIST:
                     return Artist;
-                case TagType.Album:
+                case TagType.ALBUM:
                     return Album;
-                case TagType.Title:
+                case TagType.TITLE:
                     return Title;
-                default:
-                    return "Unknown";
+                case TagType.NONE:
+                    return string.Empty;
             }
+
+            return string.Empty;
         }
 
         #endregion

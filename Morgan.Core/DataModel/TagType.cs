@@ -5,9 +5,10 @@
     /// </summary>
     public enum TagType
     {
-        Genre = 0,
-        Artist = 1,
-        Album = 2,
-        Title = 4
+        GENRE = 0,
+        ARTIST = 1,
+        ALBUM = 2,
+        TITLE = 4,
+        NONE = 8
     }
 }

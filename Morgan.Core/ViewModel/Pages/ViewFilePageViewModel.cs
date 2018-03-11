@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
@@ -114,10 +115,52 @@ namespace Morgan.Core
         /// </summary>
         private async void Organize()
         {
+            // Get the whole structure as a string and remove the title
+            var structure = SettingsForm.FileStructure.ToUpperInvariant();
+            if (structure.Contains("TITLE"))
+            {
+                int index = structure.IndexOf("TITLE");
+                structure = structure.Remove(index, 5);
+            }
+
+            // List of tags that the user has specified in the settings
+            var tags = structure.Split(",- ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
+                .Select(t => t.Trim())
+                .ToList();
+
+            // Placeholder variables for future content
+            TagType? tt1, tt2, tt3;
+            tt1 = tt2 = tt3 = TagType.NONE;
+
+            // Recursively initialize the tags
+            if (!string.IsNullOrEmpty((tags.ElementAtOrDefault(0))))
+            {
+                // Get the first tag
+                tt1 = (TagType)Enum.Parse(typeof(TagType), tags.ElementAtOrDefault(0));
+
+                if (!string.IsNullOrEmpty((tags.ElementAtOrDefault(1))))
+                {
+                    // Get the second tag
+                    tt2 = (TagType)Enum.Parse(typeof(TagType), tags.ElementAtOrDefault(1));
+
+                    if (!string.IsNullOrEmpty((tags.ElementAtOrDefault(2))))
+                    {
+                        // Get the third tag
+                        tt3 = (TagType)Enum.Parse(typeof(TagType), tags.ElementAtOrDefault(2));
+                    }
+                }
+            }
+
+            // Start organizing the files using any file organizer provider!
             await FileStructureService.OrganizeAsync(
                 SettingsForm.SaveFilePath,
                 MusicFileList, 
-                new FileHierachicalOrder());
+                new FileHierachicalOrder
+                {
+                    Level1 = tt1,
+                    Level2 = tt2,
+                    Level3 = tt3,
+                });
         }
 
         /// <summary>
