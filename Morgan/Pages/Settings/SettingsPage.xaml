@@ -14,17 +14,19 @@
                     VerticalAlignment="Center">
 
             <TextBlock Text=""
+                   Style="{StaticResource SpinnerOnLoadText}"
                    FontFamily="{StaticResource Ionicons}"
+                   FontSize="70"
+                   Foreground="{StaticResource ColorPrimaryBrush}"/>
+
+            <TextBlock Text="Ooops!"
                    HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
-                   FontSize="100"
+                   FontSize="30" FontWeight="Light"
                    Foreground="{StaticResource ForegroundLightBrush}"/>
 
-            <TextBlock Text="S E T T I N G S"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
-                   FontSize="30"
-                   Foreground="{StaticResource ForegroundLightBrush}"/>
+            <TextBlock Text="Sorry! Settings isn't implemented yet."
+                       Foreground="{StaticResource ForegroundDarkBrush}"
+                       FontSize="15" Margin="0 5 0 0"/>
 
         </StackPanel>
 

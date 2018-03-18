@@ -39,7 +39,47 @@
             </DataTrigger>
         </Style.Triggers>
     </Style>
-    
+
+    <!-- Spinner that spins only for a period of time -->
+    <Style x:Key="SpinnerOnLoadText" TargetType="TextBlock">
+
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Text" Value="&#xF29C;"/>
+        <Setter Property="FontFamily" Value="{StaticResource Ionicons}"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+        <Setter Property="RenderTransform">
+            <Setter.Value>
+                <RotateTransform/>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Resources>
+            <Storyboard x:Key="SpinnerStoryboard">
+                <DoubleAnimation From="0"
+                    To="1000"
+                    Duration="0:0:2"
+                    Storyboard.TargetProperty="(UIElement.RenderTransform).(RotateTransform.Angle)">
+                    <DoubleAnimation.EasingFunction>
+                        <QuadraticEase/>
+                    </DoubleAnimation.EasingFunction>
+                </DoubleAnimation>
+            </Storyboard>
+        </Style.Resources>
+
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsVisible, RelativeSource={x:Static RelativeSource.Self}}" Value="True">
+                <DataTrigger.EnterActions>
+                    <BeginStoryboard x:Name="ttt" Storyboard="{StaticResource SpinnerStoryboard}"/>
+                </DataTrigger.EnterActions>
+                <DataTrigger.ExitActions>
+                    <RemoveStoryboard BeginStoryboardName="ttt"/>
+                </DataTrigger.ExitActions>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
     <!-- Icon Text Block -->
     <Style x:Key="IconTextBlock" TargetType="{x:Type TextBlock}">
         <Setter Property="FontFamily" Value="{StaticResource Ionicons}"/>

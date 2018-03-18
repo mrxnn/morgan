@@ -23,7 +23,7 @@
                 Command="{Binding ListLocationsCommand}"/>
 
         <!--#region Main content-->
-        
+
         <StackPanel HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     TextBlock.Foreground="{StaticResource ForegroundDarkBrush}"
@@ -31,14 +31,22 @@
                     TextBlock.FontSize="15">
 
             <!-- App logo -->
-            <TextBlock Text="" 
-                       Margin="59 -30 0 10" 
-                       FontFamily="{StaticResource Ionicons}" 
-                       FontSize="100">
-                <TextBlock.RenderTransform>
-                    <RotateTransform Angle="46"/>
-                </TextBlock.RenderTransform>
-            </TextBlock>
+            <Border Width="90" Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
+                    HorizontalAlignment="Left" VerticalAlignment="Center"
+                    Background="{StaticResource BackgroundDarkBrush}"
+                    CornerRadius="3" Margin="0 0 0 20">
+                <TextBlock Text="Mn" 
+                    Foreground="{StaticResource ForegroundLightBrush}"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontFamily="Calibri Bold" 
+                    FontSize="50">
+                    <TextBlock.LayoutTransform>
+                        <ScaleTransform ScaleX=".85"/>
+                    </TextBlock.LayoutTransform>
+                </TextBlock>
+            </Border>
+
 
             <!-- Heading text -->
             <TextBlock Text="Getting Started"
@@ -75,11 +83,11 @@
                     local:ButtonAttachedProperties.IsBusy="{Binding IsLoadingALocation}"/>
 
         </StackPanel>
-        
+
         <!--#endregion-->
 
         <!--#region Bottom panel that contains Navigation-->
-        
+
         <local:ButtonPanelControl VerticalAlignment="Bottom"
             Visibility="{Binding HasLocation, Converter={local:BoolToVisibilityConverter}}"
             local:ButtonPanelSlideFromBottomProperty.Value="{Binding HasLocation}">
@@ -128,9 +136,9 @@
             </Grid>
 
         </local:ButtonPanelControl>
-        
+
         <!--#endregion-->
 
     </Grid>
-    
+
 </local:BasePage>
