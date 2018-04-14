@@ -1,9 +1,10 @@
-﻿using Ninject;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace Morgan.Core
 {
     /// <summary>
-    /// IoC container for the application using NInject
+    /// IoC container for the application using built-in dotnet core DI
     /// </summary>
     public static class IoC
     {
@@ -12,7 +13,12 @@ namespace Morgan.Core
         /// <summary>
         /// Kernel of the IoC container
         /// </summary>
-        public static IKernel Kernel { get; set; } = new StandardKernel();
+        public static IServiceProvider ServiceProvider { get; set; }
+
+        /// <summary>
+        /// Collection of services that are exposed via DI container
+        /// </summary>
+        public static IServiceCollection ServiceCollection { get; set; } = new ServiceCollection();
 
         #endregion
 
@@ -21,12 +27,12 @@ namespace Morgan.Core
         /// <summary>
         /// Shorthand property to get the <see cref="ApplicationViewModel"/> single instance
         /// </summary>
-        public static ApplicationViewModel ApplicationViewModel => Kernel.Get<ApplicationViewModel>();
+        public static ApplicationViewModel ApplicationViewModel => Get<ApplicationViewModel>();
 
         /// <summary>
         /// Shorthand property to get the <see cref="PopupMenuViewModel"/> single instance
         /// </summary>
-        public static PopupMenuViewModel PopupMenuViewModel => Kernel.Get<PopupMenuViewModel>();
+        public static PopupMenuViewModel PopupMenuViewModel => Get<PopupMenuViewModel>();
 
         #endregion
 
@@ -50,21 +56,26 @@ namespace Morgan.Core
         public static void Initialize()
         {
             // Binds a single instance of the ApplicationViewModel
-            Kernel.Bind<ApplicationViewModel>().ToSelf().InSingletonScope();
+            ServiceCollection.AddSingleton<ApplicationViewModel>();
 
             // Bind a default implementation for a IMetadataService
-            Kernel.Bind<IMetadataService>().To<DefaultMetadataService>();
+            ServiceCollection.AddTransient<IMetadataService, DefaultMetadataService>();
 
             // Bind a default implementation for a IFileStructureService
-            Kernel.Bind<IFileStructureService>().To<DefaultFileStructureService>();
+            ServiceCollection.AddTransient<IFileStructureService, DefaultFileStructureService>();
         }
+
+        /// <summary>
+        /// Builds the Kernel of the IoC container!
+        /// </summary>
+        public static void BuildProvider() => ServiceProvider = ServiceCollection.BuildServiceProvider();
 
         /// <summary>
         /// Returns a service pulled out from the IoC container
         /// </summary>
         /// <typeparam name="T">Type of the service to get</typeparam>
         /// <returns></returns>
-        public static T Get<T>() where T : class => Kernel.Get<T>();
+        public static T Get<T>() where T : class => ServiceProvider.GetService<T>();
 
         #endregion
     }

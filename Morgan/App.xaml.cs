@@ -1,4 +1,5 @@
-﻿using Morgan.Core;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Morgan.Core;
 using System.Windows;
 
 namespace Morgan
@@ -31,15 +32,19 @@ namespace Morgan
         private void SetupTheApplication()
         {
             // Binds a single instance of the PopupMenuViewModel.
-            IoC.Kernel.Bind<PopupMenuViewModel>().ToSelf().InSingletonScope();
+            IoC.ServiceCollection.AddSingleton<PopupMenuViewModel>();
 
             // Bind the services that is used via DI.
-            IoC.Kernel.Bind<IDirectoryService>().To<DirectoryService>();
+            IoC.ServiceCollection.AddTransient<IDirectoryService, DirectoryService>();
 
             // *Binds single instances of the view models as required;
             // This should remain in WPF Project unless cross application syncing isn't required;
-            IoC.Kernel.Bind<HomePageViewModel>().ToSelf().InSingletonScope();
-            IoC.Kernel.Bind<ViewFilePageViewModel>().ToSelf().InSingletonScope();
+            IoC.ServiceCollection.AddSingleton<HomePageViewModel>();
+            IoC.ServiceCollection.AddSingleton<ViewFilePageViewModel>();
+            IoC.ServiceCollection.AddSingleton<SideMenuControlViewModel>();
+
+            // Build the Kernel
+            IoC.BuildProvider();
         }
     }
 }

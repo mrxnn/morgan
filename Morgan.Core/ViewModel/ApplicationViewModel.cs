@@ -15,7 +15,7 @@ namespace Morgan.Core
         /// <summary>
         /// Controls the currently visible root page of the application
         /// </summary>
-        public ApplicationPage CurrentPage { get; set; }
+        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.BaseHomePage;
 
         /// <summary>
         /// Controls the currently selected sub page of the root <see cref="HomePage"/>
