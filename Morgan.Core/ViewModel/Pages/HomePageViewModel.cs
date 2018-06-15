@@ -87,7 +87,7 @@ namespace Morgan.Core
                 // Set the flag to indicate that the user is choosing a location
                 IsLoadingALocation = true;
 
-                var location = IoC.Get<IDirectoryService>().GetLocation();
+                var location = DI.Get<IDirectoryService>().GetLocation();
                 if (Directory.Exists(location))
                 {
                     // TODO:
@@ -103,7 +103,7 @@ namespace Morgan.Core
                     // Display a hint when the first location is added
                     if (!FirstLocationAdded)
                     {
-                        IoC.PopupMenuViewModel.ShowMenu("Hint: You can add as many locations as you like",
+                        DI.PopupMenuViewModel.ShowMenu("Hint: You can add as many locations as you like",
                         "keep adding locations if your collection is widely spread!", "Got it", null, 10000);
                         FirstLocationAdded = true;
                     }
@@ -122,10 +122,10 @@ namespace Morgan.Core
         private void LoadFiles()
         {
             // Set the root music directory location in a glabal scope
-            IoC.ApplicationViewModel.LocationList = this.LocationsList;
+            DI.ApplicationViewModel.LocationList = this.LocationsList;
 
             // Change the current page of the application
-            IoC.ApplicationViewModel.ApplicationSubHomePage = ApplicationSubHomePage.ViewFilePage;
+            DI.ApplicationViewModel.ApplicationSubHomePage = ApplicationSubHomePage.ViewFilePage;
         }
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace Morgan.Core
         /// </summary>
         private void ListLocations()
         {
-            IoC.PopupMenuViewModel.ShowMenu("Ooops! This function isn't implemented yet", 
+            DI.PopupMenuViewModel.ShowMenu("Ooops! This function isn't implemented yet", 
                 "All the functionality will be added after the beta version");
         }
 

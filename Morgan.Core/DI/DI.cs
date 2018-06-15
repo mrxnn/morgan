@@ -6,7 +6,7 @@ namespace Morgan.Core
     /// <summary>
     /// IoC container for the application using built-in dotnet core DI
     /// </summary>
-    public static class IoC
+    public static class DI
     {
         #region Public Property
         
@@ -41,7 +41,7 @@ namespace Morgan.Core
         /// <summary>
         /// Takes care of initialization of the IoC container prior to any service being used
         /// </summary>
-        static IoC()
+        static DI()
         {
             Initialize();
         }

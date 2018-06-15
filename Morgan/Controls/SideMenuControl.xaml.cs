@@ -11,7 +11,7 @@ namespace Morgan
         public SideMenuControl()
         {
             InitializeComponent();
-            DataContext = IoC.Get<SideMenuControlViewModel>();
+            DataContext = DI.Get<SideMenuControlViewModel>();
         }
     }
 }

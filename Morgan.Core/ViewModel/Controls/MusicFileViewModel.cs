@@ -69,7 +69,7 @@ namespace Morgan.Core
                 return;
 
             // Get all the metadata for this file
-            var (genre, artist, album, title) = IoC.Get<IMetadataService>().GetMetaData(Location);
+            var (genre, artist, album, title) = DI.Get<IMetadataService>().GetMetaData(Location);
 
             // Initialize the properties with the metadata
             Genre = (string.IsNullOrEmpty(genre) ? "Unknown Genre" : genre);

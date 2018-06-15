@@ -10,7 +10,7 @@ namespace Morgan
         public HomePage()
         {
             InitializeComponent();
-            DataContext = IoC.Get<HomePageViewModel>();
+            DataContext = DI.Get<HomePageViewModel>();
         }
     }
 }

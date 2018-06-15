@@ -8,11 +8,11 @@
         /// <summary>
         /// Instance of the application view model that is used across the application
         /// </summary>
-        public static ApplicationViewModel ApplicationViewModel { get; set; } = IoC.ApplicationViewModel;
+        public static ApplicationViewModel ApplicationViewModel { get; set; } = DI.ApplicationViewModel;
 
         /// <summary>
         /// Instance of the popup menu view model that is used across the application
         /// </summary>
-        public static PopupMenuViewModel PopupMenuViewModel { get; set; } = IoC.PopupMenuViewModel;
+        public static PopupMenuViewModel PopupMenuViewModel { get; set; } = DI.PopupMenuViewModel;
     }
 }

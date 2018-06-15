@@ -82,12 +82,12 @@
     <Compile Include="Animation\Data\SlideDirections.cs" />
     <Compile Include="Animation\FrameworkElementAnimation.cs" />
     <Compile Include="Animation\Property\SlideAnimationProperty.cs" />
-    <Compile Include="AttachedProperties\ButtonPanelAttachedProperty.cs" />
-    <Compile Include="AttachedProperties\PopupMenuAttachedProperty.cs" />
-    <Compile Include="AttachedProperties\SettingsFormAttachedProperty.cs" />
-    <Compile Include="AttachedProperties\SideMenuAttachedProperty.cs" />
-    <Compile Include="AttachedProperties\ButtonAttachedProperties.cs" />
-    <Compile Include="AttachedProperties\TextBoxAttachedProperties.cs" />
+    <Compile Include="Property\ButtonPanelAttachedProperty.cs" />
+    <Compile Include="Property\PopupMenuAttachedProperty.cs" />
+    <Compile Include="Property\SettingsFormAttachedProperty.cs" />
+    <Compile Include="Property\SideMenuAttachedProperty.cs" />
+    <Compile Include="Property\ButtonAttachedProperties.cs" />
+    <Compile Include="Property\TextBoxAttachedProperties.cs" />
     <Compile Include="Controls\ButtonPanelControl.xaml.cs">
       <DependentUpon>ButtonPanelControl.xaml</DependentUpon>
     </Compile>
@@ -113,12 +113,12 @@
     <Compile Include="Pages\Settings\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Services\DirectoryService.cs" />
-    <Compile Include="ValueConverters\ApplicationPageConverter.cs" />
-    <Compile Include="ValueConverters\ApplicationSubPageConverter.cs" />
-    <Compile Include="ValueConverters\Base\BaseValueConverter.cs" />
-    <Compile Include="ValueConverters\BoolToVisibilityConverter.cs" />
-    <Compile Include="ValueConverters\BoolToVisibilityInvertConverter.cs" />
+    <Compile Include="Services\MSWindowsDirectoryService.cs" />
+    <Compile Include="Converters\ApplicationPageConverter.cs" />
+    <Compile Include="Converters\ApplicationSubPageConverter.cs" />
+    <Compile Include="Converters\Base\BaseValueConverter.cs" />
+    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\BoolToVisibilityInvertConverter.cs" />
     <Compile Include="Window\WindowResizer.cs" />
     <Compile Include="Window\WindowViewModel.cs" />
     <Page Include="Controls\ButtonPanelControl.xaml">

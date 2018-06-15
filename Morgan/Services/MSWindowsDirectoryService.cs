@@ -8,10 +8,10 @@ using System.Collections.Generic;
 namespace Morgan.Core
 {
     /// <summary>
-    /// An Implementation for the <see cref="IDirectoryService"/>. This class uses the built-in dialogs in WIndows.
-    /// So that this implementation should remain in WPF project!
+    /// An Implementation for the <see cref="IDirectoryService"/>. This class uses the built-in dialogs in 
+    /// Windows platform. As a result, this implementation should remain in WPF project!
     /// </summary>
-    public class DirectoryService : IDirectoryService
+    public class MSWindowsDirectoryService : IDirectoryService
     {
         /// <summary>
         /// Displays a propmt to the user to select a location in the file system

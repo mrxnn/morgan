@@ -49,7 +49,7 @@
                      Text="{Binding DisplaySaveFilePath}" FontSize="14"/>
 
             <TextBlock Text="HIERACHY" Foreground="{StaticResource ForegroundLightBrush}" FontSize="16" Margin="0 15 0 10" FontFamily="Nunito"/>
-            <TextBox Tag="Hierachy of the tags to make the structure"
+            <TextBox Tag="File structure based on music tags"
                      Text="{Binding DisplayFileStructure}" FontSize="14"/>
 
             <Button Content="SAVE" HorizontalAlignment="Left" Style="{StaticResource SecondaryButton}"

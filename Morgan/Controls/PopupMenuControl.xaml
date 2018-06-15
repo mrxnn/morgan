@@ -9,7 +9,7 @@
              MaxWidth="320" MinWidth="250"
              d:DataContext="{x:Static core:PopupMenuDesignModel.Instance}">
 
-    <Grid TextBlock.FontFamily="{StaticResource Nunito}">
+    <Grid TextBlock.FontFamily="{StaticResource NunitoLight}">
 
         <!-- Background, Corner Radius, Background Effects etc -->
         <Border Background="{StaticResource BackgroundDarkBrush}"

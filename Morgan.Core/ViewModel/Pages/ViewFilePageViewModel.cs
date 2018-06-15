@@ -96,7 +96,7 @@ namespace Morgan.Core
         {
             // Init Services
             FileStructureService = fileStructureService;
-            LocationsList = IoC.ApplicationViewModel.LocationList;
+            LocationsList = DI.ApplicationViewModel.LocationList;
 
             // Create commands
             OrganizeCommand = new ActionCommand(Organize);
@@ -182,7 +182,7 @@ namespace Morgan.Core
         private async void LoadMusicFiles()
         {
             // Get all the music files in the different locations
-            var list = await IoC.Get<IDirectoryService>().GetMusicFilesFromAMultipleLocationsAsync(LocationsList);
+            var list = await DI.Get<IDirectoryService>().GetMusicFilesFromAMultipleLocationsAsync(LocationsList);
 
             // Map each music file into MusicFileViewModel objects
             MusicFileList = new ObservableCollection<MusicFileViewModel>(await MapFilesToModelsAsync(list));

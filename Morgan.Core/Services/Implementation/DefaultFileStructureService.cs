@@ -51,7 +51,7 @@ namespace Morgan.Core
                 });
 
                 // Display a message to the user notifying the state of the operation.
-                IoC.PopupMenuViewModel.ShowMenu($"File organization is complete | Errors = {error_count}",
+                DI.PopupMenuViewModel.ShowMenu($"File organization is complete | Errors = {error_count}",
                     "Rate Morgan, like, share and tell us whats to improve!");
             });
         }

@@ -24,7 +24,7 @@ namespace Morgan
         public PopupMenuControl()
         {
             InitializeComponent();
-            DataContext = IoC.PopupMenuViewModel;
+            DataContext = DI.PopupMenuViewModel;
         }
     }
 }

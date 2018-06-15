@@ -18,8 +18,8 @@ namespace Morgan
             // Let the base do whatever it needs.
             base.OnStartup(e);
 
-            // Setup the main application.
-            SetupTheApplication();
+            // Configure the DI
+            ConfigureServices();
 
             // Show the main window.
             Current.MainWindow = new MainWindow();
@@ -27,24 +27,24 @@ namespace Morgan
         }
 
         /// <summary>
-        /// Setup the main application
+        /// This method is used to configure the dependencies using dotnetcore built-in DI container!
         /// </summary>
-        private void SetupTheApplication()
+        private void ConfigureServices()
         {
             // Binds a single instance of the PopupMenuViewModel.
-            IoC.ServiceCollection.AddSingleton<PopupMenuViewModel>();
+            DI.ServiceCollection.AddSingleton<PopupMenuViewModel>();
 
             // Bind the services that is used via DI.
-            IoC.ServiceCollection.AddTransient<IDirectoryService, DirectoryService>();
+            DI.ServiceCollection.AddTransient<IDirectoryService, MSWindowsDirectoryService>();
 
             // *Binds single instances of the view models as required;
             // This should remain in WPF Project unless cross application syncing isn't required;
-            IoC.ServiceCollection.AddSingleton<HomePageViewModel>();
-            IoC.ServiceCollection.AddSingleton<ViewFilePageViewModel>();
-            IoC.ServiceCollection.AddSingleton<SideMenuControlViewModel>();
+            DI.ServiceCollection.AddSingleton<HomePageViewModel>();
+            DI.ServiceCollection.AddSingleton<ViewFilePageViewModel>();
+            DI.ServiceCollection.AddSingleton<SideMenuControlViewModel>();
 
             // Build the Kernel
-            IoC.BuildProvider();
+            DI.BuildProvider();
         }
     }
 }
