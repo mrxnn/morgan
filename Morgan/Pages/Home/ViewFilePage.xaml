@@ -8,7 +8,7 @@
       d:DesignHeight="600" d:DesignWidth="520"
       Title="ViewFilePage">
 
-    <Grid>
+    <Grid TextBlock.FontFamily="{StaticResource NunitoLight}">
         
         <Grid.RowDefinitions>
             <!-- Header Grid -->
@@ -51,13 +51,13 @@
 
                 <Grid>
                     <!-- text to display when the operation is still in progress -->
-                    <TextBlock Text="loading! please wait..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"
+                    <TextBlock Text="loading! please wait..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"
                                Visibility="{Binding EverythingLoaded, Converter={local:BoolToVisibilityInvertConverter}, FallbackValue=Hidden}"/>
 
                     <!-- text to display when the operation is finished -->
                     <StackPanel Visibility="{Binding EverythingLoaded, Converter={local:BoolToVisibilityConverter}, FallbackValue=Visible}" HorizontalAlignment="Center">
                         
-                        <TextBlock Text="Scanning Completed" FontSize="20"/>
+                        <TextBlock Text="Scanning Completed" FontSize="18"/>
                         
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="-10 8 0 8" Opacity=".8">
                             <TextBlock Text="{Binding LocationCount, FallbackValue=12}"/>
@@ -83,7 +83,7 @@
                     VerticalAlignment="Top">
 
             <!-- Header Text -->
-            <TextBlock Text="Edit music tags" FontSize="18" HorizontalAlignment="Left" Margin="0 0 0 10"/>
+            <TextBlock Text="Edit music tags" FontSize="15" HorizontalAlignment="Left" Margin="0 0 0 10"/>
 
             <!-- Metadata tag counts -->
             <Grid>
@@ -102,7 +102,7 @@
                         <Setter Property="Background" Value="#282828"/>
                         <Setter Property="Width" Value="100"/>
                         <Setter Property="Foreground" Value="#FFCFCFCF"/>
-                        <Setter Property="FontSize" Value="28"/>
+                        <Setter Property="FontSize" Value="25"/>
                         <Setter Property="FontWeight" Value="Regular"/>
                         <Setter Property="Template">
                             <Setter.Value>
@@ -119,8 +119,8 @@
                                                 <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" 
                                                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                                                 <!-- Name -->
-                                                <TextBlock Text="{TemplateBinding Tag}" FontSize="15" HorizontalAlignment="Center"
-                                                       Margin="0 -0 0 5"/>
+                                                <TextBlock Text="{TemplateBinding Tag}" FontSize="13" HorizontalAlignment="Center"
+                                                       Margin="0 -0 0 5" FontFamily="{StaticResource NunitoLight}"/>
                                             </StackPanel>
                                         </Border>
                                     </Grid>
@@ -157,10 +157,10 @@
 
             <TextBlock Text="click the tag count buttons to edit specific tags"
                        Foreground="{StaticResource ForegroundDarkBrush}"
-                       FontSize="13" Margin="0 4 0 0" Opacity=".7"/>
+                       FontSize="12" Margin="0 4 0 0" Opacity=".7"/>
 
             <!-- Header Text -->
-            <TextBlock Text="Finally, let's organize!" FontSize="18" HorizontalAlignment="Left" Margin="0 30 0 10"/>
+            <TextBlock Text="Finally, let's organize!" FontSize="15" HorizontalAlignment="Left" Margin="0 30 0 10"/>
             <StackPanel Orientation="Horizontal">
                 <Button Content="START" Width="120" Margin="0 0 10 0" Command="{Binding OrganizeCommand}"/>
                 <Button Content="" Style="{StaticResource IconButton}" Command="{Binding ShowSettingCommand}" Opacity=".8"/>

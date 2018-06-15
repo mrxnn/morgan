@@ -25,6 +25,7 @@
                                    Text="{TemplateBinding Tag}"
                                    FontFamily="{TemplateBinding FontFamily}"
                                    Padding="{TemplateBinding Padding}"
+                                   FontSize="{TemplateBinding FontSize}"
                                    Margin="2 0 0 0"
                                    x:Name="placeholder"
                                    Foreground="Gray"
@@ -38,16 +39,14 @@
                                             <!-- Float to top animation -->
                                             <Storyboard x:Key="floatUpStoryboard">
                                                 <ThicknessAnimation To="0 -18 0 18" Duration="0:0:0.2" Storyboard.TargetProperty="Margin"/>
-                                                <DoubleAnimation To="13" Duration="0:0:0.2" Storyboard.TargetProperty="FontSize"/>
-                                                <DoubleAnimation To="13" Duration="0:0:0.2" Storyboard.TargetProperty="FontSize"/>
+                                                <DoubleAnimation To="12" Duration="0:0:0.2" Storyboard.TargetProperty="FontSize"/>
                                                 <ColorAnimation To="{StaticResource ColorPrimary}" Duration="0:0:0.2" Storyboard.TargetProperty="Foreground.Color"/>
                                             </Storyboard>
 
                                             <!-- Float back animation -->
                                             <Storyboard x:Key="floatDownStoryboard">
                                                 <ThicknessAnimation To="0" Duration="0:0:0.2" Storyboard.TargetProperty="Margin"/>
-                                                <DoubleAnimation To="17" Duration="0:0:0.2" Storyboard.TargetProperty="FontSize"/>
-                                                <DoubleAnimation To="17" Duration="0:0:0.2" Storyboard.TargetProperty="FontSize"/>
+                                                <DoubleAnimation To="15" Duration="0:0:0.2" Storyboard.TargetProperty="FontSize"/>
                                                 <ColorAnimation To="Gray" Duration="0:0:0.2" Storyboard.TargetProperty="Foreground.Color"/>
                                             </Storyboard>
                                         

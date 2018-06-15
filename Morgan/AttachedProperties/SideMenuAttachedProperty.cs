@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using System.ComponentModel;
 using System.Windows.Media.Animation;
+using System.Threading.Tasks;
 
 namespace Morgan
 {
@@ -59,7 +60,7 @@ namespace Morgan
         /// Plays an animation on any framework element, moving the element from left to right (to where the element is located by default)
         /// </summary>
         /// <param name="element">The element to animate</param>
-        private static void SlideInFromLeft(FrameworkElement element)
+        private async static void SlideInFromLeft(FrameworkElement element)
         {
             // Create the storyboard
             var sb = new Storyboard();
@@ -69,6 +70,8 @@ namespace Morgan
 
             // Play the animation
             sb.Begin(element);
+
+            await Task.Delay(500);
         }
 
         #endregion

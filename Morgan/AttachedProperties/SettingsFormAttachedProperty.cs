@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media.Animation;
 
 namespace Morgan
@@ -8,7 +9,7 @@ namespace Morgan
     /// </summary>
     public class SettingsSlideInFromBottomProperty : BaseAnimationProperty<SettingsSlideInFromBottomProperty>
     {
-        protected override void Play(FrameworkElement element, bool value, bool firstLoad = false)
+        protected async override void Play(FrameworkElement element, bool value, bool firstLoad = false)
         {
             // Storyboard!
             var storyboard = new Storyboard();
@@ -24,6 +25,7 @@ namespace Morgan
             }
 
             storyboard.Begin(element);
+            await Task.Delay(300);
         }
     }
 }

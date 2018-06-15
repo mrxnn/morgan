@@ -8,7 +8,7 @@
       d:DesignHeight="600" d:DesignWidth="520"
       Title="HomePage">
 
-    <Grid>
+    <Grid TextBlock.FontFamily="{StaticResource NunitoLight}">
 
         <!-- An icon indicating how many locations are added to the list -->
         <Button Content=""
@@ -31,7 +31,7 @@
                     TextBlock.FontSize="15">
 
             <!-- App logo -->
-            <Border Width="90" Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
+            <!--<Border Width="90" Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
                     HorizontalAlignment="Left" VerticalAlignment="Center"
                     Background="{StaticResource BackgroundDarkBrush}"
                     CornerRadius="3" Margin="0 0 0 20">
@@ -45,16 +45,21 @@
                         <ScaleTransform ScaleX=".85"/>
                     </TextBlock.LayoutTransform>
                 </TextBlock>
-            </Border>
+            </Border>-->
 
 
             <!-- Heading text -->
-            <TextBlock Text="Getting Started"
+            <TextBlock Text="basics"
+                       FontFamily="{StaticResource Megrim}"
                        Foreground="{StaticResource ColorPrimaryBrush}"
-                       FontSize="25"/>
+                       FontSize="45">
+                <TextBlock.LayoutTransform>
+                    <ScaleTransform ScaleX="1.1"/>
+                </TextBlock.LayoutTransform>
+            </TextBlock>
 
             <!-- Instruction 1 -->
-            <StackPanel Orientation="Horizontal" Margin="0 15 0 0">
+            <StackPanel Orientation="Horizontal" Margin="0 15 0 0" TextBlock.FontSize="14">
                 <TextBlock Text="Press " VerticalAlignment="Center"/>
                 <Border Background="{StaticResource BackgroundSemiDarkBrush}" CornerRadius="3">
                     <TextBlock Text="locate" Foreground="White" Padding="3 2 3 3" FontSize="14"/>
@@ -64,10 +69,10 @@
 
             <!-- Instruction 2 -->
             <TextBlock Text="Select the directories that contains music files"
-                       Margin="0 10 0 0"/>
+                       Margin="0 10 0 0" FontSize="14"/>
 
             <!-- Instruction 3 -->
-            <StackPanel Orientation="Horizontal"  Margin="0 10 0 0">
+            <StackPanel Orientation="Horizontal"  Margin="0 10 0 0" TextBlock.FontSize="14">
                 <TextBlock Text="Then " VerticalAlignment="Center"/>
                 <Border Background="{StaticResource BackgroundSemiDarkBrush}" CornerRadius="3">
                     <TextBlock Text="continue" Foreground="White" Padding="3 2 3 3" FontSize="14"/>

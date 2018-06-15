@@ -8,4 +8,13 @@
     <!-- Icon Font -->
     <FontFamily x:Key="Ionicons">Ionicons, pack://application:,,,/Fonts/#Ionicons</FontFamily>
 
+    <!-- Megrim Font which is used for special headings -->
+    <FontFamily x:Key="Megrim">pack://application:,,,/Fonts/#Megrim</FontFamily>
+
+    <!-- Nunito Font -->
+    <FontFamily x:Key="Nunito">pack://application:,,,/Fonts/#Nunito Regular</FontFamily>
+
+    <!-- Nunito Font Light -->
+    <FontFamily x:Key="NunitoLight">pack://application:,,,/Fonts/#Nunito Light</FontFamily>
+
 </ResourceDictionary>

@@ -9,7 +9,7 @@
              MaxWidth="320" MinWidth="250"
              d:DataContext="{x:Static core:PopupMenuDesignModel.Instance}">
 
-    <Grid>
+    <Grid TextBlock.FontFamily="{StaticResource Nunito}">
 
         <!-- Background, Corner Radius, Background Effects etc -->
         <Border Background="{StaticResource BackgroundDarkBrush}"
@@ -24,7 +24,7 @@
                     VerticalAlignment="Center"
                     TextBlock.Foreground="{StaticResource ForegroundLightBrush}"
                     TextBlock.FontWeight="Light"
-                    TextBlock.FontSize="14">
+                    TextBlock.FontSize="13">
 
             <!-- Main message -->
             <TextBlock Text="{Binding PrimaryMessage}"
@@ -40,7 +40,7 @@
             <!-- Menu Button -->
             <TextBlock Text="{Binding ButtonText}" TextDecorations="Underline"
                        Cursor="Hand" HorizontalAlignment="Left"
-                       FontSize="12" Margin="0 2 0 2" Opacity=".8">
+                       FontSize="11" Margin="0 2 0 2" Opacity=".8">
                 <TextBlock.InputBindings>
                     <MouseBinding MouseAction="LeftClick" Command="{Binding ButtonClickCommand}"/>
                 </TextBlock.InputBindings>

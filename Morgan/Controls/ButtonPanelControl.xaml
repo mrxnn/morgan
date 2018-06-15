@@ -16,6 +16,14 @@
                         Margin="0 0 0 0"
                         CornerRadius="3"/>
 
+                <Border Background="{StaticResource ColorPrimaryBrush}"
+                        HorizontalAlignment="Left"
+                        Width="10"/>
+
+                <Border Background="{StaticResource ColorPrimaryBrush}"
+                        VerticalAlignment="Top"
+                        Height="10"/>
+
                 <ContentPresenter Margin="20"/>
 
             </Grid>
