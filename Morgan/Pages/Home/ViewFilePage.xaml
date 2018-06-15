@@ -33,14 +33,14 @@
                 </LinearGradientBrush>
             </Grid.Background>
             
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
 
                 <!-- Status Indicator Icon -->
-                <Grid HorizontalAlignment="Center">
+                <Grid HorizontalAlignment="Center" Margin="0 0 10 0">
                     
                     <!-- the icon that is displayed when the loading is finished -->
                     <TextBlock Text="" FontFamily="{StaticResource Ionicons}"
-                           FontSize="100" Foreground="{StaticResource ColorPrimaryBrush}"
+                           FontSize="105" Foreground="{StaticResource ColorPrimaryBrush}"
                            Visibility="{Binding EverythingLoaded, Converter={local:BoolToVisibilityConverter}, FallbackValue=Visible}"/>
                     
                     <!-- the icon for displaying when the operation is in progress -->
@@ -49,9 +49,9 @@
                            Visibility="{Binding EverythingLoaded, Converter={local:BoolToVisibilityInvertConverter}, FallbackValue=Hidden}"/>
                 </Grid>
 
-                <Grid>
+                <Grid VerticalAlignment="Center" Margin="10 0 0 0">
                     <!-- text to display when the operation is still in progress -->
-                    <TextBlock Text="loading! please wait..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"
+                    <TextBlock Text="loading! please wait..." FontSize="18" VerticalAlignment="Center"
                                Visibility="{Binding EverythingLoaded, Converter={local:BoolToVisibilityInvertConverter}, FallbackValue=Hidden}"/>
 
                     <!-- text to display when the operation is finished -->
@@ -59,12 +59,12 @@
                         
                         <TextBlock Text="Scanning Completed" FontSize="18"/>
                         
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="-10 8 0 8" Opacity=".8">
+                        <StackPanel Orientation="Horizontal" Margin="0 8 0 8" Opacity=".8">
                             <TextBlock Text="{Binding LocationCount, FallbackValue=12}"/>
                             <TextBlock Text=" locations"/>
                         </StackPanel>
                         
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Opacity=".8" Margin="-10 0 0 0">
+                        <StackPanel Orientation="Horizontal" Opacity=".8" Margin="0 0 0 0">
                             <TextBlock Text="{Binding MusicFileCount, FallbackValue=998}"/>
                             <TextBlock Text=" files"/>
                         </StackPanel>
