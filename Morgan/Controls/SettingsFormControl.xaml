@@ -8,7 +8,7 @@
              d:DesignHeight="550" d:DesignWidth="450">
 
     <Grid Background="{StaticResource BackgroundSemiDarkBrush}"
-          TextBlock.FontFamily="{StaticResource NunitoLight}">
+          TextBlock.FontFamily="{StaticResource FontPrimary}">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -38,28 +38,21 @@
 
         <StackPanel Margin="20" Grid.Row="1">
 
-            <TextBlock TextWrapping="Wrap" Margin="0 0 0 20" Opacity=".5"
-                       Foreground="{StaticResource ForegroundLightBrush}" FontSize="14">
-                You can change the default settings by entering new values and click te save button.
-            </TextBlock>
-            
-            <TextBlock Text="LOCATION" Foreground="{StaticResource ForegroundLightBrush}" FontSize="16" FontFamily="Nunito"/>
-            <TextBox Tag="Location to store the music files" Margin="0 10 0 15"
+            <TextBlock Text="Location" Foreground="{StaticResource ForegroundLightBrush}" FontSize="16"/>
+            <TextBox Tag="Default location: Music" Margin="0 15 0 15"
                      local:TextBoxAttachedProperties.FocusControlOnLoad="True"
                      Text="{Binding DisplaySaveFilePath}" FontSize="14"/>
 
-            <TextBlock Text="HIERACHY" Foreground="{StaticResource ForegroundLightBrush}" FontSize="16" Margin="0 15 0 10" FontFamily="Nunito"/>
-            <TextBox Tag="File structure based on music tags"
+            <TextBlock Text="Hierachy" Foreground="{StaticResource ForegroundLightBrush}" FontSize="16" Margin="0 15 0 15"/>
+            <TextBox Tag="Structure: Genre, Artists, Albums, File"
                      Text="{Binding DisplayFileStructure}" FontSize="14"/>
 
             <Button Content="SAVE" HorizontalAlignment="Left" Style="{StaticResource SecondaryButton}"
-                    Margin="0 20 0 0" Command="{Binding SaveStructureSettingsCommand}" Width="100"/>
+                    Margin="0 30 0 0" Command="{Binding SaveStructureSettingsCommand}" Width="100"/>
 
-
-            <TextBlock TextWrapping="Wrap" Margin="0 30 0 20" Opacity=".5"
-                       Foreground="{StaticResource ForegroundLightBrush}" FontSize="14">
-                Instructions are provided in the documentation to learn more about the settings that
-                you can customize.
+            <TextBlock TextWrapping="Wrap" Margin="0 180 0 20" Opacity=".5"
+                       TextAlignment="Right" Foreground="{StaticResource ForegroundLightBrush}" FontSize="14">
+                More instructions are listed in the documentation. You can change the default settings by entering new values and click the SAVE button.
             </TextBlock>
 
         </StackPanel>

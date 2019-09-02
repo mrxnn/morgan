@@ -5,11 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Morgan"
              xmlns:core="clr-namespace:Morgan.Core;assembly=Morgan.Core"
-             mc:Ignorable="d" d:DesignWidth="300"
-             MaxWidth="320" MinWidth="250"
+             mc:Ignorable="d" Width="400"
              d:DataContext="{x:Static core:PopupMenuDesignModel.Instance}">
 
-    <Grid TextBlock.FontFamily="{StaticResource NunitoLight}">
+    <Grid TextBlock.FontFamily="{StaticResource FontPrimary}">
 
         <!-- Background, Corner Radius, Background Effects etc -->
         <Border Background="{StaticResource BackgroundDarkBrush}"
@@ -20,7 +19,6 @@
         </Border>
 
         <StackPanel Margin="10"
-                    HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     TextBlock.Foreground="{StaticResource ForegroundLightBrush}"
                     TextBlock.FontWeight="Light"
@@ -33,14 +31,14 @@
 
             <!-- Secondary message -->
             <TextBlock Text="{Binding SecondaryMessage}"
-                       FontSize="11" Margin="0 2 0 2" Opacity=".5"
-                       TextOptions.TextRenderingMode="ClearType"
+                       FontSize="13"
+                       Margin="0 2 0 2" Opacity=".5"
                        TextWrapping="WrapWithOverflow"/>
 
             <!-- Menu Button -->
             <TextBlock Text="{Binding ButtonText}" TextDecorations="Underline"
-                       Cursor="Hand" HorizontalAlignment="Left"
-                       FontSize="11" Margin="0 2 0 2" Opacity=".8">
+                       Cursor="Hand" FontSize="12"
+                       Margin="0 20 0 2" Opacity=".8">
                 <TextBlock.InputBindings>
                     <MouseBinding MouseAction="LeftClick" Command="{Binding ButtonClickCommand}"/>
                 </TextBlock.InputBindings>

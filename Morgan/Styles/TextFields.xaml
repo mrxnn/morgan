@@ -10,7 +10,7 @@
         <Setter Property="Padding" Value="0 10 0 2"/>
         <Setter Property="Foreground" Value="{StaticResource ForegroundLightBrush}"/>
         <Setter Property="FontSize" Value="17"/>
-        <Setter Property="FontFamily" Value="Calibri"/>
+        <Setter Property="FontFamily" Value="{StaticResource FontPrimaryLight}"/>
 
         <Setter Property="Template">
             <Setter.Value>

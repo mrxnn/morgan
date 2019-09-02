@@ -206,11 +206,9 @@
     </EmbeddedResource>
     <Resource Include="Fonts\ionicons.ttf" />
     <Resource Include="Fonts\Lato-Thin.ttf" />
-    <Resource Include="Fonts\Nunito-Bold.ttf" />
-    <Resource Include="Fonts\Nunito-Light.ttf" />
-    <Resource Include="Fonts\Nunito-Regular.ttf" />
-    <Resource Include="Fonts\Nunito-SemiBold.ttf" />
     <Resource Include="Fonts\Megrim.ttf" />
+    <Resource Include="Fonts\Apercu Light.otf" />
+    <Resource Include="Fonts\Apercu_Regular.otf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -103,8 +103,8 @@ namespace Morgan.Core
                     // Display a hint when the first location is added
                     if (!FirstLocationAdded)
                     {
-                        DI.PopupMenuViewModel.ShowMenu("Hint: You can add as many locations as you like",
-                        "keep adding locations if your collection is widely spread!", "Got it", null, 10000);
+                        DI.PopupMenuViewModel.ShowMenu("HINT",
+                        "You can add more locations if your music collection reside in different directories", "Got it", null, 10000);
                         FirstLocationAdded = true;
                     }
                 }

@@ -8,7 +8,7 @@
       d:DesignHeight="600" d:DesignWidth="520"
       Title="ViewFilePage">
 
-    <Grid TextBlock.FontFamily="{StaticResource NunitoLight}">
+    <Grid TextBlock.FontFamily="{StaticResource FontPrimary}">
         
         <Grid.RowDefinitions>
             <!-- Header Grid -->
@@ -120,7 +120,7 @@
                                                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                                                 <!-- Name -->
                                                 <TextBlock Text="{TemplateBinding Tag}" FontSize="13" HorizontalAlignment="Center"
-                                                       Margin="0 -0 0 5" FontFamily="{StaticResource NunitoLight}"/>
+                                                       Margin="0 -0 0 5" FontFamily="{StaticResource FontPrimary}"/>
                                             </StackPanel>
                                         </Border>
                                     </Grid>

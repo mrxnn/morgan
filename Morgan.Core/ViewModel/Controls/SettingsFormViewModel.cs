@@ -64,8 +64,8 @@ namespace Morgan.Core
             SaveStructureSettingsCommand = new ActionCommand(SaveStructureSettings);
 
             // Set the default file location and the structure
-            SaveFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyMusic), "Structure");
-            FileStructure = "genre, artist, album, title";
+            // SaveFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyMusic), "Structure");
+            // FileStructure = "genre, artist, album, title";
 
             // Set the displayed values
             DisplaySaveFilePath = SaveFilePath;

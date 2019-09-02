@@ -104,7 +104,7 @@
                                                        FontWeight="Medium"
                                                        Opacity=".6"
                                                        FontSize="11"
-                                                       FontFamily="Calibri Light"
+                                                       FontFamily="{StaticResource FontPrimary}"
                                                        Margin="0 0 0 2"/>
 
                                             <!-- Window Control Icons -->

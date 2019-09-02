@@ -11,10 +11,8 @@
     <!-- Megrim Font which is used for special headings -->
     <FontFamily x:Key="Megrim">pack://application:,,,/Fonts/#Megrim</FontFamily>
 
-    <!-- Nunito Font -->
-    <FontFamily x:Key="Nunito">pack://application:,,,/Fonts/#Nunito Regular</FontFamily>
-
-    <!-- Nunito Font Light -->
-    <FontFamily x:Key="NunitoLight">pack://application:,,,/Fonts/#Nunito Light</FontFamily>
+    <!-- Primary Font -->
+    <FontFamily x:Key="FontPrimary">pack://application:,,,/Fonts/#Apercu</FontFamily>
+    <FontFamily x:Key="FontPrimaryLight">pack://application:,,,/Fonts/#Apercu Light</FontFamily>
 
 </ResourceDictionary>
