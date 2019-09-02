@@ -49,13 +49,9 @@
 
 
             <!-- Heading text -->
-            <TextBlock Text="basics"
-                       FontFamily="{StaticResource Megrim}"
+            <TextBlock Text="Getting Started"
                        Foreground="{StaticResource ColorPrimaryBrush}"
                        FontSize="45">
-                <TextBlock.LayoutTransform>
-                    <ScaleTransform ScaleX="1.1"/>
-                </TextBlock.LayoutTransform>
             </TextBlock>
 
             <!-- Instruction 1 -->
@@ -80,9 +76,8 @@
             </StackPanel>
 
             <!-- The button that the user can click to display the dialog -->
-            <Button Content="LOCATE"
-                    Width="120"
-                    Margin="0 20 0 5"
+            <Button Content="Select Music Directory"
+                    Margin="0 20 0 5" Width="180"
                     HorizontalAlignment="Left"
                     Command="{Binding AddLocationCommand}"
                     local:ButtonAttachedProperties.IsBusy="{Binding IsLoadingALocation}"/>
